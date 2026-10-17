@@ -26,15 +26,21 @@ Para una próxima iteración se puede practicar una adaptación individual: fija
 
 Una entrega técnica está terminada cuando se puede reproducir, sus cálculos coinciden con las referencias, se han probado los casos relevantes, sus límites están documentados y el código y la evidencia están enlazados. Una decisión futbolística requiere además explicar los atributos, revisar resultados inesperados y dejar registrada la preferencia elegida. Una prueba de pesos no cierra por sí sola la estabilidad por partidos ni la validación predictiva.
 
-## Revisión de esta entrega · 17/10/2026
+## Primera revisión: pivote y delantero · 17/10/2026
 
 Objetivo: comprobar pivote y delantero antes de cambiar pesos. Resultado: 108 puntuaciones base reconciliadas, 40.000 simulaciones de pesos y 48 recuentos directos de métricas sin diferencias. Augusto y Suárez conservan el liderato en el intervalo probado; los puestos siguientes dependen más de la función buscada, sobre todo en pivote.
 
-Decisión: conservar la configuración publicada y documentar alternativas. La tarea de perfiles pasa a En curso, porque todavía faltan central, lateral, mediapunta y extremo y confirmar las preferencias finales. Las tareas de estabilidad por partidos y proveedores siguen Por hacer. El balance es ocho terminadas, una en curso y dos por hacer.
+Decisión de esa primera entrega: conservar la configuración publicada y documentar alternativas. La tarea de perfiles pasó a En curso porque faltaban cuatro perfiles. Ese estado queda superado por el cierre documentado a continuación.
+
+## Cierre de la revisión de perfiles · 17/10/2026
+
+Central, lateral, mediapunta y extremo añaden 80.000 simulaciones y 213 candidatos reconciliados. El recuento directo comprueba 196 métricas y 70 valores de minutos sin diferencias. La prueba de extremos detectó que Marcelo puede superar a Filipe incluso dentro del ±20%, aunque las 10.000 simulaciones aleatorias no lo mostraron: una comprobación útil para no exagerar la robustez.
+
+La decisión es mantener las bases y conservar alternativas por función. Los siete perfiles ya tienen justificación, sensibilidad y límites; [MOD-03/SCOUT-7](https://jjrn87.atlassian.net/browse/SCOUT-7) pasa a Listo como revisión descriptiva. No equivale a validar rendimiento futuro ni a elegir una preferencia universal. El balance actual es nueve tareas terminadas y dos por hacer: estabilidad por partidos/contexto y evaluación de datos actuales. La separación de creación en mediapunta y extremo queda como mejora propuesta, con diagnóstico realizado pero sin implementación.
 
 ## Reflexión para la siguiente iteración
 
-Ha sido útil cuestionar resultados que sorprenden y comprobarlos desde los eventos, en vez de ajustar pesos para que encajen nombres conocidos. El punto a mejorar es separar desde el principio tres preguntas: si el cálculo está bien, si el perfil representa la función buscada y si el resultado se sostiene en otra muestra. La próxima revisión debería aplicar esa separación a los cuatro perfiles restantes.
+Ha sido útil cuestionar resultados que sorprenden y comprobarlos desde los eventos, en vez de ajustar pesos para que encajen nombres conocidos. El punto a mejorar es separar desde el principio tres preguntas: si el cálculo está bien, si el perfil representa la función buscada y si el resultado se sostiene en otra muestra. La siguiente iteración debe abordar esa última pregunta, especialmente para Yoda y Burgui por sus pocos minutos, y separar el efecto de muestra del efecto de pesos.
 
 Esta reflexión se ha redactado con asistencia de IA a partir del trabajo realizado. No representa una reunión de retrospectiva de un equipo.
 

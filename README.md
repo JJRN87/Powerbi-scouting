@@ -20,14 +20,14 @@ El trabajo documenta las decisiones y sus límites. La revisión técnica automa
 
 ## Estado del proyecto
 
-La parte técnica de Power BI está terminada y comprobada en Desktop. Las 1.359 comparaciones con Python, repartidas en seis escenarios, no muestran diferencias. El seguimiento queda en ocho tareas terminadas, una en curso (revisión futbolística de perfiles) y dos por hacer (estabilidad por partidos y evaluación de datos actuales). El [resumen de validación](docs/VALIDACION_POWERBI.md) explica las pruebas y sus límites.
+La parte técnica de Power BI está terminada y comprobada en Desktop. Las 1.359 comparaciones con Python, repartidas en seis escenarios, no muestran diferencias. El seguimiento queda en nueve tareas terminadas y dos por hacer: estabilidad por partidos/contexto y evaluación de datos actuales. La revisión descriptiva de los siete perfiles está cerrada. El [resumen de validación](docs/VALIDACION_POWERBI.md) explica las pruebas y sus límites.
 
-La [revisión de pivote y delantero](docs/analisis/PIVOTE_Y_DELANTERO.md) añade 40.000 simulaciones, 108 puntuaciones base reconciliadas y 48 comprobaciones directas de métricas sin diferencias. Se mantienen los pesos oficiales; las alternativas están documentadas como escenarios. Los perfiles restantes y la validación por partidos siguen abiertos.
+La [revisión de pivote y delantero](docs/analisis/PIVOTE_Y_DELANTERO.md) añade 40.000 simulaciones, 108 puntuaciones base reconciliadas y 48 comprobaciones directas de métricas sin diferencias. La [revisión de central, lateral, mediapunta y extremo](docs/analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) suma otras 80.000 simulaciones, 213 puntuaciones base, 196 métricas y 70 comprobaciones de minutos sin diferencias. Mustafi y Neymar tienen lideratos sólidos en los intervalos documentados; Filipe–Marcelo y James–Isco dependen más de la función buscada. Se mantienen los pesos oficiales. Las [decisiones de los siete perfiles](docs/analisis/DECISIONES_PERFILES.md) distinguen esta revisión de la estabilidad por partidos, que sigue pendiente.
 
 | Componente | Estado |
 |---|---|
 | Ingesta, transformación y controles de datos | Implementados y comprobados localmente |
-| Rankings y visor HTML interactivo | Implementados; pesos en revisión |
+| Rankings y visor HTML interactivo | Implementados; siete perfiles revisados descriptivamente, bases conservadas |
 | Tablas, Power Query y medidas DAX | Ejecutados en Desktop y comparados con Python |
 | Informe ejecutado en Power BI Desktop | Proyecto PBIP interactivo; seis escenarios de regresión sin diferencias |
 | Validación predictiva y valoración económica | Fuera del alcance actual |
@@ -63,6 +63,8 @@ python -m src.analyze_organizer
 python -m src.build_powerbi
 python -m src.analyze_profiles
 python -m src.verify_review_players
+python -m src.analyze_profiles --group cuatro_perfiles
+python -m src.verify_remaining_players
 ```
 
 La primera descarga necesita Internet. Las siguientes reutilizan archivos en caché. La reconstrucción y las validaciones funcionan sin conexión. La descarga fija un commit del repositorio en `data/source-lock.json`; no cambia de versión en cada ejecución. La descarga completa ocupa varios cientos de MB antes de comprimir; se conserva comprimida localmente.
@@ -85,11 +87,11 @@ Para cambiar pesos de forma permanente: editar `config/profiles.json`, ejecutar 
 | `src/build_powerbi.py` | Generador del informe y de la referencia de regresión DAX. |
 | `docs/METODOLOGIA.md` | Definiciones, decisiones estadísticas y límites. |
 
-## Revisión propuesta
+## Revisión de perfiles
 
-Organizador, pivote y delantero ya tienen una primera revisión documentada. Faltan central, lateral, mediapunta y extremo y confirmar las preferencias finales. Para cada perfil se revisan los primeros candidatos, los atributos que los favorecen y los resultados que sorprenden. La familiaridad de los nombres no demuestra que el modelo sea correcto: también importan minutos, rol y contexto del equipo.
+Los siete perfiles tienen revisión de candidatos, atributos, sensibilidad y decisión registrada. Se conservan las bases y se ofrecen escenarios según la función buscada. La familiaridad de los nombres no demuestra que el modelo sea correcto: también importan minutos, rol y contexto del equipo. Está medido el efecto de usar solo creación en juego abierto en mediapunta y extremo; incorporarlo al modelo oficial es una mejora propuesta, todavía sin implementar.
 
-Los pesos son hipótesis de scouting, no coeficientes aprendidos ni garantías de rendimiento. La validación técnica y la sensibilidad están automatizadas; la validación futbolística sigue pendiente. No se incluyen salarios, precios ni valoraciones económicas.
+Los pesos son hipótesis de scouting, no coeficientes aprendidos ni garantías de rendimiento. La validación técnica y la sensibilidad están automatizadas; la revisión descriptiva no acredita calidad predictiva ni sustituye observación futbolística. No se incluyen salarios, precios ni valoraciones económicas.
 
 ## Fuente y uso
 

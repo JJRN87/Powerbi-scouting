@@ -124,6 +124,8 @@ Se recalcularon los percentiles desde las métricas de temporada y se contrastar
 
 Reproducción: `python -m src.analyze_profiles`, `python -m src.verify_review_players` y `python -m unittest discover -s tests -v`. Los resultados completos se guardan en `outputs/revision_pivote_delantero.json` y `outputs/review-players-verification.json`. El [resumen de evidencia](../evidencias/revision-perfiles.json) conserva método, comprobaciones y hashes, sin publicar la base de datos.
 
-**Decisión:** aceptar la coherencia del cálculo y usar estos rankings como primera lista de candidatos, con las reservas indicadas. Conservar los pesos actuales como referencia y guardar las alternativas para la siguiente revisión. No dar por cerrada la validación futbolística completa: faltan central, lateral, mediapunta y extremo, confirmar preferencias del usuario y estudiar estabilidad por partidos y contexto. La tarea global de perfiles queda en curso.
+**Decisión de esta entrega:** aceptar la coherencia del cálculo y usar estos rankings como primera lista de candidatos, con las reservas indicadas. Conservar los pesos actuales como referencia y guardar las alternativas. En ese momento la tarea quedó en curso porque faltaban cuatro perfiles. La [revisión posterior](CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) completa el análisis descriptivo y cierra la tarea con las bases conservadas; la estabilidad por partidos y contexto sigue pendiente. Ver [decisiones de los siete perfiles](DECISIONES_PERFILES.md).
+
+El hash del resultado completo de esta primera revisión corresponde a la versión del código publicada en el commit `8fc96d5`. La ampliación posterior añade campos de diagnóstico al JSON; no cambia los rankings ni las conclusiones de pivote/delantero.
 
 No se ha vuelto a validar DAX para estas alternativas: se han probado en Python y no se han cambiado los pesos oficiales ni el informe. La validación anterior de Desktop sigue documentada por separado.

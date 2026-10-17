@@ -44,9 +44,9 @@ El organizador v2 separa creación abierta y balón parado, e incorpora xG de ti
 
 ## Trabajo pendiente y criterio de cierre
 
-Queda revisar futbolísticamente los siete perfiles y estudiar estabilidad por partidos y contexto de equipo. Una decisión sobre proveedores actuales requerirá comparar cobertura, definiciones y condiciones de uso.
+La revisión descriptiva de los siete perfiles está cerrada: atributos, sensibilidad y decisión de conservar las bases con escenarios por función. Queda estudiar estabilidad por partidos y contexto de equipo. Una decisión sobre proveedores actuales requerirá comparar cobertura, definiciones y condiciones de uso. Extender la separación de creación a mediapunta y extremo es una mejora propuesta cuyo efecto se ha medido, todavía sin implementar en Power BI.
 
-Una tarea se cierra cuando su criterio de aceptación tiene evidencia reproducible. Jira recoge las tareas con criterios y referencias; Confluence conserva alcance, metodología y decisiones. El [backlog público](backlog.json) conserva 11 tareas con identificadores locales. Estado actual: ocho terminadas, una en curso y dos por hacer; BI-01 cerrado y MOD-03 en curso en Jira. El detalle de la entrega está en [VALIDACION_POWERBI.md](VALIDACION_POWERBI.md). Se conserva el trabajo previo sin inventar sprints ni fechas de ejecución históricas.
+Una tarea se cierra cuando su criterio de aceptación tiene evidencia reproducible. Jira recoge las tareas con criterios y referencias; Confluence conserva alcance, metodología y decisiones. El [backlog público](backlog.json) conserva 11 tareas con identificadores locales. Estado actual: nueve terminadas y dos por hacer; BI-01 y MOD-03 cerrados. El detalle de la entrega está en [VALIDACION_POWERBI.md](VALIDACION_POWERBI.md). Se conserva el trabajo previo sin inventar sprints ni fechas de ejecución históricas.
 
 ## Uso de IA y presentación profesional
 
@@ -59,3 +59,7 @@ El destino solicitado es un repositorio público llamado Powerbi-scouting. El co
 ## Revisión de pivote y delantero
 
 La [revisión documentada](analisis/PIVOTE_Y_DELANTERO.md) incluye 40.000 simulaciones y comprobaciones directas de candidatos destacados. Conserva los pesos oficiales y distingue validación técnica, preferencia futbolística e incertidumbre por partidos. La [galería](evidencias/README.md) muestra Power BI, Jira y Confluence; la [forma de trabajo](gestion/FORMA_DE_TRABAJO.md) explica las prácticas ágiles realmente utilizadas.
+
+## Revisión de los cuatro perfiles restantes
+
+La [revisión de central, lateral, mediapunta y extremo](analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) añade 80.000 simulaciones, 213 candidatos reconciliados, 196 comprobaciones directas de métricas y 70 de minutos, sin diferencias. Las 14 pruebas unitarias actuales pasan. Mustafi y Neymar son sólidos en los intervalos documentados; Filipe–Marcelo y James–Isco cambian de orden según las preferencias. El [registro de decisiones](analisis/DECISIONES_PERFILES.md) cierra la revisión descriptiva conservando las bases. No se ha modificado Power BI ni se atribuyen nuevas pruebas Desktop a esta entrega.

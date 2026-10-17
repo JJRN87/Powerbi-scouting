@@ -42,11 +42,10 @@ El PBIX con los datos cargados se conserva localmente en `powerbi/Powerbi-scouti
 
 ## Qué queda pendiente
 
-En el cierre de Desktop quedaron ocho tareas terminadas y tres pendientes. Después se inició la revisión de perfiles: el estado actual es ocho terminadas, una en curso y dos por hacer. Las tres líneas abiertas son:
+En el cierre de Desktop quedaron ocho tareas terminadas y tres pendientes. Posteriormente se completó la [revisión descriptiva de los siete perfiles](analisis/DECISIONES_PERFILES.md), conservando los pesos oficiales. El estado actual es nueve tareas terminadas y dos por hacer:
 
-1. Revisar futbolísticamente los siete perfiles: justificar atributos y pesos y revisar resultados inesperados sin ajustar el modelo para que salgan nombres concretos.
-2. Estudiar la estabilidad por partidos y el contexto de equipo. Cambiar pesos mide nuestras preferencias; todavía falta medir cuánto depende el resultado de la muestra de partidos.
-3. Comparar proveedores de datos actuales y decidir si merece la pena pagar, una vez revisado el caso histórico.
+1. Estudiar la estabilidad por partidos y el contexto de equipo. Cambiar pesos mide nuestras preferencias; todavía falta medir cuánto depende el resultado de la muestra de partidos.
+2. Comparar proveedores de datos actuales y decidir si merece la pena pagar, una vez revisado el caso histórico.
 
 No hay validación predictiva, ajustes por posesión o rival, ni salarios o precios de fichaje. Por ahora el proyecto ayuda a localizar candidatos y explicar por qué aparecen arriba.
 

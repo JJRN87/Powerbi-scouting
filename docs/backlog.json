@@ -1,6 +1,6 @@
 {
   "project_name": "Powerbi-scouting",
-  "publication_status": "Actualizado el 17/10/2026: 8 tareas terminadas, 1 en curso y 2 por hacer. Revisión parcial de pivote y delantero documentada; configuración oficial sin cambios.",
+  "publication_status": "Actualizado el 17/10/2026: 9 tareas terminadas y 2 por hacer. Revisión descriptiva de los siete perfiles cerrada; configuración oficial sin cambios. Pendientes estabilidad por partidos/contexto y evaluación de datos actuales.",
   "items": [
     {
       "local_id": "DAT-01",
@@ -115,7 +115,7 @@
       "local_id": "MOD-03",
       "area": "Modelo",
       "summary": "Revisar futbolísticamente los siete perfiles",
-      "status": "En curso",
+      "status": "Listo",
       "description": "Justificar atributos y pesos por función, revisar candidatos inesperados y registrar decisiones sin ajustar el modelo para favorecer nombres concretos.",
       "acceptance": [
         "Cada perfil tiene justificación de pesos y limitaciones",
@@ -125,12 +125,16 @@
         "MOD-01",
         "MOD-02"
       ],
-      "progress": "Primera revisión de organizador, pivote y delantero documentada. Pivote/delantero: 40.000 simulaciones, 108 puntuaciones base y 48 comprobaciones directas sin diferencias. Faltan cuatro perfiles y confirmar preferencias finales.",
+      "progress": "Siete perfiles con justificación, sensibilidad y decisión: conservar bases como referencias y comparar escenarios por función. Última revisión: 213 candidatos, 80.000 simulaciones, 196 métricas y 70 minutos/roles contrastados sin diferencias. No es validación predictiva ni aprobación de pesos universales.",
       "evidence": [
         "docs/analisis/PIVOTE_Y_DELANTERO.md",
         "docs/evidencias/revision-perfiles.json",
         "src/analyze_profiles.py",
-        "src/verify_review_players.py"
+        "src/verify_review_players.py",
+        "docs/analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md",
+        "docs/analisis/DECISIONES_PERFILES.md",
+        "docs/evidencias/revision-cuatro-perfiles.json",
+        "src/verify_remaining_players.py"
       ]
     },
     {
@@ -146,6 +150,11 @@
       ],
       "depends_on": [
         "MOD-03"
+      ],
+      "review_inputs": [
+        "Revisar estabilidad de Yoda y Burgui con pocos minutos",
+        "Separar efecto de pesos, muestra y exposición defensiva",
+        "Estudiar sensibilidad a minutos por rol, especialmente James e Isco"
       ]
     },
     {
@@ -193,5 +202,13 @@
     "Por hacer",
     "En curso",
     "Listo"
+  ],
+  "proposed_improvements": [
+    {
+      "summary": "Separar creación abierta y balón parado en mediapunta y extremo",
+      "status": "Propuesta documentada, sin implementación ni tarea adicional creada",
+      "evidence": "docs/analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md",
+      "requires": "Versionar métricas y repetir regresión Python-DAX si se decide implementar"
+    }
   ]
 }

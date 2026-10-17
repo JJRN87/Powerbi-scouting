@@ -1,0 +1,271 @@
+{
+  "date": "2026-10-17",
+  "status": "descriptive_review_complete_production_unchanged",
+  "seed": 20261017,
+  "samples_per_profile_per_box": 10000,
+  "random_scenarios_total": 80000,
+  "input_sha256": {
+    "config/profiles.json": "ccb0319f116a27cadc8c983f4d85bad3450a31b1302dd4c910283127630910f0",
+    "data/processed/football.sqlite": "6e3e4d37a101ca6aad5a6f76996767f7f819c0b76ab7e25f38b86da8aa166e86",
+    "data/processed/rankings.csv": "7a8b23e945be14cc2512763f5be34fb76d6f460ce79d5e542ff5c3aa94281634"
+  },
+  "production_unchanged": true,
+  "baseline_comparisons": 213,
+  "baseline_errors": 0,
+  "unit_tests_passed": 14,
+  "direct_source_check": {
+    "event_files_scanned": 380,
+    "lineup_files_scanned": 380,
+    "players": [
+      {
+        "player": "Shkodran Mustafi",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Neymar",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Isco",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Cristiano Ronaldo",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Lionel Messi",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Éver Banega",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Marcelo",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "James Rodríguez",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Filipe Luis",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Burgui",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Nolito",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Gustavo Cabral",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Diego Reyes",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      },
+      {
+        "player": "Abdoul Karim Yoda",
+        "event_metrics": 14,
+        "minute_checks": 5,
+        "passed": true
+      }
+    ],
+    "event_comparisons": 196,
+    "minute_comparisons": 70,
+    "errors": 0,
+    "scope": "Recuento independiente de 14 métricas y minutos totales/en roles para 14 candidatos. No audita las anotaciones del proveedor ni todas las métricas de todos los jugadores."
+  },
+  "results_sha256": "89b6557b5ca76d8f257a0d9fc6c28e1a3af9960a1caa0f3d4e04c0b8c3aecdaa",
+  "profiles": [
+    {
+      "profile_id": "central",
+      "cohort_size": 62,
+      "base_weights": {
+        "tackles_won_p90": 20,
+        "interceptions_p90": 20,
+        "aerial_wins_p90": 20,
+        "progressive_passes_p90": 20,
+        "pass_completion_pct": 10,
+        "dribbled_past_p90": 10
+      },
+      "leader_certificates": [
+        {
+          "spread": 0.2,
+          "strict_first_proven": true,
+          "conservative_score_margin_lower_bound": 3.172043010752688,
+          "rival_id": 16539
+        },
+        {
+          "spread": 0.5,
+          "strict_first_proven": false,
+          "conservative_score_margin_lower_bound": -9.516129032258068,
+          "rival_id": 16539
+        }
+      ],
+      "corner20_leader_reversal_examples": []
+    },
+    {
+      "profile_id": "lateral",
+      "cohort_size": 66,
+      "base_weights": {
+        "progressive_passes_p90": 20,
+        "progressive_carries_p90": 20,
+        "key_passes_p90": 15,
+        "dribbles_completed_p90": 15,
+        "tackles_won_p90": 20,
+        "interceptions_p90": 10
+      },
+      "leader_certificates": [
+        {
+          "spread": 0.2,
+          "strict_first_proven": false,
+          "conservative_score_margin_lower_bound": -0.03787878787878718,
+          "rival_id": 5552
+        },
+        {
+          "spread": 0.5,
+          "strict_first_proven": false,
+          "conservative_score_margin_lower_bound": -6.5151515151515165,
+          "rival_id": 5552
+        }
+      ],
+      "corner20_leader_reversal_examples": [
+        {
+          "weights": {
+            "progressive_passes_p90": 24.0,
+            "progressive_carries_p90": 24.0,
+            "key_passes_p90": 18.0,
+            "dribbles_completed_p90": 12.0,
+            "tackles_won_p90": 16.0,
+            "interceptions_p90": 8.0
+          },
+          "base_leader_rank": 2,
+          "top2": [
+            {
+              "player": "Marcelo",
+              "score": 92.8550208
+            },
+            {
+              "player": "Filipe Luis",
+              "score": 92.82531194
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "mediapunta",
+      "cohort_size": 18,
+      "base_weights": {
+        "xg_assisted_p90": 25,
+        "key_passes_p90": 20,
+        "progressive_passes_p90": 20,
+        "progressive_carries_p90": 15,
+        "dribbles_completed_p90": 10,
+        "npxg_p90": 10
+      },
+      "leader_certificates": [
+        {
+          "spread": 0.2,
+          "strict_first_proven": false,
+          "conservative_score_margin_lower_bound": -4.722222222222223,
+          "rival_id": 4926
+        },
+        {
+          "spread": 0.5,
+          "strict_first_proven": false,
+          "conservative_score_margin_lower_bound": -19.72222222222223,
+          "rival_id": 4926
+        }
+      ],
+      "corner20_leader_reversal_examples": [
+        {
+          "weights": {
+            "xg_assisted_p90": 20.0,
+            "key_passes_p90": 16.0,
+            "progressive_passes_p90": 16.0,
+            "progressive_carries_p90": 12.0,
+            "dribbles_completed_p90": 8.0,
+            "npxg_p90": 12.0
+          },
+          "base_leader_rank": 2,
+          "top2": [
+            {
+              "player": "Isco",
+              "score": 85.05291005
+            },
+            {
+              "player": "James Rodríguez",
+              "score": 84.52380952
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "extremo",
+      "cohort_size": 67,
+      "base_weights": {
+        "dribbles_completed_p90": 25,
+        "progressive_carries_p90": 20,
+        "npxg_p90": 20,
+        "xg_assisted_p90": 20,
+        "key_passes_p90": 15
+      },
+      "leader_certificates": [
+        {
+          "spread": 0.2,
+          "strict_first_proven": true,
+          "conservative_score_margin_lower_bound": 1.0199004975124366,
+          "rival_id": 5503
+        },
+        {
+          "spread": 0.5,
+          "strict_first_proven": true,
+          "conservative_score_margin_lower_bound": 0.02487562189054723,
+          "rival_id": 5503
+        }
+      ],
+      "corner20_leader_reversal_examples": []
+    }
+  ],
+  "limitations": [
+    "Fixed cohort and percentiles for weight tests; no match bootstrap or possession adjustment.",
+    "Open-play-only diagnostic changes metric definitions and recalculates their percentiles; it is reported separately.",
+    "No production weights, PBIX or DAX changes. No new Desktop validation.",
+    "Rank ranges and frequencies from random draws do not guarantee whole-box stability.",
+    "Scrum-compatible practices do not establish a complete Scrum process."
+  ]
+}

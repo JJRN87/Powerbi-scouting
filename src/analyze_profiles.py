@@ -1,15 +1,15 @@
-"""Review pivote/striker weights without changing production profiles or rankings.
+"""Review profile weights without changing production profiles or rankings.
 
 Run: python -m src.analyze_profiles. Outputs stay local; the public report is
 an editorial summary, not a redistribution of the database.
 """
+import argparse
 import hashlib
 import itertools
 import json
 import math
 import random
 import sqlite3
-from collections import Counter
 from pathlib import Path
 from statistics import correlation, median
 
@@ -32,7 +32,33 @@ SCENARIOS = {
         'Finalizador': [45, 30, 10, 5, 10],
         'Asociativo': [35, 10, 10, 30, 15],
     },
+    'central': {
+        'Base': [20, 20, 20, 20, 10, 10],
+        'Defensa y juego aereo': [25, 25, 30, 10, 5, 5],
+        'Salida de balon': [15, 15, 15, 30, 20, 5],
+        'Sin penalizar exposicion al regate': [20, 25, 25, 20, 10, 0],
+    },
+    'lateral': {
+        'Base': [20, 20, 15, 15, 20, 10],
+        'Prioridad defensiva': [15, 10, 10, 5, 35, 25],
+        'Profundidad y creacion': [20, 25, 25, 20, 5, 5],
+        'Progresion con pase': [35, 15, 15, 5, 20, 10],
+    },
+    'mediapunta': {
+        'Base': [25, 20, 20, 15, 10, 10],
+        'Creador de ocasiones': [40, 20, 15, 10, 5, 10],
+        'Llegada y desborde': [15, 10, 10, 20, 15, 30],
+        'Menos doble peso a creacion': [30, 5, 25, 20, 10, 10],
+    },
+    'extremo': {
+        'Base': [25, 20, 20, 20, 15],
+        'Desborde y progresion': [40, 30, 10, 10, 10],
+        'Creador': [15, 15, 10, 40, 20],
+        'Amenaza de gol': [15, 15, 40, 20, 10],
+    },
 }
+GROUPS = {'pivote_delantero': ['pivote', 'delantero'],
+          'cuatro_perfiles': ['central', 'lateral', 'mediapunta', 'extremo']}
 
 
 def evaluate(matrix, weights):
@@ -74,7 +100,8 @@ def leader_certificate(matrix, weights, leader, spread):
         delta = [a-b for a, b in zip(matrix[leader], vals)]
         low = sum(w*d*(1-spread if d >= 0 else 1+spread)
                   for w, d in zip(weights, delta))
-        margins.append((low / (sum(weights)*(1+spread)), pid))
+        denominator = sum(weights)*(1+spread if low >= 0 else 1-spread)
+        margins.append((low / denominator, pid))
     bound, rival = min(margins)
     return {'spread': spread, 'strict_first_proven': bound > 1e-8,
             'conservative_score_margin_lower_bound': bound, 'rival_id': rival}
@@ -108,6 +135,16 @@ def review(db, profile, seasons):
         rng = random.Random(SEED)
         stress[str(spread)] = summarize(matrix, ([w*rng.uniform(1-spread, 1+spread) for w in base] for _ in range(SAMPLES)))
     one_summary, corner_summary = summarize(matrix, one), summarize(matrix, corners)
+    # Keep an explicit counterexample when random draws miss a narrow reversal.
+    leader = min(rows, key=lambda r: (r['rank_base'], r['player_id']))['player_id']
+    reversals = []
+    for weights in corners:
+        sc, rk = evaluate(matrix, weights)
+        if rk[leader] > 1:
+            reversals.append({'weights':dict(zip(keys, weights)),
+                             'base_leader_rank':rk[leader],
+                             'top2':[{'player':r['player'],'score':sc[r['player_id']]}
+                                     for r in sorted(rows,key=lambda r:-sc[r['player_id']])[:2]]})
     named = []
     for label, weights in SCENARIOS[pid].items():
         assert len(weights) == len(keys) and sum(weights) == 100
@@ -152,26 +189,50 @@ def review(db, profile, seasons):
             share = sum(s['minutes_'+role] for role in profile['roles'])/s['minutes'] if s['minutes'] else 0
             exclusions.append({'player':s['player'], 'minutes':s['minutes'], 'role_share':share,
                                'eligible':s['player_id'] in matrix, 'rank':ranks.get(s['player_id'])})
+    diagnostics = {}
+    if pid in GROUPS['cuatro_perfiles']:
+        diagnostics['stricter_role_share'] = [
+            {'minimum': threshold, 'size':sum(r['role_share'] >= threshold for r in rows),
+             'removed_from_base_top10':[r['player'] for r in ordered
+                                       if r['rank_base'] <= 10 and r['role_share'] < threshold]}
+            for threshold in [.6, .75]]
+        if pid in ['mediapunta', 'extremo']:
+            replaced = {'xg_assisted_p90':'xg_assisted_open_play_p90',
+                        'key_passes_p90':'key_passes_open_play_p90'}
+            alt_keys = [replaced.get(k,k) for k in keys]
+            alt_matrix = {r['player_id']:[percentile(seasons[r['player_id']][k],
+                [seasons[x['player_id']][k] for x in rows], k in NEGATIVE) for k in alt_keys] for r in rows}
+            sc, rk = evaluate(alt_matrix, base)
+            diagnostics['open_play_only'] = {
+                'note':'Definition sensitivity, not a weight-only test. Same cohort, recalculated percentiles for replaced metrics.',
+                'ranking':[{'player':r['player'],'rank':rk[r['player_id']], 'score':sc[r['player_id']]}
+                           for r in sorted(rows,key=lambda r:-sc[r['player_id']])],
+                'set_piece_xg_share':{r['player']:seasons[r['player_id']]['xg_assisted_set_piece']/seasons[r['player_id']]['xg_assisted']
+                                     if seasons[r['player_id']]['xg_assisted'] else None for r in ordered[:5]}}
     return {'profile_id':pid, 'cohort_size':len(rows), 'base_weights':profile['weights'],
             'baseline_recomputed_ok':len(rows), 'players':player_summaries,
+            'corner20_leader_reversal_examples':reversals[:1], 'additional_diagnostics':diagnostics,
             'named_scenarios':named, 'ablations':ablations, 'correlations':correlations,
             'leader_certificates':[leader_certificate(matrix, base, ordered[0]['player_id'], s) for s in [.2,.5]],
             'minutes_filter_fixed_percentiles':filters, 'strict_dm_diagnostic':strict_dm, 'eligibility_examples':exclusions}
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--group', choices=GROUPS, default='pivote_delantero')
+    args = parser.parse_args()
     config = json.loads((ROOT/'config/profiles.json').read_text(encoding='utf-8'))
     paths = ['config/profiles.json','data/processed/football.sqlite','data/processed/rankings.csv']
     before = {p: hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in paths}
     with sqlite3.connect((ROOT/'data/processed/football.sqlite').as_uri()+'?mode=ro', uri=True) as db:
         db.row_factory = sqlite3.Row
         seasons = {r['player_id']:dict(r) for r in db.execute('SELECT * FROM players_season')}
-        results = [review(db, p, seasons) for p in config['profiles'] if p['profile_id'] in SCENARIOS]
+        results = [review(db, p, seasons) for p in config['profiles'] if p['profile_id'] in GROUPS[args.group]]
     assert before == {p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in paths}
     result = {'seed':SEED,'samples_per_random_box':SAMPLES,'input_sha256':before,
               'method':'Independent uniform multipliers on base weights, normalized implicitly; fixed cohort and percentiles. Dense ranks, including ties. Frequencies are scenario frequencies, not player-quality probabilities.',
               'production_unchanged':True,'profiles':results}
-    (ROOT/'outputs/revision_pivote_delantero.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (ROOT/f'outputs/revision_{args.group}.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     for p in results:
         print(p['profile_id'], 'N=',p['cohort_size'], 'certificates=',p['leader_certificates'])
         for r in p['players'][:12]:

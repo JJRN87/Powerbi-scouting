@@ -8,7 +8,7 @@ Fuente de los análisis: [StatsBomb Open Data](https://github.com/statsbomb/open
 
 <img src="../assets/statsbomb-logo.png" width="230" alt="StatsBomb">
 
-El informe permite seleccionar perfil, equipo y pesos. Esta captura corresponde al organizador y a la configuración base validada; los escenarios nuevos de pivote y delantero se han revisado en Python.
+El informe permite seleccionar perfil, equipo y pesos. Esta captura corresponde al organizador y a la configuración base validada; los escenarios de las revisiones posteriores de los otros seis perfiles se han probado en Python.
 
 ![Informe de Power BI con pesos ajustables](capturas/powerbi-ranking-base.png)
 
@@ -18,7 +18,7 @@ La página de validación compara DAX con Python en seis escenarios: 1.359 compa
 
 ## Jira
 
-Tablero después de iniciar la revisión de perfiles: ocho tareas terminadas, una en curso y dos por hacer. La revisión global permanece abierta.
+Tablero después de cerrar la revisión descriptiva de los siete perfiles: nueve tareas terminadas y dos por hacer. Siguen pendientes estabilidad por partidos/contexto y evaluación de datos actuales.
 
 ![Seguimiento del proyecto en Jira](capturas/jira-tablero.png)
 
@@ -32,6 +32,7 @@ La página recoge el objetivo, la limpieza, la validación y los siguientes paso
 
 - [Validación de Desktop](powerbi-validacion.json): registro de la sesión, escenarios y hashes de los archivos probados.
 - [Revisión de perfiles](revision-perfiles.json): método de sensibilidad, contraste base, recuento directo y límites.
+- [Revisión de los cuatro perfiles restantes](revision-cuatro-perfiles.json): 80.000 simulaciones, 213 candidatos, 196 comprobaciones de métricas y 70 de minutos. Incluye la excepción Filipe–Marcelo que no apareció en el muestreo aleatorio.
 - [Metodología](../METODOLOGIA.md) y [forma de trabajo](../gestion/FORMA_DE_TRABAJO.md).
 
 Las capturas de herramientas documentan el proceso. No prueban por sí solas calidad predictiva ni aplicación de Scrum completo. No se publican los eventos originales, la base, los CSV completos, la caché ni el PBIX cargado. Las marcas pertenecen a sus titulares.
