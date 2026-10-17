@@ -4,9 +4,9 @@
 
 <img src="../assets/statsbomb-logo.png" width="230" alt="StatsBomb">
 
-Quería comprobar si los jugadores de arriba salían por un equilibrio de atributos o porque un peso concreto los favorecía demasiado. La conclusión es distinta para cada perfil: Mustafi y Neymar tienen lideratos sólidos dentro de los límites probados; Filipe Luis y Marcelo forman una pareja destacada cuyo orden depende de lo que busquemos; James e Isco están prácticamente igualados.
+La revisión comprueba si los jugadores de arriba salían por un equilibrio de atributos o porque un peso concreto los favorecía demasiado. La conclusión es distinta para cada perfil: Mustafi y Neymar tienen lideratos sólidos dentro de los límites probados; Filipe Luis y Marcelo forman una pareja destacada cuyo orden depende de lo que busquemos; James e Isco están prácticamente igualados.
 
-Conservo los pesos publicados como referencia. Las alternativas de esta revisión son escenarios para comparar funciones, no una nueva configuración oficial. Se cierra la revisión descriptiva de los siete perfiles, pero sigue pendiente comprobar estabilidad por partidos y contexto. No se han cambiado los datos, el PBIX ni las medidas DAX.
+Conservo los pesos publicados como referencia. Las alternativas de esta revisión son escenarios para comparar funciones, no una nueva configuración oficial. Se cierra la revisión descriptiva de los siete perfiles, y el [análisis posterior por partidos y contexto](ESTABILIDAD_PARTIDOS_CONTEXTO.md) estudia la variación de la muestra. No se han cambiado los datos, el PBIX ni las medidas DAX.
 
 ## Qué se ha comprobado
 
@@ -48,7 +48,7 @@ Reyes destaca en entradas e intercepciones, pero queda en percentil 23,4 en pase
 
 El liderato de Mustafi está demostrado para **todo** el intervalo de multiplicadores 0,8–1,2 mediante comparación lineal contra cada rival, con margen conservador mínimo de 3,17 puntos. Con ±50% gana el 99,16% de las simulaciones y Reyes el 0,84%: ahí ya no hay garantía. Los tres escenarios por función mantienen a Mustafi primero. Al exigir 1.800 minutos se conserva el primer cuarteto.
 
-**Decisión:** mantener la base como perfil general y mostrar la alternativa de salida cuando esa sea la prioridad. No vender el orden de los puestos 2–7 como estable. El indicador de regates sufridos y los conteos defensivos necesitan estudiar exposición y posesión; menos intervenciones no demuestra mejor defensa. Los duelos aéreos son victorias por 90, no porcentaje de victorias.
+**Decisión:** mantener la base como perfil general y mostrar la alternativa de salida cuando esa sea la prioridad. El orden de los puestos 2–7 es variable. El indicador de regates sufridos y los conteos defensivos necesitan estudiar exposición y posesión; menos intervenciones no demuestra mejor defensa. Los duelos aéreos son victorias por 90, no porcentaje de victorias.
 
 ## Lateral: la pareja es más sólida que el orden
 
@@ -74,7 +74,7 @@ La base ya es bastante ofensiva: un 70% en progresión, creación y regate frent
 
 Filipe Luis tiene percentiles entre 87,1 y 97,7 en los seis atributos. Marcelo le supera en pase progresivo, conducciones y creación; Filipe tiene ventaja en entradas e intercepciones. En ±50%, Filipe lidera el 91,78% de los escenarios y Marcelo el 8,22%. El escenario ofensivo coloca a Marcelo primero y Carvajal tercero; el defensivo coloca a Filipe primero y Danilo tercero. Cancelo solo es tercero en el 55,56% de las simulaciones de ±20%.
 
-**La excepción que la simulación no detectó:** con pesos `24/24/18/12/16/8`, todos dentro del ±20% relativo antes de normalizar, Marcelo puntúa 92,8550 y Filipe 92,8253. Las 10.000 simulaciones no encontraron ese pequeño rincón, pero la prueba de combinaciones extremas sí. Por tanto, no afirmo que Filipe sea primero en todo el intervalo.
+**La excepción que la simulación no detectó:** con pesos `24/24/18/12/16/8`, todos dentro del ±20% relativo antes de normalizar, Marcelo puntúa 92,8550 y Filipe 92,8253. Las 10.000 simulaciones no encontraron ese pequeño rincón, pero la prueba de combinaciones extremas sí. Por tanto, Filipe no es primero en todo el intervalo.
 
 Yoda merece atención: percentiles 99,2 en conducciones y regates, pero solo 975,5 minutos. La fuente asigna un 82,0% de su tiempo a roles FB, que incluyen carrileros, y ese dato se ha contrastado con las alineaciones. Las estadísticas usadas son de toda su temporada, no solo de esos minutos. Al subir el mínimo a 1.500 desaparece de la lista; Filipe, Marcelo y Cancelo mantienen los tres primeros puestos.
 
@@ -104,11 +104,11 @@ La base combina un 45% de creación, un 35% de progresión, un 10% de regate y u
 
 James lidera creación y pase progresivo dentro de esta cohorte: percentil 97,2 en las tres métricas. Isco alcanza ese mismo percentil en conducciones y regates. La diferencia base es solo **0,28 puntos**. En ±20%, James sale primero el 60,48% de las veces e Isco el 39,52%. Banega conserva el tercero en esas simulaciones y en las 64 combinaciones extremas.
 
-«Creador de ocasiones» mantiene James–Isco–Banega. «Llegada y desborde» y «Menos doble peso a creación» colocan a Isco primero. No sería razonable resolver esa preferencia con una etiqueta de mejor jugador absoluto.
+«Creador de ocasiones» mantiene James–Isco–Banega. «Llegada y desborde» y «Menos doble peso a creación» colocan a Isco primero. La diferencia representa funciones distintas y no una clasificación de calidad absoluta.
 
 También influye quién entra: James acumula 1.514,9 minutos y un 52,5% en AM/CM; Isco, 1.831,8 y un 59,1%. Si se exige un 60% en esos roles, ambos quedan fuera. Con 1.800 minutos, James y Banega dejan de ser elegibles. El perfil admite interiores creativos; no es una lista pura de mediapuntas. Koke no entra porque solo tiene un 28,3% en AM/CM según la fuente.
 
-**Decisión:** mantener la referencia, tratar James–Isco como una elección por función y presentar Banega como parte de la terna estable ante cambios moderados de pesos. Antes de buscar un mediapunta puro habría que redefinir la cohorte y recalcular sus percentiles, no eliminar nombres a mano.
+**Decisión:** mantener la referencia, tratar James–Isco como una elección por función y presentar Banega como parte de la terna estable ante cambios moderados de pesos. Una búsqueda limitada a mediapuntas puros requiere otra definición de roles y sus propios percentiles.
 
 ## Extremo: Neymar lidera, pero el perfil no busca solo gol
 
@@ -135,7 +135,7 @@ Neymar combina percentiles entre 94,8 y 99,3. Messi lo supera en regates y xG si
 
 Nolito es tercero en todas las simulaciones de ±20% y en las 32 combinaciones extremas. En el escenario creador, Konoplyanka pasa al tercero y Nolito al cuarto. Burgui combina conducción y creación, pero sus 979,4 minutos hacen que desaparezca al exigir 1.500. El primer trío sí permanece al exigir 1.800 minutos.
 
-Cristiano Ronaldo queda 25 pese a liderar el percentil de xG sin penaltis (99,3). Sus percentiles de regates (29,1) y pases que generan tiro (33,6) explican el resultado. Al duplicar el peso del xG propio al 40% sube al 13, pero eso sigue siendo un perfil con varias funciones. Koke queda 44: la creación le favorece, la conducción y el regate no. Los roles W incluyen jugadores de banda más retrasados. No interpreto estas posiciones como calidad global ni adapto los pesos para colocar nombres conocidos arriba.
+Cristiano Ronaldo queda 25 pese a liderar el percentil de xG sin penaltis (99,3). Sus percentiles de regates (29,1) y pases que generan tiro (33,6) explican el resultado. Al duplicar el peso del xG propio al 40% sube al 13, pero eso sigue siendo un perfil con varias funciones. Koke queda 44: la creación le favorece, la conducción y el regate no. Los roles W incluyen jugadores de banda más retrasados. Estas posiciones describen el perfil seleccionado, no la calidad global de los jugadores.
 
 **Decisión:** conservar la base como extremo de desborde y creación, y ofrecer el escenario de amenaza de gol para otra necesidad. Neymar–Messi es la pareja más estable en estas pruebas; el tercero depende más de la función y de la definición de creación.
 
@@ -150,13 +150,13 @@ En estos perfiles la creación sigue siendo total. Como diagnóstico adicional, 
 
 El 52,4% del xG asistido de Banega procede del balón parado; también el 52,4% del de Burgui y el 41,7% del de Konoplyanka. Se han comprobado los totales y la parte de juego abierto desde los eventos. Las participaciones no explican por sí solas el cambio: el ranking depende de los percentiles relativos de toda la cohorte. James conserva sus percentiles de creación, pero Isco mejora respecto al grupo al retirar el balón parado.
 
-Recomiendo ofrecer la separación también para mediapunta y extremo en una futura versión del modelo. Esta entrega deja medido su efecto; no añade controles ni sustituye las métricas de Power BI. El organizador ya dispone de esa separación.
+La separación en mediapunta y extremo queda documentada como mejora propuesta. Esta entrega deja medido su efecto; no añade controles ni sustituye las métricas de Power BI. El organizador ya dispone de esa separación.
 
 ## Cierre y siguientes pasos
 
 La revisión de pesos queda documentada para los siete perfiles. La decisión de esta entrega es **mantener las bases como hipótesis de referencia**, conservar escenarios por función y señalar candidatos sensibles a pesos, minutos o roles. No se han aprobado pesos universales ni se ha validado rendimiento futuro. [Registro de decisiones de los siete perfiles](DECISIONES_PERFILES.md).
 
-SCOUT-7 puede cerrarse porque cada perfil tiene justificación, sensibilidad y decisión registrada. SCOUT-8 sigue pendiente: remuestreo por partidos, estabilidad de candidatos con pocos minutos y contexto de equipo/posesión. SCOUT-11 sigue pendiente: decidir si compensa obtener datos actuales. La separación de creación en más perfiles es una mejora propuesta, pendiente de una nueva versión y de repetir las pruebas DAX si se implementa.
+SCOUT-7 está cerrada: cada perfil tiene justificación, sensibilidad y decisión registrada. SCOUT-8 se completó posteriormente con el [análisis de partidos y contexto](ESTABILIDAD_PARTIDOS_CONTEXTO.md). SCOUT-11 sigue pendiente: decidir si compensa obtener datos actuales. La separación de creación en más perfiles es una mejora propuesta, pendiente de una nueva versión y de repetir las pruebas DAX si se implementa.
 
 Las pruebas de esta revisión se ejecutaron en Python. Las 1.359 comparaciones de Power BI corresponden a la entrega anterior; no se presentan como pruebas nuevas de estos escenarios. Las estadísticas son de toda la temporada y los minutos excluyen el descuento, aunque los eventos lo incluyen. No se corrige aquí posesión, dificultad del rival ni incertidumbre de observación.
 

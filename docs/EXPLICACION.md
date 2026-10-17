@@ -1,35 +1,37 @@
-# Explicar Powerbi-scouting
+# Cómo funciona Powerbi-scouting
 
-## Qué problema resuelve
+## Objetivo
 
-Permite comparar candidatos que encajan en un perfil futbolístico y justificar el orden con atributos medibles. Hace explícita la preferencia del analista: un organizador que progresa con pases puede diferir de otro que regatea y crea ocasiones. No calcula por sí solo quién es el mejor futbolista ni quién está infravalorado económicamente.
+Comparar jugadores que encajan en una función y explicar su posición mediante atributos medibles. Un organizador que avanza con pases puede diferir de otro que regatea y crea ocasiones. El ranking depende de esas preferencias; no calcula por sí solo el mejor futbolista ni el valor de un fichaje.
 
-## Por qué hay limpieza aunque los datos ya sean estructurados
+## Preparación de los datos
 
-Un JSON válido puede contener valores no evaluables, ratios sin denominador o eventos de personas sin minutos. El proceso define cómo tratarlos y deja evidencia. Por ejemplo, un pase Unknown no se convierte en fallado y un porcentaje sin intentos permanece nulo.
+Los datos estructurados también necesitan reglas de limpieza. Un pase con resultado Unknown se excluye del porcentaje de acierto, sin contarlo como fallado. Un porcentaje sin intentos permanece nulo. Los eventos y las alineaciones se relacionan por identificadores y los totales de partido se contrastan con los de temporada.
 
-## Cómo se calcula una puntuación
+## Cálculo de la puntuación
 
-Se seleccionan jugadores con minutos y roles suficientes. Se transforma cada métrica en un percentil dentro del perfil. Después se calcula la media ponderada de los percentiles. Ejemplo ficticio: percentiles 80 y 50 con pesos 60 y 40 producen `(80 × 60 + 50 × 40) / 100 = 68`. Cambiar pesos cambia la preferencia, sin cambiar los datos observados.
+Se seleccionan jugadores con al menos 900 minutos y un 50% de tiempo en los roles del perfil. Cada métrica se transforma en un percentil dentro de ese grupo. La puntuación es la media ponderada de esos percentiles.
 
-## Por qué usar tasas por 90 y percentiles
+Ejemplo: percentiles 80 y 50 con pesos 60 y 40 producen `(80 × 60 + 50 × 40) / 100 = 68`. Cambiar los pesos modifica la preferencia, sin cambiar los datos observados.
 
-Las tasas facilitan comparar volúmenes con distinta participación. Los percentiles permiten combinar métricas con escalas diferentes. Se pierde información sobre la distancia absoluta entre jugadores; un puesto alto no dice cuánto mejor es una acción ni cuánto vale un fichaje. Las muestras pequeñas y el contexto siguen importando.
+Las tasas por 90 permiten comparar volúmenes con distinta participación. Los percentiles permiten combinar escalas diferentes, aunque no conservan la distancia absoluta entre los valores. Una puntuación de 80 no es una probabilidad de éxito.
 
-## Por qué separar creación abierta y balón parado
+## Creación de ocasiones
 
-Los lanzadores de faltas y córners pueden acumular ocasiones por una función específica. La separación permite que el perfil priorice esa función o la creación abierta. El xG asistido suma el xG de los tiros resultantes: combina cantidad y calidad, y está relacionado con el número de pases que generan tiro.
+El organizador distingue juego abierto y balón parado. Así se separa la creación habitual de la función de lanzar faltas y córners. El xG asistido suma el xG de los tiros que siguen a los pases: combina cantidad y calidad de ocasiones. Los demás perfiles conservan creación total; la separación en mediapunta y extremo está analizada como alternativa.
 
-## Qué enseñó revisar a André Gomes
+## Resultados de las revisiones
 
-La sorpresa en el ranking llevó a descomponer sus contribuciones y probar otros pesos. La ventaja puede depender de regates y recuperaciones aunque el perfil se llame organizador. El nombre del perfil no sustituye revisar su definición. `python -m src.analyze_organizer` permite reproducir el análisis manteniendo fija la cohorte.
+André Gomes queda tercero como organizador con los pesos base y quinto al aumentar progresión a 35 y reducir regate a 5. El cambio se explica por las contribuciones de sus atributos. Los siete perfiles tienen escenarios que muestran ese tipo de sensibilidad.
 
-## Qué está validado y qué falta
+Al variar la muestra de partidos, Yoda mantiene el top 10 en el 77% de las muestras y Burgui en el 65,7%. Sus pocos minutos hacen que sus puestos exactos sean más variables. El [análisis por partidos y contexto](analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) distingue este efecto del cambio de pesos.
 
-Se han comprobado integridad de archivos, cobertura, marcadores, agregaciones y fórmulas. El contraste independiente de eventos incluye una muestra de cinco partidos. El informe se ha ejecutado en Power BI Desktop: seis escenarios y 1.359 comparaciones con Python sin diferencias, además de pruebas de filtros y cambios de pesos en la interfaz. Falta revisar futbolísticamente los pesos y evaluar estabilidad por partidos. No hay validación predictiva ni ajustes por posesión o nivel del rival.
+## Comprobaciones y alcance
 
-## Cómo describir la contribución y la IA
+Se han comprobado archivos, cobertura, marcadores, agregaciones y fórmulas. Power BI se ejecutó en Desktop: seis escenarios y 1.359 comparaciones con Python sin diferencias, además de pruebas de filtros y pesos en la interfaz. El análisis por partidos reconcilia las 387 puntuaciones base y utiliza 2.000 muestras de partidos y otras 2.000 de jornadas.
 
-Una formulación coherente con el trabajo realizado es: «Proyecto de scouting histórico desarrollado con asistencia de IA. Definí el objetivo y participé en la revisión de métricas y sensibilidad de los rankings. El proceso incorpora limpieza documentada, controles reproducibles y un informe interactivo en Power BI Desktop con pesos ajustables y rankings contrastados con Python».
+El contexto se explora mediante la proporción de pases de cada equipo, que no equivale a posesión medida en tiempo. Los ajustes son escenarios separados y no modifican Power BI. No hay validación predictiva, datos económicos ni una estimación de la calidad individual aislada del equipo.
 
-Antes de usarlo en una entrevista, conviene poder reproducir un cálculo, explicar una exclusión y justificar un cambio de pesos. La documentación sirve para practicar estas explicaciones; no sustituye la comprensión del autor.
+## Desarrollo
+
+El proyecto se ha desarrollado con asistencia de IA en código, documentación y comprobaciones. El objetivo, las revisiones solicitadas y las decisiones sobre los perfiles forman parte del proceso documentado en GitHub, Jira y Confluence.

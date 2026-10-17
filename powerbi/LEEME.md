@@ -17,7 +17,7 @@ El generador escribe la ruta local de los CSV en el parámetro Power Query `Carp
 - **Perfil / posición:** selección única entre siete perfiles. El informe abre en organizador.
 - **Equipo:** restringe los candidatos visibles. Los percentiles de referencia y las puntuaciones permanecen fijos; el puesto interactivo se recalcula dentro de la selección.
 - **Ocho pesos:** cada desplegable acepta un entero de 0 a 100. Sin selección (`Todas`) usa el peso base que indica el título. El valor seleccionado aparece en el desplegable. Cero elimina el atributo; todos los pesos cero dejan puntuación y puesto vacíos.
-- **Cambio de perfil:** limpiar los pesos seleccionados con el icono de borrador del segmentador. Los números de slot representan atributos distintos en cada perfil. Los controles «No aplica» se ignoran.
+- **Cambio de perfil:** limpiar los pesos seleccionados con el icono de borrador del segmentador. Los controles numerados representan atributos distintos en cada perfil. Los controles «No aplica» se ignoran.
 - **Tabla:** puesto actual, jugador, equipo, minutos, proporción de tiempo en el rol, puntuación, puesto base de la cohorte completa y cambio de puntuación. Orden inicial por puntuación descendente.
 
 Las puntuaciones se redondean a ocho decimales antes de ordenar, aunque se muestran dos. Los empates reciben el mismo puesto denso. La cohorte exige 900 minutos y 50% de tiempo en los roles; cambiar esos umbrales exige reconstruir los datos, no solo filtrar el informe.
@@ -45,7 +45,7 @@ Se importan rankings, perfiles, pesos, métricas, detalle y sensibilidad. Relaci
 
 Para modificar pesos base: editar `config/profiles.json`, ejecutar `python -m src.build` y `python -m src.build_powerbi`, cerrar y reabrir el PBIP y actualizar. Para explorar pesos temporalmente basta con los desplegables.
 
-Las tasas corresponden a la temporada completa, sin ajuste por posesión ni rival. Los pesos son hipótesis de scouting. La validación técnica no demuestra calidad predictiva ni determina por sí sola la mejor posición de un jugador.
+Las tasas del informe corresponden a la temporada completa, sin ajuste por posesión ni rival. El [análisis por partidos y contexto](../docs/analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) se ejecuta aparte en Python. Los pesos son hipótesis de scouting. La validación técnica no demuestra calidad predictiva ni determina por sí sola la mejor posición de un jugador.
 
 ## Archivos y atribución
 

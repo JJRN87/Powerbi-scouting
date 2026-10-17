@@ -42,13 +42,10 @@ El PBIX con los datos cargados se conserva localmente en `powerbi/Powerbi-scouti
 
 ## Qué queda pendiente
 
-En el cierre de Desktop quedaron ocho tareas terminadas y tres pendientes. Posteriormente se completó la [revisión descriptiva de los siete perfiles](analisis/DECISIONES_PERFILES.md), conservando los pesos oficiales. El estado actual es nueve tareas terminadas y dos por hacer:
+En el cierre de Desktop quedaron ocho tareas terminadas y tres pendientes. Posteriormente se completó la [revisión descriptiva de los siete perfiles](analisis/DECISIONES_PERFILES.md), conservando los pesos oficiales. El [análisis por partidos y contexto](analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) también está terminado como diagnóstico separado. El estado actual es diez tareas terminadas y una pendiente: comparar proveedores de datos actuales.
 
-1. Estudiar la estabilidad por partidos y el contexto de equipo. Cambiar pesos mide nuestras preferencias; todavía falta medir cuánto depende el resultado de la muestra de partidos.
-2. Comparar proveedores de datos actuales y decidir si merece la pena pagar, una vez revisado el caso histórico.
-
-No hay validación predictiva, ajustes por posesión o rival, ni salarios o precios de fichaje. Por ahora el proyecto ayuda a localizar candidatos y explicar por qué aparecen arriba.
+El informe conserva las tasas originales. El diagnóstico de contexto usa proporción de pases, no posesión medida en tiempo. No hay validación predictiva, corrección por rival ni datos económicos. Por ahora el proyecto ayuda a localizar candidatos y explicar por qué aparecen arriba.
 
 ## Cómo se ha hecho
 
-He preparado este proyecto con ayuda de IA y quiero dejarlo claro. Mi parte ha sido definir lo que quería buscar, pedir revisiones de métricas y cuestionar resultados como el de André Gomes. La IA ha ayudado con la implementación, la documentación y las comprobaciones. El objetivo es poder explicar de dónde salen los datos, qué limpieza se aplica y por qué un cambio de pesos mueve el ranking.
+El desarrollo utiliza asistencia de IA en implementación, documentación y comprobaciones. Las revisiones de métricas y resultados, como el caso de André Gomes, forman parte de las decisiones documentadas del proyecto.

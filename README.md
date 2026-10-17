@@ -4,7 +4,7 @@ Mi objetivo es usar datos de fútbol para localizar jugadores que encajen en lo 
 
 La pregunta es: **¿cómo cambia la selección de candidatos cuando cambia lo que buscamos en una posición?** Se comparan siete perfiles mediante percentiles y pesos editables. Un jugador puede encajar en varios perfiles; la puntuación no determina por sí sola su mejor posición ni garantiza rendimiento futuro.
 
-**Para recorrer el portfolio:** [documentación](docs/README.md) · [capturas de Power BI, Jira y Confluence](docs/evidencias/README.md) · [revisión de pivote y delantero](docs/analisis/PIVOTE_Y_DELANTERO.md) · [forma de trabajo](docs/gestion/FORMA_DE_TRABAJO.md).
+**Documentación:** [índice](docs/README.md) · [capturas de Power BI, Jira y Confluence](docs/evidencias/README.md) · [revisión de pivote y delantero](docs/analisis/PIVOTE_Y_DELANTERO.md) · [forma de trabajo](docs/gestion/FORMA_DE_TRABAJO.md).
 
 Datos: StatsBomb Open Data. Análisis propio, sin afiliación al proveedor.
 
@@ -14,15 +14,15 @@ Datos: StatsBomb Open Data. Análisis propio, sin afiliación al proveedor.
 
 ## Desarrollo asistido por IA
 
-He preparado este proyecto con ayuda de IA y no quiero ocultarlo. Mi parte ha sido definir lo que quería buscar, pedir la separación de creación en juego abierto y a balón parado y cuestionar resultados como el de André Gomes por delante de Kroos y Trashorras. La IA ha ayudado con la implementación, la documentación y las comprobaciones. El código y las reglas quedan disponibles para poder entenderlos y reproducirlos.
+El proyecto se ha desarrollado con asistencia de IA. Mi parte ha sido definir lo que quería buscar, pedir la separación de creación en juego abierto y a balón parado y cuestionar resultados como el de André Gomes por delante de Kroos y Trashorras. La IA ha ayudado con la implementación, la documentación y las comprobaciones. El código y las reglas quedan disponibles para poder entenderlos y reproducirlos.
 
-El trabajo documenta las decisiones y sus límites. La revisión técnica automatizada no equivale a una auditoría manual de cada evento ni a una validación futbolística definitiva. La [guía de explicación](docs/EXPLICACION.md) recoge preguntas y respuestas que ayudan a comprender y defender el proyecto.
+El trabajo documenta las decisiones y sus límites. La revisión técnica automatizada no equivale a una auditoría manual de cada evento ni a una validación futbolística definitiva. La [explicación del modelo](docs/EXPLICACION.md) resume sus reglas, resultados y límites.
 
 ## Estado del proyecto
 
-La parte técnica de Power BI está terminada y comprobada en Desktop. Las 1.359 comparaciones con Python, repartidas en seis escenarios, no muestran diferencias. El seguimiento queda en nueve tareas terminadas y dos por hacer: estabilidad por partidos/contexto y evaluación de datos actuales. La revisión descriptiva de los siete perfiles está cerrada. El [resumen de validación](docs/VALIDACION_POWERBI.md) explica las pruebas y sus límites.
+La parte técnica de Power BI está terminada y comprobada en Desktop. Las 1.359 comparaciones con Python, repartidas en seis escenarios, no muestran diferencias. El seguimiento queda en diez tareas terminadas y una pendiente: evaluar proveedores de datos actuales. La revisión descriptiva de los siete perfiles está cerrada. El [resumen de validación](docs/VALIDACION_POWERBI.md) explica las pruebas y sus límites.
 
-La [revisión de pivote y delantero](docs/analisis/PIVOTE_Y_DELANTERO.md) añade 40.000 simulaciones, 108 puntuaciones base reconciliadas y 48 comprobaciones directas de métricas sin diferencias. La [revisión de central, lateral, mediapunta y extremo](docs/analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) suma otras 80.000 simulaciones, 213 puntuaciones base, 196 métricas y 70 comprobaciones de minutos sin diferencias. Mustafi y Neymar tienen lideratos sólidos en los intervalos documentados; Filipe–Marcelo y James–Isco dependen más de la función buscada. Se mantienen los pesos oficiales. Las [decisiones de los siete perfiles](docs/analisis/DECISIONES_PERFILES.md) distinguen esta revisión de la estabilidad por partidos, que sigue pendiente.
+La [revisión de pivote y delantero](docs/analisis/PIVOTE_Y_DELANTERO.md) añade 40.000 simulaciones, 108 puntuaciones base reconciliadas y 48 comprobaciones directas de métricas sin diferencias. La [revisión de central, lateral, mediapunta y extremo](docs/analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) suma otras 80.000 simulaciones, 213 puntuaciones base, 196 métricas y 70 comprobaciones de minutos sin diferencias. Mustafi y Neymar tienen lideratos sólidos en los intervalos documentados; Filipe–Marcelo y James–Isco dependen más de la función buscada. Se mantienen los pesos oficiales. Las [decisiones de los siete perfiles](docs/analisis/DECISIONES_PERFILES.md) recogen las bases conservadas y las alternativas.
 
 | Componente | Estado |
 |---|---|
@@ -30,15 +30,16 @@ La [revisión de pivote y delantero](docs/analisis/PIVOTE_Y_DELANTERO.md) añade
 | Rankings y visor HTML interactivo | Implementados; siete perfiles revisados descriptivamente, bases conservadas |
 | Tablas, Power Query y medidas DAX | Ejecutados en Desktop y comparados con Python |
 | Informe ejecutado en Power BI Desktop | Proyecto PBIP interactivo; seis escenarios de regresión sin diferencias |
+| Estabilidad por partidos y contexto | Analizada en Python; escenarios separados del ranking oficial |
 | Validación predictiva y valoración económica | Fuera del alcance actual |
 
-El proyecto cuenta con documentación en Confluence y seguimiento en Jira, ambos sujetos al acceso del sitio de Atlassian. La [metodología](docs/METODOLOGIA.md), el [resumen de proyecto](docs/PROYECTO.md), la [guía de explicación](docs/EXPLICACION.md) y una [instantánea del backlog](docs/backlog.json) están disponibles públicamente en este repositorio.
+El proyecto cuenta con documentación en Confluence y seguimiento en Jira, ambos sujetos al acceso del sitio de Atlassian. La [metodología](docs/METODOLOGIA.md), el [resumen de proyecto](docs/PROYECTO.md), la [explicación del modelo](docs/EXPLICACION.md) y una [instantánea del backlog](docs/backlog.json) están disponibles públicamente en este repositorio.
 
 Se usan prácticas de trabajo iterativo y criterios de aceptación; no se presenta como Scrum completo. La [forma de trabajo](docs/gestion/FORMA_DE_TRABAJO.md) distingue lo realizado de lo propuesto.
 
 ## Entorno
 
-Base analítica local de StatsBomb Open Data para explorar perfiles de jugadores con pesos editables. Python 3.10+; el proceso de datos usa únicamente la biblioteca estándar, sin instalación de paquetes.
+Base analítica local de StatsBomb Open Data para explorar perfiles de jugadores con pesos editables. Python 3.10+; el proceso de datos usa la biblioteca estándar. El análisis de estabilidad por partidos utiliza NumPy, declarado en `requirements-analysis.txt`.
 
 ## Empezar
 
@@ -65,6 +66,9 @@ python -m src.analyze_profiles
 python -m src.verify_review_players
 python -m src.analyze_profiles --group cuatro_perfiles
 python -m src.verify_remaining_players
+python -m pip install -r requirements-analysis.txt
+python -m src.analyze_match_stability
+python -m unittest discover -s tests -v
 ```
 
 La primera descarga necesita Internet. Las siguientes reutilizan archivos en caché. La reconstrucción y las validaciones funcionan sin conexión. La descarga fija un commit del repositorio en `data/source-lock.json`; no cambia de versión en cada ejecución. La descarga completa ocupa varios cientos de MB antes de comprimir; se conserva comprimida localmente.
@@ -89,9 +93,15 @@ Para cambiar pesos de forma permanente: editar `config/profiles.json`, ejecutar 
 
 ## Revisión de perfiles
 
-Los siete perfiles tienen revisión de candidatos, atributos, sensibilidad y decisión registrada. Se conservan las bases y se ofrecen escenarios según la función buscada. La familiaridad de los nombres no demuestra que el modelo sea correcto: también importan minutos, rol y contexto del equipo. Está medido el efecto de usar solo creación en juego abierto en mediapunta y extremo; incorporarlo al modelo oficial es una mejora propuesta, todavía sin implementar.
+Los siete perfiles tienen revisión de candidatos, atributos, sensibilidad y decisión registrada. Se conservan las bases y se ofrecen escenarios según la función buscada. La revisión incluye minutos, rol y contexto del equipo. Está medido el efecto de usar solo creación en juego abierto en mediapunta y extremo; incorporarlo al modelo oficial es una mejora propuesta, todavía sin implementar.
 
 Los pesos son hipótesis de scouting, no coeficientes aprendidos ni garantías de rendimiento. La validación técnica y la sensibilidad están automatizadas; la revisión descriptiva no acredita calidad predictiva ni sustituye observación futbolística. No se incluyen salarios, precios ni valoraciones económicas.
+
+## Estabilidad por partidos y contexto
+
+El [análisis de estabilidad](docs/analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) utiliza 2.000 muestras de partidos y otras 2.000 de jornadas, con candidatos y pesos fijos. Yoda mantiene el top 10 en el 77% de las muestras de partidos y Burgui en el 65,7%; sus rangos centrales del 95% son 2–22 y 3–27. Los puestos exactos son menos estables que ante cambios moderados de pesos.
+
+El contexto se explora con la proporción de pases de cada equipo, sin confundirla con posesión medida en tiempo. Es un diagnóstico separado: los datos, los pesos oficiales y Power BI se conservan.
 
 ## Fuente y uso
 

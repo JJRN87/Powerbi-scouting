@@ -4,9 +4,9 @@ Revisión del 17/10/2026. Datos de LaLiga 2015/16. Fuente: [StatsBomb Open Data]
 
 <img src="../assets/statsbomb-logo.png" width="230" alt="StatsBomb">
 
-## Qué quería comprobar
+## Objetivo de la revisión
 
-La pregunta era si los jugadores de arriba tienen sentido para la función que buscamos y si siguen ahí cuando cambiamos los pesos. No basta con reconocer nombres: hay que mirar qué métricas los favorecen, quién queda fuera y cuánto depende el orden de nuestras preferencias.
+La pregunta era si los jugadores de arriba tienen sentido para la función que buscamos y si siguen ahí cuando cambiamos los pesos. Se analizan las métricas que los favorecen, las exclusiones y la variación del orden.
 
 La conclusión es distinta para cada perfil. **En pivote hay un líder muy sólido, Augusto Fernández, pero bastante movimiento detrás. En delantero el grupo Suárez–Benzema–Gameiro es mucho más estable.** Esto describe el modelo y la temporada analizada; no demuestra que sean los mejores fichajes ni predice la siguiente temporada.
 
@@ -27,7 +27,7 @@ Los pesos oficiales no se han cambiado. Se han conservado el PBIX y los rankings
 
 La base dedica 65 puntos a recuperar, 30 al pase y 5 a evitar desposesiones. Tiene sentido como primera aproximación a un pivote recuperador con salida, pero es demasiado amplio llamarlo simplemente «mejor pivote». La cohorte admite DM y CM, y no mide colocación sin intervención, coberturas o capacidad de impedir que el rival progrese.
 
-Mantendría la base como referencia de **pivote recuperador**, y usaría «Más salida» cuando también busquemos iniciar ataques. No aumentaría mucho el porcentaje de pase acertado: puede premiar pases seguros. El peso 5 de desposesiones es deliberadamente pequeño; ese evento no incluye todas las pérdidas y tampoco está ajustado a cuántas veces recibe el jugador.
+Se conserva la base como referencia de **pivote recuperador**. «Más salida» representa una mayor prioridad por iniciar ataques. La precisión mantiene un peso moderado porque puede favorecer pases seguros. El peso 5 de desposesiones es deliberadamente pequeño; ese evento no incluye todas las pérdidas y tampoco está ajustado a cuántas veces recibe el jugador.
 
 ### Delantero: amenaza, producción y asociación
 
@@ -39,7 +39,7 @@ Mantendría la base como referencia de **pivote recuperador**, y usaría «Más 
 | xG de tiros asistidos por 90 | 15 | 20 | 5 | 30 |
 | Recepciones y tiros en el área por 90 | 15 | 15 | 10 | 15 |
 
-La base es útil para revisar producción ofensiva histórica. Para buscar candidatos daría preferencia a probar **45/10/10/20/15**: menos dependencia de goles y volumen de tiros y algo más de creación. No es un peso «óptimo» demostrado.
+La base es útil para revisar producción ofensiva histórica. La alternativa **45/10/10/20/15** propone menos dependencia de goles y volumen de tiros y algo más de creación. No es un peso «óptimo» demostrado.
 
 En los 42 candidatos, las correlaciones de rangos son 0,85 entre xG sin penaltis y goles, 0,74 entre xG y tiros, y 0,80 entre tiros y el indicador de área. Por tanto, varios atributos recompensan dimensiones parecidas. Subir xG no elimina esa redundancia, pero explicita que preferimos generación de ocasiones a resultados observados. El indicador de área cuenta recepciones y tiros, no todos los toques; el volumen de tiros incluye penaltis, aunque goles y xG los excluyen. La creación total incluye balón parado. Son decisiones a revisar si hacemos una versión nueva del perfil.
 
@@ -47,11 +47,11 @@ En los 42 candidatos, las correlaciones de rangos son 0,85 entre xG sin penaltis
 
 **Augusto Fernández:** no gana por un único atributo. Está en percentil 97,7 en intercepciones, 93,2 en entradas, 81,1 en recuperaciones, 78,0 en progresión y 91,7 en precisión. Los tres componentes defensivos aportan 59,89 de sus 87,42 puntos. La puntuación agrega su temporada en Celta y Atlético; no debe atribuirse a un solo equipo. Sus 2.190 minutos superan con margen el mínimo.
 
-**Camacho e Illarramendi:** salen arriba por intercepciones, entradas y recuperaciones. Camacho pierde mucho si damos más valor al pase acertado: tiene 74,36 % y percentil 5,3 dentro de esta cohorte. Illarramendi lidera las intercepciones, pero queda por detrás de Augusto en otras dimensiones. La diferencia base entre ambos es de solo 0,30 puntos; no interpretaría segundo y tercero como una separación clara.
+**Camacho e Illarramendi:** salen arriba por intercepciones, entradas y recuperaciones. Camacho pierde mucho si damos más valor al pase acertado: tiene 74,36 % y percentil 5,3 dentro de esta cohorte. Illarramendi lidera las intercepciones, pero queda por detrás de Augusto en otras dimensiones. La diferencia base entre ambos es de solo 0,30 puntos; los puestos segundo y tercero están muy próximos.
 
 **Casemiro:** destaca en entradas (percentil 99,2) e intercepciones (96,2), pero la progresión del pase queda en 20,5. Es coherente que suba en el escenario recuperador y que cambie bastante con otro reparto. Con 1.527 minutos, además, su muestra es menor que la de otros candidatos.
 
-**Busquets, puesto 31:** es una advertencia sobre el modelo. Tiene percentil 97,7 en precisión y 82,6 en entradas, pero 9,8 en intercepciones y 17,4 en recuperaciones. Esos dos últimos atributos pesan 40 puntos. Los recuentos se han contrastado directamente con los eventos y coinciden. Eso no permite concluir que fuera un mal pivote. La exposición defensiva y el rol pueden afectar estos volúmenes; todavía no hemos estimado cuánto explican su posición. [StatsBomb explica por qué la oportunidad de defender importa al comparar acciones por 90](https://blogarchive.statsbomb.com/articles/soccer/introducing-possession-adjusted-player-stats/).
+**Busquets, puesto 31:** es una advertencia sobre el modelo. Tiene percentil 97,7 en precisión y 82,6 en entradas, pero 9,8 en intercepciones y 17,4 en recuperaciones. Esos dos últimos atributos pesan 40 puntos. Los recuentos se han contrastado directamente con los eventos y coinciden. Eso no permite concluir que fuera un mal pivote. La exposición defensiva y el rol pueden afectar estos volúmenes; el [diagnóstico de contexto](ESTABILIDAD_PARTIDOS_CONTEXTO.md) muestra su sensibilidad, sin atribuir causalmente la posición al equipo. [StatsBomb explica por qué la oportunidad de defender importa al comparar acciones por 90](https://blogarchive.statsbomb.com/articles/soccer/introducing-possession-adjusted-player-stats/).
 
 **Suárez y Benzema:** ambos sobresalen en todas las métricas de remate. Benzema tiene más xG sin penaltis por 90 (0,789 frente a 0,678) y goles sin penaltis por 90 (1,087 frente a 1,057). Suárez gana el ranking combinado por creación: 0,305 de xG asistido por 90 frente a 0,137, además de mayor presencia en área. No es una contradicción: el perfil también valora lo que genera para otros.
 
@@ -124,7 +124,7 @@ Se recalcularon los percentiles desde las métricas de temporada y se contrastar
 
 Reproducción: `python -m src.analyze_profiles`, `python -m src.verify_review_players` y `python -m unittest discover -s tests -v`. Los resultados completos se guardan en `outputs/revision_pivote_delantero.json` y `outputs/review-players-verification.json`. El [resumen de evidencia](../evidencias/revision-perfiles.json) conserva método, comprobaciones y hashes, sin publicar la base de datos.
 
-**Decisión de esta entrega:** aceptar la coherencia del cálculo y usar estos rankings como primera lista de candidatos, con las reservas indicadas. Conservar los pesos actuales como referencia y guardar las alternativas. En ese momento la tarea quedó en curso porque faltaban cuatro perfiles. La [revisión posterior](CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) completa el análisis descriptivo y cierra la tarea con las bases conservadas; la estabilidad por partidos y contexto sigue pendiente. Ver [decisiones de los siete perfiles](DECISIONES_PERFILES.md).
+**Decisión de esta entrega:** aceptar la coherencia del cálculo y usar estos rankings como primera lista de candidatos, con las reservas indicadas. Conservar los pesos actuales como referencia y guardar las alternativas. En ese momento la tarea quedó en curso porque faltaban cuatro perfiles. La [revisión posterior](CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) completa el análisis descriptivo y cierra la tarea con las bases conservadas; el [análisis posterior por partidos y contexto](ESTABILIDAD_PARTIDOS_CONTEXTO.md) amplía esa revisión. Ver [decisiones de los siete perfiles](DECISIONES_PERFILES.md).
 
 El hash del resultado completo de esta primera revisión corresponde a la versión del código publicada en el commit `8fc96d5`. La ampliación posterior añade campos de diagnóstico al JSON; no cambia los rankings ni las conclusiones de pivote/delantero.
 

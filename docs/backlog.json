@@ -1,6 +1,6 @@
 {
   "project_name": "Powerbi-scouting",
-  "publication_status": "Actualizado el 17/10/2026: 9 tareas terminadas y 2 por hacer. Revisión descriptiva de los siete perfiles cerrada; configuración oficial sin cambios. Pendientes estabilidad por partidos/contexto y evaluación de datos actuales.",
+  "publication_status": "Actualizado el 17/10/2026: 10 tareas terminadas y 1 pendiente. Estabilidad por partidos y contexto analizada; configuración oficial conservada. Pendiente evaluar datos actuales.",
   "items": [
     {
       "local_id": "DAT-01",
@@ -141,8 +141,8 @@
       "local_id": "MOD-04",
       "area": "Modelo",
       "summary": "Evaluar estabilidad por partidos y contexto",
-      "status": "Por hacer",
-      "description": "Distinguir la sensibilidad a preferencias de la incertidumbre de observación y estudiar efectos de posesión y equipo.",
+      "status": "Listo",
+      "description": "Análisis exploratorio con 2.000 muestras de partidos y 2.000 de jornadas, retirada de encuentros y tres escenarios de contexto mediante proporción de pases. Pesos y ranking oficial conservados.",
       "acceptance": [
         "Diseño de remuestreo por partidos documentado",
         "Intervalos o estabilidad de posiciones reproducibles",
@@ -155,6 +155,13 @@
         "Revisar estabilidad de Yoda y Burgui con pocos minutos",
         "Separar efecto de pesos, muestra y exposición defensiva",
         "Estudiar sensibilidad a minutos por rol, especialmente James e Isco"
+      ],
+      "progress": "387 puntuaciones y 6.842 totales reconciliados; 18 pruebas superadas. Yoda y Burgui muestran variación amplia. El contexto es aproximado y no se valida predicción.",
+      "evidence": [
+        "src/analyze_match_stability.py",
+        "tests/test_match_stability.py",
+        "docs/analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md",
+        "docs/evidencias/estabilidad-partidos.json"
       ]
     },
     {

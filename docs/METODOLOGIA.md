@@ -59,7 +59,7 @@ Los empates comparten percentil. Una cohorte constante obtiene 50. Para métrica
 
 Pesos finitos y no negativos; si todos son cero, no hay puntuación. La puntuación está entre 0 y 100, pero no es probabilidad, nota absoluta ni valor económico. Los empates de puntuación comparten puesto con ranking denso; el ID de jugador proporciona un orden de presentación determinista. Las puntuaciones de perfiles diferentes no deben compararse directamente.
 
-Los perfiles y pesos están en `config/profiles.json`. No se han ajustado para situar a jugadores concretos arriba. La ponderación de goles, tiros y xG del delantero expresa una preferencia inicial por producción ofensiva, pero introduce correlación y debe revisarse.
+Los perfiles y pesos están en `config/profiles.json`. No se han ajustado para situar a jugadores concretos arriba. La ponderación de goles, tiros y xG del delantero expresa una preferencia inicial por producción ofensiva, e introduce correlación, documentada en la revisión del perfil.
 
 ## Validación
 
@@ -67,11 +67,11 @@ La construcción comprueba cobertura (20 equipos, 38 partidos por equipo y cada 
 
 `src.validate` comprueba hashes, integridad de la base, unicidad, sumas partido/temporada, denominadores, coherencia de la puntuación y concordancia de un muestreo directo de pases y tiros con los JSON. Las pruebas unitarias cubren descuento, ausencias temporales, penaltis, balón parado, datos ausentes, empates y cambios de orden al cambiar pesos.
 
-La sensibilidad varía un peso por vez a 80% y 120% de su valor, normaliza el total y mantiene la cohorte fija. Exporta mejor/peor puesto y frecuencia de top 10. No es incertidumbre estadística ni validación predictiva. Los pesos siguen pendientes de revisión futbolística. Para validar predicción habría que separar temporalmente entrenamiento y evaluación, sin utilizar estadísticas futuras para elegir pesos o percentiles.
+La sensibilidad varía un peso por vez a 80% y 120% de su valor, normaliza el total y mantiene la cohorte fija. Exporta mejor/peor puesto y frecuencia de top 10. No es incertidumbre estadística ni validación predictiva. Los siete perfiles tienen revisión de atributos, pesos y escenarios. Para validar predicción habría que separar temporalmente entrenamiento y evaluación, sin utilizar estadísticas futuras para elegir pesos o percentiles.
 
 ## Límites
 
-No hay ajuste por posesión, ritmo, rival, fuerza de equipo o contexto del marcador. Las acciones defensivas pueden crecer por mayor exposición y los pases seguros pueden inflar la precisión. El mínimo de minutos reduce muestras pequeñas, pero no elimina la variabilidad. No se han aplicado correcciones por fiabilidad ni inferido potencial.
+El ranking oficial no ajusta posesión, ritmo, rival, fuerza de equipo o marcador. El análisis separado de contexto utiliza proporción de pases como aproximación, no posesión medida en tiempo. Las acciones defensivas pueden crecer por mayor exposición y los pases seguros pueden inflar la precisión. El mínimo de minutos reduce muestras pequeñas, pero no elimina la variabilidad. No se han aplicado correcciones por fiabilidad ni inferido potencial.
 
 No se incluyen mercado, salarios, lesiones ni disponibilidad para fichar. No se obtiene una conclusión de jugador infravalorado a partir de este ranking por sí solo. La muestra es histórica y las posiciones son las registradas entonces.
 
@@ -80,7 +80,7 @@ No se incluyen mercado, salarios, lesiones ni disponibilidad para fichar. No se 
 
 La creación se divide de manera exhaustiva y sin duplicados entre juego abierto y balón parado. Balón parado comprende las secuencias del pase etiquetadas por StatsBomb como `From Corner` o `From Free Kick`, más cualquier pase de ejecución directa tipo Corner, Free Kick, Throw-in, Goal Kick o Kick Off que genere un tiro. Las fases completas de saque de banda, puerta y centro no se consideran balón parado: tras el saque, sus pases ordinarios entran en juego abierto. Los demás pases creadores, incluidos los de patrón Other, quedan en juego abierto por esta definición operativa.
 
-Esto es una aproximación dependiente de las etiquetas de origen de posesión del proveedor, sin una ventana temporal adicional. Incluye segundas jugadas de córner/falta que mantengan esa etiqueta. Es más amplia que el recuento de córners/faltas directos de la conversación anterior, por lo que sus porcentajes no son intercambiables.
+Esto es una aproximación dependiente de las etiquetas de origen de posesión del proveedor, sin una ventana temporal adicional. Incluye segundas jugadas de córner/falta que mantengan esa etiqueta. Incluye más acciones que un recuento limitado a córners y faltas directos, por lo que sus porcentajes no son intercambiables.
 
 Se conservan las métricas totales para los demás perfiles. Para cada jugador-partido y jugador-temporada, la suma de las dos clases coincide con el total, tanto en número de pases que generan tiro como en xG de sus tiros asistidos. Un pase creador sin tiro enlazado detiene el cálculo; nunca se rellena su xG con cero. En esta muestra todos los pases creadores tienen enlace.
 
@@ -88,4 +88,10 @@ Pesos organizador v2: progresión 30%, pases que generan tiro en juego abierto 1
 
 El xG asistido es una suma por 90: combina volumen y calidad de los tiros, no calidad media por ocasión. Está correlacionado con el número de pases que generan tiro; los dos se ponderan dentro de un presupuesto total de creación de 40%.
 
-La comparación reproducible se publica en `outputs/ORGANIZADOR_V2.md` y `data/processed/organizer_comparison.csv`. Distingue el perfil original v1 (25/20), la simulación conversada (40/5, creación total sin separar) y el nuevo v2. El archivo histórico `config/history/profiles_v1.json` conserva los pesos originales. La cohorte sigue teniendo 66 jugadores. Los otros seis perfiles conservan exactamente sus puntuaciones y puestos.
+La comparación reproducible se publica en `outputs/ORGANIZADOR_V2.md` y `data/processed/organizer_comparison.csv`. Distingue el perfil original v1 (25/20), el escenario 40/5 con creación total sin separar y el nuevo v2. El archivo histórico `config/history/profiles_v1.json` conserva los pesos originales. La cohorte sigue teniendo 66 jugadores. Los otros seis perfiles conservan exactamente sus puntuaciones y puestos.
+
+## Estabilidad por partidos y contexto de equipo
+
+El [análisis específico](analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) conserva candidatos y pesos, remuestrea partidos o jornadas completas y recalcula tasas, percentiles y puestos. Usa 2.000 muestras por método y resume los percentiles 2,5 y 97,5 de los puestos. También retira cada partido una vez. Los rangos son descriptivos de la muestra observada y no predicen otra temporada.
+
+El contexto se explora mediante la proporción de pases de cada equipo en cada partido. Se comparan ajustes defensivos y ajustes de ataque/defensa de dos intensidades. No se considera una corrección causal ni se incorpora a Power BI. La muestra, los pesos y el contexto se estudian por separado.

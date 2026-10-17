@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-17",
+  "origin": "Exportación nativa a PDF desde el PBIX abierto en Power BI Desktop; páginas 1 y 2.",
+  "processing": "Renderizado Poppler a 140 dpi, región y=88, altura=1441 px: excluye el aviso superior de la aplicación. Sin retoques de datos, texto, filtros o resultados.",
+  "source_local": "outputs/powerbi-export-limpio.pdf",
+  "source_sha256": "5dc6442c4d93910dc2faa3c1040880be03075e99f24e043da997d5f881ae4707",
+  "images": {
+    "powerbi-ranking-base.png": "8b3658a211f9926796677e671a71fc4286374ac5ad41e4e04cdc9bd67fef3309",
+    "powerbi-validacion.png": "b75ee843e40ff0ec2809af16175b7a7242dbd135012cede14f1419d30d07f744"
+  }
+}
