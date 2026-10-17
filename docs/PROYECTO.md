@@ -1,69 +1,62 @@
-# Powerbi-scouting
+# Alcance y cierre de Powerbi-scouting
 
-## Objetivo y alcance
+## Propósito
 
-Construir una herramienta explicable de selección de candidatos por perfil, utilizando LaLiga 2015/16 como caso histórico. El usuario decide qué atributos prioriza y observa cómo cambia el ranking. El objetivo inicial es validar las métricas y las preferencias antes de invertir en datos actuales.
+Proyecto personal para practicar la preparación y el análisis de datos con Python y construir un informe interactivo en Power BI. El caso práctico es comparar jugadores según el tipo de futbolista que se busca.
 
-Los perfiles son central, lateral, pivote, organizador, mediapunta, extremo y delantero. Se exige un mínimo de 900 minutos y un 50% de tiempo en los roles admitidos. Las estadísticas son de toda la temporada del jugador. No se infiere automáticamente su posición óptima.
+Se utiliza LaLiga 2015/16 de StatsBomb Open Data. La versión histórica queda finalizada el 17/10/2026. Evaluar proveedores actuales y adaptar nuevas fuentes son posibles ampliaciones, fuera de este cierre.
 
-## Flujo de datos
+## Resultado entregado
 
-1. `src.download` obtiene eventos, alineaciones y partidos de un commit fijo de StatsBomb. Conserva originales comprimidos y hashes SHA-256.
-2. `src.build` relaciona entidades por identificadores, calcula intervalos de participación y agrega métricas por partido y temporada.
-3. Las tablas SQLite y CSV alimentan el cálculo de percentiles por perfil y el ranking ponderado.
-4. El visor HTML permite inspeccionar contribuciones y variar pesos. El informe nativo de Power BI usa Power Query y DAX para filtrar perfiles y equipos y recalcular rankings con pesos ajustables.
-5. `src.validate` contrasta integridad, agregaciones y puntuaciones. `src.analyze_organizer` reproduce el análisis de sensibilidad del organizador.
-
-## Limpieza y controles
-
-| Decisión | Motivo y tratamiento |
+| Parte | Resultado |
 |---|---|
-| Identificadores estables | Unir por ID evita confundir nombres y permite agregar jugadores que cambian de club. |
-| Pases no evaluables | Unknown e Injury Clearance se excluyen del denominador; quedan auditados, sin tratarlos como fallos. |
-| Ratios sin denominador | Se mantienen nulas; no se sustituyen por cero. |
-| Porcentajes de temporada | Se calculan desde numeradores y denominadores agregados. |
-| Suplentes sin participación | Sus eventos excluidos quedan registrados; no se inventan minutos. |
-| Descuento | Los minutos se limitan al tiempo reglamentario; los eventos del descuento se conservan. Esta convención afecta las tasas por 90. |
-| Tiro asistido ausente | El cálculo de creación se detiene ante enlaces faltantes; no se asigna xG cero. |
-| Duplicados y referencias | Se comprueba unicidad de eventos por partido e integridad de referencias; los errores detienen la construcción. |
-| Juego abierto y balón parado | La partición debe conservar tanto el conteo total como el xG asistido. |
+| Datos | Descarga con versión de origen fijada, reglas de limpieza y tablas SQLite/CSV. |
+| Análisis | Siete perfiles, percentiles, pesos editables y detalle de contribuciones en el visor HTML. |
+| Power BI | Informe con perfiles, filtro de equipo, ocho controles de peso y página de validación. |
+| Comprobaciones | Pruebas de datos y fórmulas; revisión de pesos, minutos, partidos y contexto. |
+| Documentación | Explicación sencilla, método, reproducción, análisis y capturas. |
+| Seguimiento | Tareas y criterios en Jira, decisiones en Confluence e historial en GitHub. |
 
-No se eliminan valores extremos porque un jugador sobresalga. Los controles verifican coherencia con la fuente; no certifican que todas las anotaciones del proveedor sean correctas.
+La fuente contiene 380 partidos, 20 equipos, 539 jugadores y 1.295.354 eventos. Los perfiles generan 387 candidaturas jugador-perfil de 311 personas distintas; una persona puede entrar en varios perfiles. Se exigen 900 minutos y un 50 % de tiempo en los roles admitidos. Las estadísticas corresponden a toda la temporada del jugador, no solo a sus minutos en ese rol.
 
-## Evidencia de validación
+## Decisiones de preparación
 
-El 17 de octubre de 2026 se repitieron con éxito las 10 pruebas unitarias y `src.validate`: 764 archivos fuente con hash verificado, 539 jugadores reconciliados y 387 puntuaciones de candidatos verificadas. La auditoría de construcción registra 380 partidos, 20 equipos, 1.295.354 eventos y reconciliación del marcador en los 380 partidos. El contraste independiente directo de pases, tiros y creación cubre cinco partidos distribuidos en la temporada.
+Las tablas se relacionan por identificadores, evitando depender de los nombres. Los pases de resultado desconocido o Injury Clearance quedan fuera del porcentaje evaluable. Los porcentajes se calculan a partir de totales y permanecen nulos cuando no tienen denominador.
 
-El informe existente de pruebas del visor registra paridad de puntuaciones, pesos nulos, cambios de orden, detalle del jugador, filtros vacíos y anchura móvil. Power BI Desktop se ha ejecutado y guardado como PBIP y PBIX: seis escenarios, 1.359 comparaciones con Python y cero errores de puntuación, puesto o cohorte. Se han probado cambios de perfil, pesos y equipo en la interfaz. La evidencia de esta sesión está en `outputs/powerbi-verification.json` y sus capturas; la página de validación del informe permite repetir las comprobaciones DAX. No se distribuye el conjunto de datos en GitHub.
+Los minutos se limitan al tiempo reglamentario y los eventos del descuento se conservan. Si un pase creador carece del tiro enlazado, el cálculo se detiene. Los controles revisan duplicados, referencias, marcadores y conservación de totales. No se descartan valores extremos solo porque un jugador destaque.
 
-## Decisiones analíticas
+Estas reglas comprueban la coherencia del procesamiento con la fuente. No equivalen a revisar manualmente cada acción del proveedor. [Metodología completa](METODOLOGIA.md).
 
-Los percentiles comparan al jugador con su cohorte elegible; la puntuación es su media ponderada. Los pesos representan preferencias y no coeficientes aprendidos. Una puntuación de 80 no es una probabilidad de éxito y no se compara directamente entre perfiles.
+## Qué está comprobado
 
-El organizador v2 separa creación abierta y balón parado, e incorpora xG de tiros asistidos. El análisis de André Gomes, Kroos y Trashorras motivó comprobar la estabilidad del orden al variar pesos. Esta sensibilidad no representa incertidumbre estadística por partidos. Las definiciones y los pesos exactos están en [METODOLOGIA.md](METODOLOGIA.md) y `config/profiles.json`.
+| Comprobación | Resultado y alcance |
+|---|---|
+| Archivos y datos | 764 hashes de origen, 539 jugadores y 387 puntuaciones reconciliadas en la validación general. |
+| Python y Power BI | 1.359 comparaciones en seis escenarios, sin diferencias de puntuación, puesto o grupo. Incluye pruebas representativas de filtros y pesos en Desktop. |
+| Revisión de perfiles | Siete perfiles con atributos, sensibilidad y decisiones documentadas. |
+| Partidos y contexto | 387 puntuaciones base y 6.842 totales contrastados; 2.000 muestras de partidos y 2.000 de jornadas. |
+| Pruebas automatizadas | 18 pruebas con NumPy instalado. Sin NumPy se omiten las cuatro del análisis de estabilidad. |
 
-## Trabajo pendiente y criterio de cierre
+Los registros conservan las pruebas de cada entrega: [Power BI](evidencias/powerbi-validacion.json), [pivote y delantero](evidencias/revision-perfiles.json), [cuatro perfiles restantes](evidencias/revision-cuatro-perfiles.json) y [partidos y contexto](evidencias/estabilidad-partidos.json).
 
-La revisión descriptiva de los siete perfiles está cerrada: atributos, sensibilidad y decisión de conservar las bases con escenarios por función. La estabilidad por partidos y el contexto ya cuentan con un análisis exploratorio documentado. Una decisión sobre proveedores actuales requerirá comparar cobertura, definiciones y condiciones de uso. Extender la separación de creación a mediapunta y extremo es una mejora propuesta cuyo efecto se ha medido, todavía sin implementar en Power BI.
+Las revisiones posteriores de pesos y contexto se ejecutaron en Python. Las 1.359 comparaciones de Desktop corresponden a los seis escenarios documentados, no a todos los análisis posteriores.
 
-Una tarea se cierra cuando su criterio de aceptación tiene evidencia reproducible. Jira recoge las tareas con criterios y referencias; Confluence conserva alcance, metodología y decisiones. El [backlog público](backlog.json) conserva 11 tareas con identificadores locales. Estado actual: diez terminadas y una pendiente; BI-01, MOD-03 y MOD-04 cerrados. El detalle de la entrega está en [VALIDACION_POWERBI.md](VALIDACION_POWERBI.md). El historial conserva las evidencias de cada entrega.
+## Interpretación de los resultados
 
-## Desarrollo asistido por IA
+El ranking responde a las preferencias elegidas. André Gomes cambia de tercero a quinto como organizador al aumentar el peso del pase progresivo y reducir el del regate. Yoda y Burgui muestran más variación por su muestra pequeña de minutos. Estos casos permiten entender qué mide el informe y dónde tiene límites.
 
-La IA participa en implementación, documentación y comprobaciones. El objetivo y las revisiones de métricas, pesos y resultados guían el desarrollo. Las reglas y las pruebas quedan documentadas.
+La puntuación combina posiciones relativas dentro de un grupo; no representa una probabilidad de éxito ni permite comparar perfiles distintos directamente. No se ha probado capacidad predictiva, valoración económica ni una estimación de calidad individual aislada del equipo.
 
-## Publicación
+## Desarrollo y organización
 
-El repositorio público Powerbi-scouting contiene código, configuración, pruebas, instrucciones de reproducción y documentación. Los datos originales, la base, los CSV de resultados y el visor generado permanecen fuera de Git por las reglas del proyecto. La fuente y las condiciones de uso se documentan en el README y en la licencia descargada de StatsBomb. La licencia del código propio queda por decidir; no se atribuye la licencia de los datos al código.
+El autor ha definido el objetivo y solicitado revisiones de métricas, pesos y resultados. La IA ha apoyado código, documentación y comprobaciones. El ranking es una fórmula explícita y el xG procede de StatsBomb; no se ha entrenado un modelo de aprendizaje automático.
 
-## Revisión de pivote y delantero
+La versión se cierra con diez tareas terminadas. SCOUT-11/DAT-03 se conserva como propuesta futura de evaluación de datos actuales, aplazada y fuera del alcance cerrado. No se marca como trabajo realizado. [Organización e historial](gestion/FORMA_DE_TRABAJO.md).
 
-La [revisión documentada](analisis/PIVOTE_Y_DELANTERO.md) incluye 40.000 simulaciones y comprobaciones directas de candidatos destacados. Conserva los pesos oficiales y distingue validación técnica, preferencia futbolística e incertidumbre por partidos. La [galería](evidencias/README.md) muestra Power BI, Jira y Confluence; la [forma de trabajo](gestion/FORMA_DE_TRABAJO.md) explica las prácticas ágiles realmente utilizadas.
+## Reproducción y ampliación
 
-## Revisión de los cuatro perfiles restantes
+GitHub incluye el código, la configuración, el proyecto PBIP y la documentación. Los datos originales, los CSV completos, la base y el PBIX cargado se generan o conservan localmente. [Pasos para reproducir](REPRODUCIR.md).
 
-La [revisión de central, lateral, mediapunta y extremo](analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) añade 80.000 simulaciones, 213 candidatos reconciliados, 196 comprobaciones directas de métricas y 70 de minutos, sin diferencias. En esa entrega pasaron 14 pruebas unitarias. Mustafi y Neymar son sólidos en los intervalos documentados; Filipe–Marcelo y James–Isco cambian de orden según las preferencias. El [registro de decisiones](analisis/DECISIONES_PERFILES.md) cierra la revisión descriptiva conservando las bases. No se ha modificado Power BI ni se atribuyen nuevas pruebas Desktop a esta entrega.
+La estructura separa entrada, cálculo y presentación, pero varios archivos contienen supuestos de LaLiga 2015/16. Adaptar otra fuente exige revisar esos supuestos y repetir la validación. [Propuesta de ampliación](FUTURO.md).
 
-## Estabilidad por partidos y contexto
-
-El [análisis](analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) compara 2.000 muestras de partidos y otras 2.000 de jornadas, retira encuentros uno a uno y prueba tres escenarios de contexto. Se reconcilian 6.842 totales y las 387 puntuaciones base; pasan las 18 pruebas actuales. Yoda y Burgui mantienen señales favorables, pero sus puestos exactos son variables. El contexto se aproxima con la proporción de pases por equipo, sin modificar el ranking oficial.
+La atribución y la licencia de los datos se conservan por separado del código propio. El repositorio no declara una licencia de reutilización para el código propio; la licencia de StatsBomb no se extiende automáticamente a él.

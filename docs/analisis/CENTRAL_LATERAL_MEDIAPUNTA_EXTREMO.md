@@ -156,7 +156,7 @@ La separación en mediapunta y extremo queda documentada como mejora propuesta. 
 
 La revisión de pesos queda documentada para los siete perfiles. La decisión de esta entrega es **mantener las bases como hipótesis de referencia**, conservar escenarios por función y señalar candidatos sensibles a pesos, minutos o roles. No se han aprobado pesos universales ni se ha validado rendimiento futuro. [Registro de decisiones de los siete perfiles](DECISIONES_PERFILES.md).
 
-SCOUT-7 está cerrada: cada perfil tiene justificación, sensibilidad y decisión registrada. SCOUT-8 se completó posteriormente con el [análisis de partidos y contexto](ESTABILIDAD_PARTIDOS_CONTEXTO.md). SCOUT-11 sigue pendiente: decidir si compensa obtener datos actuales. La separación de creación en más perfiles es una mejora propuesta, pendiente de una nueva versión y de repetir las pruebas DAX si se implementa.
+SCOUT-7 está cerrada: cada perfil tiene justificación, sensibilidad y decisión registrada. SCOUT-8 se completó posteriormente con el [análisis de partidos y contexto](ESTABILIDAD_PARTIDOS_CONTEXTO.md). SCOUT-11 queda aplazada como propuesta futura para evaluar datos actuales, fuera de la versión histórica finalizada. La separación de creación en más perfiles es una mejora propuesta, pendiente de una nueva versión y de repetir las pruebas DAX si se implementa.
 
 Las pruebas de esta revisión se ejecutaron en Python. Las 1.359 comparaciones de Power BI corresponden a la entrega anterior; no se presentan como pruebas nuevas de estos escenarios. Las estadísticas son de toda la temporada y los minutos excluyen el descuento, aunque los eventos lo incluyen. No se corrige aquí posesión, dificultad del rival ni incertidumbre de observación.
 

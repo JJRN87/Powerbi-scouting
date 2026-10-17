@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-17",
+  "release_status": "Version historica finalizada",
+  "scope": "StatsBomb LaLiga 2015/16; proyecto personal de Power BI, analisis de datos y Python con asistencia de IA.",
+  "changes": [
+    "Presentacion y explicacion simplificadas",
+    "Separacion entre reproduccion y futuras adaptaciones",
+    "Aclaracion del papel de la IA y de los limites del ranking",
+    "SCOUT-11 aplazada fuera del alcance cerrado",
+    "Texto del informe generado actualizado sin cambiar formulas"
+  ],
+  "checks": {
+    "unit_tests_passed": 18,
+    "markdown_files_checked": 16,
+    "broken_relative_links": 0,
+    "source_players": 539,
+    "ranked_player_profile_rows": 387,
+    "distinct_ranked_players": 311,
+    "toy_example_scores": [
+      68,
+      62
+    ]
+  },
+  "production_input_sha256": {
+    "config/profiles.json": "ccb0319f116a27cadc8c983f4d85bad3450a31b1302dd4c910283127630910f0",
+    "data/processed/football.sqlite": "6e3e4d37a101ca6aad5a6f76996767f7f819c0b76ab7e25f38b86da8aa166e86",
+    "data/processed/rankings.csv": "7a8b23e945be14cc2512763f5be34fb76d6f460ce79d5e542ff5c3aa94281634"
+  },
+  "production_inputs_unchanged": true,
+  "powerbi_engine_rerun_for_this_documentation_closure": false,
+  "powerbi_validation_reference": "docs/evidencias/powerbi-validacion.json",
+  "scope_status": {
+    "completed_tasks": 10,
+    "future_deferred_tasks": 1,
+    "future_issue": "SCOUT-11",
+    "future_issue_workflow_status": "Por hacer"
+  },
+  "documentation": [
+    "README.md",
+    "docs/EXPLICACION.md",
+    "docs/PROYECTO.md",
+    "docs/REPRODUCIR.md",
+    "docs/FUTURO.md"
+  ]
+}

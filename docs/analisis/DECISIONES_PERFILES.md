@@ -18,4 +18,4 @@ Evidencia: [central, lateral, mediapunta y extremo](CENTRAL_LATERAL_MEDIAPUNTA_E
 
 SCOUT-7/MOD-03 se cierra como revisión de atributos, sensibilidad y decisiones. Las bases siguen siendo preferencias de referencia; no se ha comprobado rendimiento futuro. Cambiar una base o una definición exigirá versionarla y repetir las pruebas correspondientes.
 
-SCOUT-8/MOD-04 se completó con el [análisis de estabilidad por partidos y contexto](ESTABILIDAD_PARTIDOS_CONTEXTO.md). Sigue pendiente SCOUT-11/DAT-03, evaluación de datos actuales. Se propone como mejora futura extender la separación de creación a mediapunta y extremo; su diagnóstico ya está documentado, su implementación no está hecha.
+SCOUT-8/MOD-04 se completó con el [análisis de estabilidad por partidos y contexto](ESTABILIDAD_PARTIDOS_CONTEXTO.md). SCOUT-11/DAT-03, evaluación de datos actuales, queda aplazada fuera de la versión histórica finalizada. Ver [posibles ampliaciones](../FUTURO.md). Se propone como mejora futura extender la separación de creación a mediapunta y extremo; su diagnóstico ya está documentado, su implementación no está hecha.

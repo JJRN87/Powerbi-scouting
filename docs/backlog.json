@@ -1,6 +1,6 @@
 {
   "project_name": "Powerbi-scouting",
-  "publication_status": "Actualizado el 17/10/2026: 10 tareas terminadas y 1 pendiente. Estabilidad por partidos y contexto analizada; configuración oficial conservada. Pendiente evaluar datos actuales.",
+  "publication_status": "Versión histórica finalizada el 17/10/2026: diez tareas terminadas; evaluación de datos actuales aplazada como propuesta futura fuera de este alcance.",
   "items": [
     {
       "local_id": "DAT-01",
@@ -16,7 +16,8 @@
         "src/download.py",
         "data/source-lock.json",
         "outputs/verification.json"
-      ]
+      ],
+      "release_scope": "Version historica"
     },
     {
       "local_id": "DAT-02",
@@ -34,7 +35,8 @@
         "src/metrics.py",
         "docs/METODOLOGIA.md",
         "outputs/audit.json"
-      ]
+      ],
+      "release_scope": "Version historica"
     },
     {
       "local_id": "MOD-01",
@@ -50,7 +52,8 @@
         "config/profiles.json",
         "src/validate.py",
         "tests/test_metrics.py"
-      ]
+      ],
+      "release_scope": "Version historica"
     },
     {
       "local_id": "MOD-02",
@@ -67,7 +70,8 @@
         "src/analyze_organizer.py",
         "outputs/organizador_robustez.json",
         "config/history/profiles_v1.json"
-      ]
+      ],
+      "release_scope": "Version historica"
     },
     {
       "local_id": "VIS-01",
@@ -83,7 +87,8 @@
         "src/review.html",
         "tests/check_viewer.cjs",
         "outputs/viewer-verification.json"
-      ]
+      ],
+      "release_scope": "Version historica"
     },
     {
       "local_id": "BI-01",
@@ -109,7 +114,8 @@
         "outputs/powerbi-validacion.png",
         "docs/VALIDACION_POWERBI.md",
         "docs/evidencias/powerbi-validacion.json"
-      ]
+      ],
+      "release_scope": "Version historica"
     },
     {
       "local_id": "MOD-03",
@@ -135,7 +141,8 @@
         "docs/analisis/DECISIONES_PERFILES.md",
         "docs/evidencias/revision-cuatro-perfiles.json",
         "src/verify_remaining_players.py"
-      ]
+      ],
+      "release_scope": "Version historica"
     },
     {
       "local_id": "MOD-04",
@@ -162,7 +169,8 @@
         "tests/test_match_stability.py",
         "docs/analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md",
         "docs/evidencias/estabilidad-partidos.json"
-      ]
+      ],
+      "release_scope": "Version historica"
     },
     {
       "local_id": "PUB-01",
@@ -175,7 +183,8 @@
         "Código y documentación coinciden con la entrega local",
         "Datos descargados y resultados generados excluidos",
         "README distingue implementación y trabajo pendiente"
-      ]
+      ],
+      "release_scope": "Version historica"
     },
     {
       "local_id": "PUB-02",
@@ -187,14 +196,15 @@
         "Páginas de alcance, metodología y validación publicadas",
         "Tareas con criterios, evidencia y estado real",
         "Enlaces entre Jira, Confluence y GitHub verificados"
-      ]
+      ],
+      "release_scope": "Version historica"
     },
     {
       "local_id": "DAT-03",
       "area": "Datos",
-      "summary": "Evaluar si compensa adquirir datos actuales",
+      "summary": "Futuro · Evaluar datos actuales (fuera de esta versión)",
       "status": "Por hacer",
-      "description": "Comparar proveedores una vez validado el caso histórico, considerando cobertura, definiciones, actualización, coste y condiciones de uso.",
+      "description": "Propuesta aplazada al cierre: comparar proveedores por cobertura, definiciones, actualización, coste y condiciones de uso. No se ha realizado la comparativa ni contratado servicios. No bloquea el cierre histórico.",
       "acceptance": [
         "Comparativa documentada con necesidades del proyecto",
         "Decisión explícita sin contratar automáticamente servicios"
@@ -202,6 +212,11 @@
       "depends_on": [
         "BI-01",
         "MOD-03"
+      ],
+      "release_scope": "Futuro",
+      "planning_status": "Aplazada",
+      "evidence": [
+        "docs/FUTURO.md"
       ]
     }
   ],
@@ -217,5 +232,13 @@
       "evidence": "docs/analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md",
       "requires": "Versionar métricas y repetir regresión Python-DAX si se decide implementar"
     }
-  ]
+  ],
+  "release": {
+    "status": "Finalizada",
+    "date": "2026-10-17",
+    "scope": "Proyecto personal de Power BI y análisis de datos con Python y asistencia de IA. StatsBomb LaLiga 2015/16.",
+    "completed_tasks": 10,
+    "future_tasks": 1,
+    "implemented_new_providers": false
+  }
 }

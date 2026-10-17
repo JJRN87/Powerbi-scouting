@@ -54,7 +54,7 @@ def write_reports(audit, tables, schemas):
     for r in comparison:
         text.append(f"| {r['player']} | {r['rank_v1']} | {r['rank_creation_40']} | {r['rank_v2']} | {r['score_v2']:.2f} | {r['key_passes_open_play_p90']:.2f} | {r['xg_assisted_open_play_p90']:.3f} | {r['key_passes_set_piece_p90']:.2f} | {r['xg_assisted_set_piece_p90']:.3f} |")
     text += ['', 'El xG asistido combina volumen y calidad de los tiros. No es xG medio por ocasión. '
-             'Los pesos v2 son una hipótesis de scouting pendiente de validación, no un modelo predictivo entrenado.']
+             'Los pesos v2 son preferencias de scouting revisadas mediante sensibilidad; no son un modelo predictivo entrenado.']
     (output/'ORGANIZADOR_V2.md').write_text('\n'.join(text)+'\n',encoding='utf-8')
     payload = {k:tables[k] for k in ['rankings','ranking_detail','profiles','metrics','sensitivity']}
     payload['max_slots'] = MAX_SLOTS

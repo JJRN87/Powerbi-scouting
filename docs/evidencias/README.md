@@ -18,7 +18,7 @@ La página de validación compara DAX con Python en seis escenarios: 1.359 compa
 
 ## Jira
 
-Tablero después del análisis por partidos y contexto: diez tareas terminadas y una pendiente, la evaluación de datos actuales.
+Tablero al cierre de la versión histórica: diez tareas terminadas. La evaluación de datos actuales se conserva en Por hacer como propuesta futura, aplazada y fuera de esta versión.
 
 ![Seguimiento del proyecto en Jira](capturas/jira-tablero.png)
 
@@ -29,6 +29,8 @@ La página recoge el objetivo, la limpieza, la validación y los siguientes paso
 ![Documentación del proyecto en Confluence](capturas/confluence-proyecto.png)
 
 ## Registros reproducibles
+
+- [Cierre de la versión histórica](cierre.json): comprobaciones finales, alcance y propuesta aplazada.
 
 - [Validación de Desktop](powerbi-validacion.json): registro de la sesión, escenarios y hashes de los archivos probados.
 - [Revisión de perfiles](revision-perfiles.json): método de sensibilidad, contraste base, recuento directo y límites.

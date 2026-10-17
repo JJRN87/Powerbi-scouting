@@ -1,20 +1,29 @@
-# Documentación del proyecto
+# Documentación
 
-Documentación del alcance, tratamiento de datos, informe, análisis y seguimiento.
+**Versión histórica finalizada el 17/10/2026.** Proyecto personal de Power BI y análisis de datos con Python y asistencia de IA.
 
-| Para ver… | Documento |
+## Entender y utilizar el proyecto
+
+| Documento | Contenido |
 |---|---|
-| Qué persigue el proyecto y hasta dónde llega | [Resumen del proyecto](PROYECTO.md) |
-| El informe y las herramientas en uso | [Capturas de Power BI, Jira y Confluence](evidencias/README.md) |
-| Por qué salen unos jugadores y no otros | [Revisión de pivote y delantero](analisis/PIVOTE_Y_DELANTERO.md) |
-| Qué ocurre con los cuatro perfiles restantes | [Central, lateral, mediapunta y extremo](analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) |
-| Cuánto cambia el ranking con la muestra y el equipo | [Estabilidad por partidos y contexto](analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) |
-| Qué decisión se ha tomado en cada perfil | [Decisiones de los siete perfiles](analisis/DECISIONES_PERFILES.md) |
-| Cómo se limpian y puntúan los datos | [Metodología](METODOLOGIA.md) |
-| Cómo se comprobó Python frente a DAX | [Validación de Power BI](VALIDACION_POWERBI.md) |
-| Cómo abrir o reconstruir el informe | [Guía de Power BI](../powerbi/LEEME.md) |
-| Organización del trabajo y prácticas ágiles | [Jira, Confluence y forma de trabajo](gestion/FORMA_DE_TRABAJO.md) |
-| Qué queda por hacer | [Backlog](backlog.json) |
-| Funcionamiento del modelo y desarrollo | [Explicación del modelo](EXPLICACION.md) |
+| [Explicación sencilla](EXPLICACION.md) | La idea, el recorrido de los datos y un ejemplo del cálculo. |
+| [Resumen del proyecto](PROYECTO.md) | Alcance, herramientas, comprobaciones y cierre. |
+| [Capturas](evidencias/README.md) | Power BI, Jira y Confluence. |
+| [Reproducción](REPRODUCIR.md) | Pasos para construir los datos y repetir los análisis. |
+| [Guía de Power BI](../powerbi/LEEME.md) | Filtros, pesos y actualización del informe. |
+| [Posibles ampliaciones](FUTURO.md) | Qué requeriría otra temporada o una nueva base de datos. |
 
-Estado al 17/10/2026: diez tareas terminadas y una pendiente. El informe técnico y la revisión descriptiva de los siete perfiles están terminados. La estabilidad por partidos y el contexto se han analizado como diagnósticos. Queda pendiente evaluar proveedores de datos actuales. Las bases se conservan; no se ha validado rendimiento futuro.
+## Consultar el detalle
+
+| Documento | Contenido |
+|---|---|
+| [Metodología](METODOLOGIA.md) | Limpieza, métricas, minutos, percentiles y límites. |
+| [Validación de Power BI](VALIDACION_POWERBI.md) | Comparación de Python y DAX. |
+| [Decisiones de los siete perfiles](analisis/DECISIONES_PERFILES.md) | Pesos de referencia y alternativas. |
+| [Pivote y delantero](analisis/PIVOTE_Y_DELANTERO.md) | Resultados y sensibilidad de ambos perfiles. |
+| [Central, lateral, mediapunta y extremo](analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) | Revisión de candidatos y escenarios. |
+| [Partidos y contexto](analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) | Estabilidad de la muestra y efecto exploratorio del equipo. |
+| [Organización](gestion/FORMA_DE_TRABAJO.md) | Uso de Jira, Confluence y GitHub. |
+| [Backlog](backlog.json) | Diez tareas terminadas y una propuesta aplazada fuera de esta versión. |
+
+Los registros de pruebas conservan sus cifras y fechas originales. El cierre no convierte las propuestas futuras en funcionalidades implementadas.

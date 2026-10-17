@@ -1,4 +1,4 @@
-# Power BI: qué está terminado y qué falta
+# Power BI: validación de la versión finalizada
 
 Actualizado el 17/10/2026.
 
@@ -40,9 +40,9 @@ Primero se reconstruyen los datos siguiendo el README. Después se ejecuta `pyth
 
 El PBIX con los datos cargados se conserva localmente en `powerbi/Powerbi-scouting/Powerbi-scouting.pbix`. GitHub incluye el proyecto y el código para reproducirlo. Los datos, la caché y el PBIX no se publican. Las capturas de la sesión se conservan localmente en `outputs/`.
 
-## Qué queda pendiente
+## Cierre y posibles ampliaciones
 
-En el cierre de Desktop quedaron ocho tareas terminadas y tres pendientes. Posteriormente se completó la [revisión descriptiva de los siete perfiles](analisis/DECISIONES_PERFILES.md), conservando los pesos oficiales. El [análisis por partidos y contexto](analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) también está terminado como diagnóstico separado. El estado actual es diez tareas terminadas y una pendiente: comparar proveedores de datos actuales.
+En el cierre de Desktop quedaron ocho tareas terminadas y tres pendientes. Posteriormente se completó la [revisión descriptiva de los siete perfiles](analisis/DECISIONES_PERFILES.md), conservando los pesos oficiales. El [análisis por partidos y contexto](analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) también está terminado como diagnóstico separado. La versión histórica queda finalizada con diez tareas terminadas. Comparar proveedores actuales se aplaza como propuesta futura, fuera de este alcance. [Posibles ampliaciones](FUTURO.md).
 
 El informe conserva las tasas originales. El diagnóstico de contexto usa proporción de pases, no posesión medida en tiempo. No hay validación predictiva, corrección por rival ni datos económicos. Por ahora el proyecto ayuda a localizar candidatos y explicar por qué aparecen arriba.
 

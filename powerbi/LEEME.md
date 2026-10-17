@@ -1,10 +1,10 @@
 # Informe interactivo en Power BI Desktop
 
-El archivo local listo para abrir es `Powerbi-scouting/Powerbi-scouting.pbix`. Incluye datos cargados. La versión reproducible es el PBIP de la misma carpeta.
+El informe explora siete perfiles de jugadores mediante filtros y pesos ajustables. La versión pública se reconstruye desde `Powerbi-scouting/Powerbi-scouting.pbip`. El PBIX con datos cargados solo existe en la copia local de trabajo; no está incluido en GitHub.
 
 ## Abrir y reproducir
 
-1. Generar los datos siguiendo el README del proyecto.
+1. Generar los datos siguiendo la [guía de reproducción](../docs/REPRODUCIR.md).
 2. Ejecutar `python -m src.build_powerbi` desde la raíz. Genera el PBIP, el modelo y `data/processed/qa_expected.csv`.
 3. Abrir `powerbi/Powerbi-scouting/Powerbi-scouting.pbip` con Power BI Desktop.
 4. Pulsar **Actualizar**. La primera apertura no contiene caché de datos.

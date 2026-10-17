@@ -119,7 +119,7 @@ Se reconciliaron 6.842 totales jugador-métrica con la base y las 387 puntuacion
 
 SCOUT-8/MOD-04 queda terminado como análisis exploratorio de estabilidad y contexto. Se conservan los rankings oficiales y se acompañan de estas limitaciones. Yoda y Burgui quedan identificados como candidatos de muestra reducida. No se incorporan automáticamente los ajustes de contexto al informe.
 
-Queda pendiente evaluar proveedores de datos actuales. La predicción en otra temporada, el ajuste con posesión medida en tiempo y la separación por marcador o rival requieren estudios adicionales fuera del alcance de esta entrega.
+La evaluación de proveedores actuales se aplaza como [posible ampliación](../FUTURO.md) fuera de la versión histórica finalizada. La predicción en otra temporada, el ajuste con posesión medida en tiempo y la separación por marcador o rival requieren estudios adicionales fuera del alcance de esta entrega.
 
 ## Reproducción
 
