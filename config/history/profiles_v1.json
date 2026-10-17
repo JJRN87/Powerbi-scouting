@@ -1,0 +1,13 @@
+{
+  "minimum_minutes": 900,
+  "minimum_role_share": 0.5,
+  "profiles": [
+    {"profile_id":"central","label":"Central","roles":["CB"],"weights":{"tackles_won_p90":20,"interceptions_p90":20,"aerial_wins_p90":20,"progressive_passes_p90":20,"pass_completion_pct":10,"dribbled_past_p90":10}},
+    {"profile_id":"lateral","label":"Lateral / carrilero","roles":["FB"],"weights":{"progressive_passes_p90":20,"progressive_carries_p90":20,"key_passes_p90":15,"dribbles_completed_p90":15,"tackles_won_p90":20,"interceptions_p90":10}},
+    {"profile_id":"pivote","label":"Pivote defensivo","roles":["DM","CM"],"weights":{"interceptions_p90":25,"tackles_won_p90":25,"recoveries_p90":15,"progressive_passes_p90":20,"pass_completion_pct":10,"dispossessed_p90":5}},
+    {"profile_id":"organizador","label":"Centrocampista organizador","roles":["DM","CM"],"weights":{"progressive_passes_p90":30,"key_passes_p90":25,"pass_completion_pct":20,"recoveries_p90":15,"dribbles_completed_p90":10}},
+    {"profile_id":"mediapunta","label":"Mediapunta / interior creativo","roles":["AM","CM"],"weights":{"xg_assisted_p90":25,"key_passes_p90":20,"progressive_passes_p90":20,"progressive_carries_p90":15,"dribbles_completed_p90":10,"npxg_p90":10}},
+    {"profile_id":"extremo","label":"Extremo","roles":["W"],"weights":{"dribbles_completed_p90":25,"progressive_carries_p90":20,"npxg_p90":20,"xg_assisted_p90":20,"key_passes_p90":15}},
+    {"profile_id":"delantero","label":"Delantero","roles":["ST"],"weights":{"npxg_p90":35,"non_penalty_goals_p90":20,"shots_p90":15,"xg_assisted_p90":15,"box_touches_p90":15}}
+  ]
+}

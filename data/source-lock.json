@@ -1,0 +1,8 @@
+{
+  "provider": "StatsBomb",
+  "repository": "https://github.com/statsbomb/open-data",
+  "commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+  "competition_id": 11,
+  "season_id": 27,
+  "created_utc": "2026-10-17T10:27:14.289873+00:00"
+}

@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+data/raw/
+data/processed/
+outputs/
+*.tmp
+.env
+.env.*
+!.env.example
+.venv/
+.codex/
+.agents/
+*.log
+

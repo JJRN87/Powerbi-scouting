@@ -1,0 +1,89 @@
+// Crear cada tabla por separado con Modelado > Nueva tabla.
+Peso1 = GENERATESERIES(0, 100, 1)
+
+Peso2 = GENERATESERIES(0, 100, 1)
+
+Peso3 = GENERATESERIES(0, 100, 1)
+
+Peso4 = GENERATESERIES(0, 100, 1)
+
+Peso5 = GENERATESERIES(0, 100, 1)
+
+Peso6 = GENERATESERIES(0, 100, 1)
+
+Peso7 = GENERATESERIES(0, 100, 1)
+
+Peso8 = GENERATESERIES(0, 100, 1)
+
+// Crear las siguientes medidas en rankings. Separadores DAX estándar (coma).
+Puntuacion interactiva =
+VAR UnCandidato = HASONEVALUE(rankings[candidate_id])
+VAR W1 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_1])), 0, SELECTEDVALUE(Peso1[Value], SELECTEDVALUE(rankings[weight_1])))
+VAR P1 = SELECTEDVALUE(rankings[percentile_1])
+VAR W2 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_2])), 0, SELECTEDVALUE(Peso2[Value], SELECTEDVALUE(rankings[weight_2])))
+VAR P2 = SELECTEDVALUE(rankings[percentile_2])
+VAR W3 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_3])), 0, SELECTEDVALUE(Peso3[Value], SELECTEDVALUE(rankings[weight_3])))
+VAR P3 = SELECTEDVALUE(rankings[percentile_3])
+VAR W4 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_4])), 0, SELECTEDVALUE(Peso4[Value], SELECTEDVALUE(rankings[weight_4])))
+VAR P4 = SELECTEDVALUE(rankings[percentile_4])
+VAR W5 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_5])), 0, SELECTEDVALUE(Peso5[Value], SELECTEDVALUE(rankings[weight_5])))
+VAR P5 = SELECTEDVALUE(rankings[percentile_5])
+VAR W6 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_6])), 0, SELECTEDVALUE(Peso6[Value], SELECTEDVALUE(rankings[weight_6])))
+VAR P6 = SELECTEDVALUE(rankings[percentile_6])
+VAR W7 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_7])), 0, SELECTEDVALUE(Peso7[Value], SELECTEDVALUE(rankings[weight_7])))
+VAR P7 = SELECTEDVALUE(rankings[percentile_7])
+VAR W8 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_8])), 0, SELECTEDVALUE(Peso8[Value], SELECTEDVALUE(rankings[weight_8])))
+VAR P8 = SELECTEDVALUE(rankings[percentile_8])
+VAR Faltan = (W1 > 0 && ISBLANK(P1)) || (W2 > 0 && ISBLANK(P2)) || (W3 > 0 && ISBLANK(P3)) || (W4 > 0 && ISBLANK(P4)) || (W5 > 0 && ISBLANK(P5)) || (W6 > 0 && ISBLANK(P6)) || (W7 > 0 && ISBLANK(P7)) || (W8 > 0 && ISBLANK(P8))
+VAR TotalPeso = W1 + W2 + W3 + W4 + W5 + W6 + W7 + W8
+RETURN IF(UnCandidato && NOT(Faltan) && TotalPeso > 0,
+    ROUND(DIVIDE(W1 * P1 + W2 * P2 + W3 * P3 + W4 * P4 + W5 * P5 + W6 * P6 + W7 * P7 + W8 * P8, TotalPeso), 8), BLANK())
+
+Ranking interactivo =
+VAR Actual = [Puntuacion interactiva]
+VAR Perfil = SELECTEDVALUE(rankings[profile_id])
+VAR Candidatos = FILTER(ALLSELECTED(rankings), rankings[profile_id] = Perfil)
+RETURN IF(HASONEVALUE(rankings[candidate_id]) && NOT(ISBLANK(Actual)),
+    RANKX(Candidatos, [Puntuacion interactiva], Actual, DESC, DENSE), BLANK())
+
+Cambio de puntuacion = [Puntuacion interactiva] - SELECTEDVALUE(rankings[score_base])
+
+Etiqueta peso 1 =
+VAR Perfil = SELECTEDVALUE(profiles[profile_id])
+VAR Metrica = LOOKUPVALUE(weights[metric_id], weights[profile_id], Perfil, weights[slot], 1)
+RETURN LOOKUPVALUE(metrics[label], metrics[metric_id], Metrica)
+
+Etiqueta peso 2 =
+VAR Perfil = SELECTEDVALUE(profiles[profile_id])
+VAR Metrica = LOOKUPVALUE(weights[metric_id], weights[profile_id], Perfil, weights[slot], 2)
+RETURN LOOKUPVALUE(metrics[label], metrics[metric_id], Metrica)
+
+Etiqueta peso 3 =
+VAR Perfil = SELECTEDVALUE(profiles[profile_id])
+VAR Metrica = LOOKUPVALUE(weights[metric_id], weights[profile_id], Perfil, weights[slot], 3)
+RETURN LOOKUPVALUE(metrics[label], metrics[metric_id], Metrica)
+
+Etiqueta peso 4 =
+VAR Perfil = SELECTEDVALUE(profiles[profile_id])
+VAR Metrica = LOOKUPVALUE(weights[metric_id], weights[profile_id], Perfil, weights[slot], 4)
+RETURN LOOKUPVALUE(metrics[label], metrics[metric_id], Metrica)
+
+Etiqueta peso 5 =
+VAR Perfil = SELECTEDVALUE(profiles[profile_id])
+VAR Metrica = LOOKUPVALUE(weights[metric_id], weights[profile_id], Perfil, weights[slot], 5)
+RETURN LOOKUPVALUE(metrics[label], metrics[metric_id], Metrica)
+
+Etiqueta peso 6 =
+VAR Perfil = SELECTEDVALUE(profiles[profile_id])
+VAR Metrica = LOOKUPVALUE(weights[metric_id], weights[profile_id], Perfil, weights[slot], 6)
+RETURN LOOKUPVALUE(metrics[label], metrics[metric_id], Metrica)
+
+Etiqueta peso 7 =
+VAR Perfil = SELECTEDVALUE(profiles[profile_id])
+VAR Metrica = LOOKUPVALUE(weights[metric_id], weights[profile_id], Perfil, weights[slot], 7)
+RETURN LOOKUPVALUE(metrics[label], metrics[metric_id], Metrica)
+
+Etiqueta peso 8 =
+VAR Perfil = SELECTEDVALUE(profiles[profile_id])
+VAR Metrica = LOOKUPVALUE(weights[metric_id], weights[profile_id], Perfil, weights[slot], 8)
+RETURN LOOKUPVALUE(metrics[label], metrics[metric_id], Metrica)
