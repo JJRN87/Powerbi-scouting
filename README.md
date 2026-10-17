@@ -20,13 +20,15 @@ El trabajo documenta las decisiones y sus límites. La revisión técnica automa
 | Informe ejecutado en Power BI Desktop | Pendiente; no se entrega PBIX |
 | Validación predictiva y valoración económica | Fuera del alcance actual |
 
-El [resumen de proyecto](docs/PROYECTO.md) contiene el contenido inicial para Confluence. El [backlog](docs/backlog.json) recoge el trabajo realizado y pendiente para Jira; su presencia en este repositorio no implica que se haya publicado en Atlassian.
+El proyecto cuenta con documentación en Confluence y seguimiento en Jira, ambos sujetos al acceso del sitio de Atlassian. La [metodología](docs/METODOLOGIA.md), el [resumen de proyecto](docs/PROYECTO.md), la [guía de explicación](docs/EXPLICACION.md) y una [instantánea del backlog](docs/backlog.json) están disponibles públicamente en este repositorio.
 
 ## Entorno
 
 Base analítica local de StatsBomb Open Data para explorar perfiles de jugadores con pesos editables. Python 3.10+; el proceso de datos usa únicamente la biblioteca estándar, sin instalación de paquetes.
 
 ## Empezar
+
+Si acabas de clonar este repositorio, ejecuta primero los comandos de **Reproducir**: los datos y los informes generados no están incluidos en GitHub. Después:
 
 1. Abrir `outputs/revisar_rankings.html` en un navegador. Elegir perfil, ajustar pesos y pulsar un jugador para ver el desglose. Funciona sin conexión.
 2. Leer `outputs/VALIDACION.md` para ver los diez primeros de cada perfil y su sensibilidad a cambios de pesos.
@@ -50,7 +52,7 @@ La primera descarga necesita Internet. Las siguientes reutilizan archivos en cac
 
 Para cambiar pesos de forma permanente: editar `config/profiles.json`, ejecutar `python -m src.build` y actualizar Power BI. Los cambios del visor son temporales y no modifican el fichero de configuración. El mínimo de referencia inicial es 900 minutos y la fracción mínima de tiempo en los roles es 50%. Si se cambia esta configuración, se reconstruyen los percentiles y la cohorte.
 
-## Qué se entrega
+## Archivos y resultados que se generan
 
 | Ruta | Contenido |
 |---|---|

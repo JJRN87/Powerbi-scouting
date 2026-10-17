@@ -46,7 +46,7 @@ El organizador v2 separa creación abierta y balón parado, e incorpora xG de ti
 
 La siguiente entrega requiere ejecutar el modelo en Power BI Desktop y comprobar filtros, relaciones y paridad con Python. Después se revisarán los siete perfiles y se estudiará estabilidad por partidos y contexto de equipo. Una decisión sobre proveedores actuales requerirá comparar cobertura, definiciones y condiciones de uso.
 
-Una tarea se cierra cuando su criterio de aceptación tiene evidencia reproducible. Jira debe recoger estado, dependencias y enlaces a cambios; Confluence conserva alcance, metodología y decisiones. Las tareas propuestas están en [backlog.json](backlog.json), con identificadores locales que deberán vincularse a las claves reales de Jira.
+Una tarea se cierra cuando su criterio de aceptación tiene evidencia reproducible. Jira recoge las tareas con criterios y referencias; Confluence conserva alcance, metodología y decisiones. El [backlog público](backlog.json) conserva 11 tareas con identificadores locales. Estado al publicar: siete terminadas y cuatro pendientes; se conserva el trabajo previo sin inventar sprints ni fechas de ejecución históricas.
 
 ## Uso de IA y presentación profesional
 
