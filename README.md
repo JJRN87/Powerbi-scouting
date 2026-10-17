@@ -4,6 +4,14 @@ Mi objetivo es usar datos de fútbol para localizar jugadores que encajen en lo 
 
 La pregunta es: **¿cómo cambia la selección de candidatos cuando cambia lo que buscamos en una posición?** Se comparan siete perfiles mediante percentiles y pesos editables. Un jugador puede encajar en varios perfiles; la puntuación no determina por sí sola su mejor posición ni garantiza rendimiento futuro.
 
+**Para recorrer el portfolio:** [documentación](docs/README.md) · [capturas de Power BI, Jira y Confluence](docs/evidencias/README.md) · [revisión de pivote y delantero](docs/analisis/PIVOTE_Y_DELANTERO.md) · [forma de trabajo](docs/gestion/FORMA_DE_TRABAJO.md).
+
+Datos: StatsBomb Open Data. Análisis propio, sin afiliación al proveedor.
+
+<img src="docs/assets/statsbomb-logo.png" width="230" alt="StatsBomb">
+
+![Informe interactivo en Power BI Desktop](docs/evidencias/capturas/powerbi-ranking-base.png)
+
 ## Desarrollo asistido por IA
 
 He preparado este proyecto con ayuda de IA y no quiero ocultarlo. Mi parte ha sido definir lo que quería buscar, pedir la separación de creación en juego abierto y a balón parado y cuestionar resultados como el de André Gomes por delante de Kroos y Trashorras. La IA ha ayudado con la implementación, la documentación y las comprobaciones. El código y las reglas quedan disponibles para poder entenderlos y reproducirlos.
@@ -12,7 +20,9 @@ El trabajo documenta las decisiones y sus límites. La revisión técnica automa
 
 ## Estado del proyecto
 
-La parte técnica de Power BI está terminada y comprobada en Desktop. Las 1.359 comparaciones con Python, repartidas en seis escenarios, no muestran diferencias. El seguimiento queda en ocho tareas terminadas y tres pendientes: revisar futbolísticamente los perfiles, estudiar estabilidad por partidos y decidir si merece la pena pagar por datos actuales. El [resumen de validación](docs/VALIDACION_POWERBI.md) explica las pruebas y sus límites.
+La parte técnica de Power BI está terminada y comprobada en Desktop. Las 1.359 comparaciones con Python, repartidas en seis escenarios, no muestran diferencias. El seguimiento queda en ocho tareas terminadas, una en curso (revisión futbolística de perfiles) y dos por hacer (estabilidad por partidos y evaluación de datos actuales). El [resumen de validación](docs/VALIDACION_POWERBI.md) explica las pruebas y sus límites.
+
+La [revisión de pivote y delantero](docs/analisis/PIVOTE_Y_DELANTERO.md) añade 40.000 simulaciones, 108 puntuaciones base reconciliadas y 48 comprobaciones directas de métricas sin diferencias. Se mantienen los pesos oficiales; las alternativas están documentadas como escenarios. Los perfiles restantes y la validación por partidos siguen abiertos.
 
 | Componente | Estado |
 |---|---|
@@ -23,6 +33,8 @@ La parte técnica de Power BI está terminada y comprobada en Desktop. Las 1.359
 | Validación predictiva y valoración económica | Fuera del alcance actual |
 
 El proyecto cuenta con documentación en Confluence y seguimiento en Jira, ambos sujetos al acceso del sitio de Atlassian. La [metodología](docs/METODOLOGIA.md), el [resumen de proyecto](docs/PROYECTO.md), la [guía de explicación](docs/EXPLICACION.md) y una [instantánea del backlog](docs/backlog.json) están disponibles públicamente en este repositorio.
+
+Se usan prácticas de trabajo iterativo y criterios de aceptación; no se presenta como Scrum completo. La [forma de trabajo](docs/gestion/FORMA_DE_TRABAJO.md) distingue lo realizado de lo propuesto.
 
 ## Entorno
 
@@ -49,6 +61,8 @@ python -m unittest discover -s tests -v
 python -m src.validate
 python -m src.analyze_organizer
 python -m src.build_powerbi
+python -m src.analyze_profiles
+python -m src.verify_review_players
 ```
 
 La primera descarga necesita Internet. Las siguientes reutilizan archivos en caché. La reconstrucción y las validaciones funcionan sin conexión. La descarga fija un commit del repositorio en `data/source-lock.json`; no cambia de versión en cada ejecución. La descarga completa ocupa varios cientos de MB antes de comprimir; se conserva comprimida localmente.
@@ -73,13 +87,13 @@ Para cambiar pesos de forma permanente: editar `config/profiles.json`, ejecutar 
 
 ## Revisión propuesta
 
-Primero revisar el organizador, el pivote y el delantero. Para cada perfil, valorar los primeros diez jugadores, los atributos que los favorecen y los jugadores que sorprenden. Cambiar un peso cada vez, observar el orden y guardar los pesos acordados en la configuración. La familiaridad de los nombres no demuestra que el modelo sea correcto: revisar también minutos, rol y contexto del equipo.
+Organizador, pivote y delantero ya tienen una primera revisión documentada. Faltan central, lateral, mediapunta y extremo y confirmar las preferencias finales. Para cada perfil se revisan los primeros candidatos, los atributos que los favorecen y los resultados que sorprenden. La familiaridad de los nombres no demuestra que el modelo sea correcto: también importan minutos, rol y contexto del equipo.
 
 Los pesos son hipótesis de scouting, no coeficientes aprendidos ni garantías de rendimiento. La validación técnica y la sensibilidad están automatizadas; la validación futbolística sigue pendiente. No se incluyen salarios, precios ni valoraciones económicas.
 
 ## Fuente y uso
 
-Datos: [StatsBomb Open Data](https://github.com/statsbomb/open-data), competición 11, temporada 27. Consultar la copia exacta de `data/raw/LICENSE.pdf`. El proyecto está preparado para análisis local de investigación. La licencia del conjunto limita el uso comercial y la redistribución de datos; la publicación de análisis requiere la atribución y el logotipo indicados por StatsBomb. Los datos y resultados derivados están excluidos del control de versiones mediante `.gitignore`.
+Datos: [StatsBomb Open Data](https://github.com/statsbomb/open-data), competición 11, temporada 27. Consultar la copia exacta de `data/raw/LICENSE.pdf`. El proyecto está preparado para investigación. Los eventos, la base y las tablas completas quedan excluidos del control de versiones; se publican resúmenes de análisis y capturas con atribución al proveedor. Ver [atribución](docs/assets/ATRIBUCION.md) antes de reutilizar el contenido.
 
 El motor de puntuación está separado del procesamiento de eventos. Incorporar otro proveedor requerirá un adaptador y comprobar equivalencias de métricas; no se deben mezclar automáticamente definiciones diferentes.
 

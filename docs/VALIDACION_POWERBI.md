@@ -42,7 +42,7 @@ El PBIX con los datos cargados se conserva localmente en `powerbi/Powerbi-scouti
 
 ## Qué queda pendiente
 
-El seguimiento queda en ocho tareas terminadas y tres pendientes:
+En el cierre de Desktop quedaron ocho tareas terminadas y tres pendientes. Después se inició la revisión de perfiles: el estado actual es ocho terminadas, una en curso y dos por hacer. Las tres líneas abiertas son:
 
 1. Revisar futbolísticamente los siete perfiles: justificar atributos y pesos y revisar resultados inesperados sin ajustar el modelo para que salgan nombres concretos.
 2. Estudiar la estabilidad por partidos y el contexto de equipo. Cambiar pesos mide nuestras preferencias; todavía falta medir cuánto depende el resultado de la muestra de partidos.

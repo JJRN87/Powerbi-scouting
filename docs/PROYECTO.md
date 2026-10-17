@@ -46,7 +46,7 @@ El organizador v2 separa creación abierta y balón parado, e incorpora xG de ti
 
 Queda revisar futbolísticamente los siete perfiles y estudiar estabilidad por partidos y contexto de equipo. Una decisión sobre proveedores actuales requerirá comparar cobertura, definiciones y condiciones de uso.
 
-Una tarea se cierra cuando su criterio de aceptación tiene evidencia reproducible. Jira recoge las tareas con criterios y referencias; Confluence conserva alcance, metodología y decisiones. El [backlog público](backlog.json) conserva 11 tareas con identificadores locales. Estado tras validar Desktop: ocho terminadas y tres pendientes; BI-01 cerrado en Jira. El detalle de la entrega está en [VALIDACION_POWERBI.md](VALIDACION_POWERBI.md). Se conserva el trabajo previo sin inventar sprints ni fechas de ejecución históricas.
+Una tarea se cierra cuando su criterio de aceptación tiene evidencia reproducible. Jira recoge las tareas con criterios y referencias; Confluence conserva alcance, metodología y decisiones. El [backlog público](backlog.json) conserva 11 tareas con identificadores locales. Estado actual: ocho terminadas, una en curso y dos por hacer; BI-01 cerrado y MOD-03 en curso en Jira. El detalle de la entrega está en [VALIDACION_POWERBI.md](VALIDACION_POWERBI.md). Se conserva el trabajo previo sin inventar sprints ni fechas de ejecución históricas.
 
 ## Uso de IA y presentación profesional
 
@@ -55,3 +55,7 @@ La IA participa en implementación, documentación y comprobaciones. El autor de
 ## Publicación
 
 El destino solicitado es un repositorio público llamado Powerbi-scouting. El contenido publicable comprende código, configuración, pruebas, instrucciones de reproducción y documentación. Los datos originales, la base, los CSV de resultados y el visor generado permanecen fuera de Git por las reglas del proyecto. La fuente y las condiciones de uso se documentan en el README y en la licencia descargada de StatsBomb. La licencia del código propio queda por decidir; no se atribuye la licencia de los datos al código.
+
+## Revisión de pivote y delantero
+
+La [revisión documentada](analisis/PIVOTE_Y_DELANTERO.md) incluye 40.000 simulaciones y comprobaciones directas de candidatos destacados. Conserva los pesos oficiales y distingue validación técnica, preferencia futbolística e incertidumbre por partidos. La [galería](evidencias/README.md) muestra Power BI, Jira y Confluence; la [forma de trabajo](gestion/FORMA_DE_TRABAJO.md) explica las prácticas ágiles realmente utilizadas.

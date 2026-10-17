@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-17",
+  "status": "technical_checks_passed_functional_review_provisional",
+  "seed": 20261017,
+  "samples_per_profile_per_box": 10000,
+  "random_scenarios_total": 40000,
+  "input_sha256": {
+    "config/profiles.json": "ccb0319f116a27cadc8c983f4d85bad3450a31b1302dd4c910283127630910f0",
+    "data/processed/football.sqlite": "6e3e4d37a101ca6aad5a6f76996767f7f819c0b76ab7e25f38b86da8aa166e86",
+    "data/processed/rankings.csv": "7a8b23e945be14cc2512763f5be34fb76d6f460ce79d5e542ff5c3aa94281634"
+  },
+  "production_unchanged": true,
+  "baseline_comparisons": 108,
+  "baseline_errors": 0,
+  "unit_tests_passed": 13,
+  "direct_event_check": {
+    "event_files_scanned": 380,
+    "players": [
+      {
+        "player": "Sergio Busquets",
+        "metrics_checked": 6,
+        "passed": true
+      },
+      {
+        "player": "Luis Suárez",
+        "metrics_checked": 6,
+        "passed": true
+      },
+      {
+        "player": "Kévin Gameiro",
+        "metrics_checked": 6,
+        "passed": true
+      },
+      {
+        "player": "Asier Illarramendi",
+        "metrics_checked": 6,
+        "passed": true
+      },
+      {
+        "player": "Imanol Agirretxe",
+        "metrics_checked": 6,
+        "passed": true
+      },
+      {
+        "player": "Ignacio Camacho",
+        "metrics_checked": 6,
+        "passed": true
+      },
+      {
+        "player": "Augusto Fernández",
+        "metrics_checked": 6,
+        "passed": true
+      },
+      {
+        "player": "Karim Benzema",
+        "metrics_checked": 6,
+        "passed": true
+      }
+    ],
+    "comparisons": 48,
+    "errors": 0,
+    "scope": "Recuento directo de seis métricas para ocho jugadores, sin llamar al agregador del proyecto. No valida cada métrica ni el rendimiento futuro."
+  },
+  "results_sha256": "3d7465312215fe00aa671bba7a0e8d3eeefc6b7530131471356dce8da6cdafc3",
+  "profiles": [
+    {
+      "profile_id": "pivote",
+      "cohort_size": 66,
+      "leader_certificates": [
+        {
+          "spread": 0.2,
+          "strict_first_proven": true,
+          "conservative_score_margin_lower_bound": 9.595959595959597,
+          "rival_id": 8234
+        },
+        {
+          "spread": 0.5,
+          "strict_first_proven": true,
+          "conservative_score_margin_lower_bound": 1.8181818181818175,
+          "rival_id": 5574
+        }
+      ]
+    },
+    {
+      "profile_id": "delantero",
+      "cohort_size": 42,
+      "leader_certificates": [
+        {
+          "spread": 0.2,
+          "strict_first_proven": true,
+          "conservative_score_margin_lower_bound": 2.1428571428571446,
+          "rival_id": 19677
+        },
+        {
+          "spread": 0.5,
+          "strict_first_proven": true,
+          "conservative_score_margin_lower_bound": 0.2380952380952392,
+          "rival_id": 19677
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Fixed cohort/percentiles; no match bootstrap or possession adjustment.",
+    "Weights remain provisional; no production changes or new DAX tests.",
+    "Top-10 frequencies use dense rank and may include more than ten players."
+  ]
+}
