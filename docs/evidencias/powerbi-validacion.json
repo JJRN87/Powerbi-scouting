@@ -1,0 +1,94 @@
+{
+  "status": "passed",
+  "validated_at": "2026-10-17",
+  "environment": "Power BI Desktop, actual refresh and native UI",
+  "powerbi_engine_tested": true,
+  "comparisons": 1359,
+  "scenarios": [
+    {
+      "scenario": "Base",
+      "candidates": 387,
+      "expected": 387,
+      "score_errors": 0,
+      "rank_errors": 0,
+      "cohort_errors": 0
+    },
+    {
+      "scenario": "Ceros",
+      "candidates": 387,
+      "expected": 387,
+      "score_errors": 0,
+      "rank_errors": 0,
+      "cohort_errors": 0
+    },
+    {
+      "scenario": "Solo progresion",
+      "candidates": 387,
+      "expected": 387,
+      "score_errors": 0,
+      "rank_errors": 0,
+      "cohort_errors": 0
+    },
+    {
+      "scenario": "Organizador 32 y 8",
+      "candidates": 66,
+      "expected": 66,
+      "score_errors": 0,
+      "rank_errors": 0,
+      "cohort_errors": 0
+    },
+    {
+      "scenario": "Organizador 35 y 5",
+      "candidates": 66,
+      "expected": 66,
+      "score_errors": 0,
+      "rank_errors": 0,
+      "cohort_errors": 0
+    },
+    {
+      "scenario": "Organizador xG 25",
+      "candidates": 66,
+      "expected": 66,
+      "score_errors": 0,
+      "rank_errors": 0,
+      "cohort_errors": 0
+    }
+  ],
+  "ui_checks": {
+    "profile_switch": "organizador (66) -> delantero (42) -> organizador",
+    "weight_change_35_5": {
+      "Kroos": {
+        "rank": 3,
+        "display_score": 78.24
+      },
+      "Trashorras": {
+        "rank": 4,
+        "display_score": 74.61
+      },
+      "Andre Gomes": {
+        "rank": 5,
+        "display_score": 73.61
+      }
+    },
+    "team_filter": "Barcelona: 4 candidates, ranks 1-4; scores unchanged",
+    "weight_clear": "Restored base ranks and scores",
+    "saved_default": "organizador, all teams, no custom weights"
+  },
+  "evidence": [
+    "outputs/powerbi-validacion.png",
+    "outputs/powerbi-ranking-base.png",
+    "outputs/powerbi-escenario-35-5.png"
+  ],
+  "sha256": {
+    "powerbi/Powerbi-scouting/Powerbi-scouting.pbix": "b3587a072c95e0738795e4e034ea1b81787887d4e07a8aa9433b463144b93508",
+    "powerbi/Powerbi-scouting/Scouting.SemanticModel/model.bim": "b32c2596c81060de60da97458844ac68bc05f33eac6c8f3312f34c2def674370",
+    "data/processed/rankings.csv": "7a8b23e945be14cc2512763f5be34fb76d6f460ce79d5e542ff5c3aa94281634",
+    "data/processed/qa_expected.csv": "88873d8f340fec28ab4ad9f4f9a3ef981885a33084b27da150a141b679f9366f",
+    "config/profiles.json": "ccb0319f116a27cadc8c983f4d85bad3450a31b1302dd4c910283127630910f0"
+  },
+  "limitations": [
+    "Fixed current season percentiles; not predictive validation.",
+    "The UI was exercised on representative profiles/weights; all base profiles and six scenarios checked in DAX."
+  ],
+  "evidence_scope": "Registro de la sesion de Desktop del 17/10/2026. Las capturas referenciadas se conservan localmente; no forman parte del repositorio."
+}

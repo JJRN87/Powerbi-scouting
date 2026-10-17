@@ -11,7 +11,7 @@ Los perfiles son central, lateral, pivote, organizador, mediapunta, extremo y de
 1. `src.download` obtiene eventos, alineaciones y partidos de un commit fijo de StatsBomb. Conserva originales comprimidos y hashes SHA-256.
 2. `src.build` relaciona entidades por identificadores, calcula intervalos de participación y agrega métricas por partido y temporada.
 3. Las tablas SQLite y CSV alimentan el cálculo de percentiles por perfil y el ranking ponderado.
-4. El visor HTML permite inspeccionar contribuciones y variar pesos. Power Query y DAX preparan la integración en Power BI.
+4. El visor HTML permite inspeccionar contribuciones y variar pesos. El informe nativo de Power BI usa Power Query y DAX para filtrar perfiles y equipos y recalcular rankings con pesos ajustables.
 5. `src.validate` contrasta integridad, agregaciones y puntuaciones. `src.analyze_organizer` reproduce el análisis de sensibilidad del organizador.
 
 ## Limpieza y controles
@@ -34,7 +34,7 @@ No se eliminan valores extremos porque un jugador sobresalga. Los controles veri
 
 El 17 de octubre de 2026 se repitieron con éxito las 10 pruebas unitarias y `src.validate`: 764 archivos fuente con hash verificado, 539 jugadores reconciliados y 387 puntuaciones de candidatos verificadas. La auditoría de construcción registra 380 partidos, 20 equipos, 1.295.354 eventos y reconciliación del marcador en los 380 partidos. El contraste independiente directo de pases, tiros y creación cubre cinco partidos distribuidos en la temporada.
 
-El informe existente de pruebas del visor registra paridad de puntuaciones, pesos nulos, cambios de orden, detalle del jugador, filtros vacíos y anchura móvil. Power BI Desktop sigue pendiente de ejecución y comprobación. Los informes locales se regeneran en `outputs/`; no se distribuye el conjunto de datos en GitHub.
+El informe existente de pruebas del visor registra paridad de puntuaciones, pesos nulos, cambios de orden, detalle del jugador, filtros vacíos y anchura móvil. Power BI Desktop se ha ejecutado y guardado como PBIP y PBIX: seis escenarios, 1.359 comparaciones con Python y cero errores de puntuación, puesto o cohorte. Se han probado cambios de perfil, pesos y equipo en la interfaz. La evidencia de esta sesión está en `outputs/powerbi-verification.json` y sus capturas; la página de validación del informe permite repetir las comprobaciones DAX. No se distribuye el conjunto de datos en GitHub.
 
 ## Decisiones analíticas
 
@@ -44,9 +44,9 @@ El organizador v2 separa creación abierta y balón parado, e incorpora xG de ti
 
 ## Trabajo pendiente y criterio de cierre
 
-La siguiente entrega requiere ejecutar el modelo en Power BI Desktop y comprobar filtros, relaciones y paridad con Python. Después se revisarán los siete perfiles y se estudiará estabilidad por partidos y contexto de equipo. Una decisión sobre proveedores actuales requerirá comparar cobertura, definiciones y condiciones de uso.
+Queda revisar futbolísticamente los siete perfiles y estudiar estabilidad por partidos y contexto de equipo. Una decisión sobre proveedores actuales requerirá comparar cobertura, definiciones y condiciones de uso.
 
-Una tarea se cierra cuando su criterio de aceptación tiene evidencia reproducible. Jira recoge las tareas con criterios y referencias; Confluence conserva alcance, metodología y decisiones. El [backlog público](backlog.json) conserva 11 tareas con identificadores locales. Estado al publicar: siete terminadas y cuatro pendientes; se conserva el trabajo previo sin inventar sprints ni fechas de ejecución históricas.
+Una tarea se cierra cuando su criterio de aceptación tiene evidencia reproducible. Jira recoge las tareas con criterios y referencias; Confluence conserva alcance, metodología y decisiones. El [backlog público](backlog.json) conserva 11 tareas con identificadores locales. Estado tras validar Desktop: ocho terminadas y tres pendientes; BI-01 cerrado en Jira. El detalle de la entrega está en [VALIDACION_POWERBI.md](VALIDACION_POWERBI.md). Se conserva el trabajo previo sin inventar sprints ni fechas de ejecución históricas.
 
 ## Uso de IA y presentación profesional
 

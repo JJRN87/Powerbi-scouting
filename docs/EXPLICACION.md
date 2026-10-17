@@ -26,10 +26,10 @@ La sorpresa en el ranking llevó a descomponer sus contribuciones y probar otros
 
 ## Qué está validado y qué falta
 
-Se han comprobado integridad de archivos, cobertura, marcadores, agregaciones y fórmulas. El contraste independiente de eventos incluye una muestra de cinco partidos. Falta validar el informe en Power BI Desktop, revisar futbolísticamente los pesos y evaluar estabilidad por partidos. No hay validación predictiva ni ajustes por posesión o nivel del rival.
+Se han comprobado integridad de archivos, cobertura, marcadores, agregaciones y fórmulas. El contraste independiente de eventos incluye una muestra de cinco partidos. El informe se ha ejecutado en Power BI Desktop: seis escenarios y 1.359 comparaciones con Python sin diferencias, además de pruebas de filtros y cambios de pesos en la interfaz. Falta revisar futbolísticamente los pesos y evaluar estabilidad por partidos. No hay validación predictiva ni ajustes por posesión o nivel del rival.
 
 ## Cómo describir la contribución y la IA
 
-Una formulación coherente con el trabajo realizado es: «Proyecto de scouting histórico desarrollado con asistencia de IA. Definí el objetivo y participé en la revisión de métricas y sensibilidad de los rankings. El proceso incorpora limpieza documentada, controles reproducibles y tablas y medidas preparadas para Power BI; la ejecución del informe en Desktop está pendiente».
+Una formulación coherente con el trabajo realizado es: «Proyecto de scouting histórico desarrollado con asistencia de IA. Definí el objetivo y participé en la revisión de métricas y sensibilidad de los rankings. El proceso incorpora limpieza documentada, controles reproducibles y un informe interactivo en Power BI Desktop con pesos ajustables y rankings contrastados con Python».
 
 Antes de usarlo en una entrevista, conviene poder reproducir un cálculo, explicar una exclusión y justificar un cambio de pesos. La documentación sirve para practicar estas explicaciones; no sustituye la comprensión del autor.

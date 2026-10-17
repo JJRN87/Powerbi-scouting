@@ -1,23 +1,25 @@
 # Powerbi-scouting
 
-Proyecto de portfolio para explorar qué jugadores encajan mejor en un perfil futbolístico según los atributos que se prioricen. Utiliza StatsBomb Open Data de LaLiga 2015/16, un proceso reproducible en Python, una base SQLite y tablas preparadas para Power BI.
+Mi objetivo es usar datos de fútbol para localizar jugadores que encajen en lo que busco para una posición. La idea parte de Moneyball: elegir atributos, darles una importancia y ver qué candidatos aparecen arriba, pudiendo explicar por qué. Para empezar uso StatsBomb Open Data de LaLiga 2015/16, Python, SQLite y un informe interactivo en Power BI Desktop.
 
 La pregunta es: **¿cómo cambia la selección de candidatos cuando cambia lo que buscamos en una posición?** Se comparan siete perfiles mediante percentiles y pesos editables. Un jugador puede encajar en varios perfiles; la puntuación no determina por sí sola su mejor posición ni garantiza rendimiento futuro.
 
 ## Desarrollo asistido por IA
 
-El proyecto se desarrolla con asistencia de IA para programar, documentar y ejecutar comprobaciones. La intervención del autor incluye definir el objetivo, revisar decisiones metodológicas, pedir la separación de creación en juego abierto y a balón parado e investigar la sensibilidad de resultados inesperados. El código generado se acompaña de pruebas y reglas explícitas para poder inspeccionarlo y reproducirlo.
+He preparado este proyecto con ayuda de IA y no quiero ocultarlo. Mi parte ha sido definir lo que quería buscar, pedir la separación de creación en juego abierto y a balón parado y cuestionar resultados como el de André Gomes por delante de Kroos y Trashorras. La IA ha ayudado con la implementación, la documentación y las comprobaciones. El código y las reglas quedan disponibles para poder entenderlos y reproducirlos.
 
 El trabajo documenta las decisiones y sus límites. La revisión técnica automatizada no equivale a una auditoría manual de cada evento ni a una validación futbolística definitiva. La [guía de explicación](docs/EXPLICACION.md) recoge preguntas y respuestas que ayudan a comprender y defender el proyecto.
 
 ## Estado del proyecto
 
+La parte técnica de Power BI está terminada y comprobada en Desktop. Las 1.359 comparaciones con Python, repartidas en seis escenarios, no muestran diferencias. El seguimiento queda en ocho tareas terminadas y tres pendientes: revisar futbolísticamente los perfiles, estudiar estabilidad por partidos y decidir si merece la pena pagar por datos actuales. El [resumen de validación](docs/VALIDACION_POWERBI.md) explica las pruebas y sus límites.
+
 | Componente | Estado |
 |---|---|
 | Ingesta, transformación y controles de datos | Implementados y comprobados localmente |
 | Rankings y visor HTML interactivo | Implementados; pesos en revisión |
-| Tablas, Power Query y medidas DAX | Preparados |
-| Informe ejecutado en Power BI Desktop | Pendiente; no se entrega PBIX |
+| Tablas, Power Query y medidas DAX | Ejecutados en Desktop y comparados con Python |
+| Informe ejecutado en Power BI Desktop | Proyecto PBIP interactivo; seis escenarios de regresión sin diferencias |
 | Validación predictiva y valoración económica | Fuera del alcance actual |
 
 El proyecto cuenta con documentación en Confluence y seguimiento en Jira, ambos sujetos al acceso del sitio de Atlassian. La [metodología](docs/METODOLOGIA.md), el [resumen de proyecto](docs/PROYECTO.md), la [guía de explicación](docs/EXPLICACION.md) y una [instantánea del backlog](docs/backlog.json) están disponibles públicamente en este repositorio.
@@ -32,9 +34,9 @@ Si acabas de clonar este repositorio, ejecuta primero los comandos de **Reproduc
 
 1. Abrir `outputs/revisar_rankings.html` en un navegador. Elegir perfil, ajustar pesos y pulsar un jugador para ver el desglose. Funciona sin conexión.
 2. Leer `outputs/VALIDACION.md` para ver los diez primeros de cada perfil y su sensibilidad a cambios de pesos.
-3. Seguir `powerbi/LEEME.md` para importar las tablas y activar las medidas interactivas.
+3. Ejecutar `python -m src.build_powerbi`, abrir `powerbi/Powerbi-scouting/Powerbi-scouting.pbip` en Desktop y pulsar Actualizar. Ver `powerbi/LEEME.md`.
 
-**Esto prepara los datos, las consultas y las medidas para Power BI. No incluye un archivo PBIX ni un informe ya ejecutado en Power BI Desktop.** El visor local permite comenzar la revisión de los pesos inmediatamente.
+El informe nativo contiene selección de perfil y equipo, ocho pesos ajustables y una página de validación Python–DAX. Los datos, la caché del modelo y el PBIX local no se distribuyen en GitHub. El proyecto PBIP y su generador permiten reproducirlo.
 
 ## Reproducir
 
@@ -46,11 +48,12 @@ python -m src.build
 python -m unittest discover -s tests -v
 python -m src.validate
 python -m src.analyze_organizer
+python -m src.build_powerbi
 ```
 
 La primera descarga necesita Internet. Las siguientes reutilizan archivos en caché. La reconstrucción y las validaciones funcionan sin conexión. La descarga fija un commit del repositorio en `data/source-lock.json`; no cambia de versión en cada ejecución. La descarga completa ocupa varios cientos de MB antes de comprimir; se conserva comprimida localmente.
 
-Para cambiar pesos de forma permanente: editar `config/profiles.json`, ejecutar `python -m src.build` y actualizar Power BI. Los cambios del visor son temporales y no modifican el fichero de configuración. El mínimo de referencia inicial es 900 minutos y la fracción mínima de tiempo en los roles es 50%. Si se cambia esta configuración, se reconstruyen los percentiles y la cohorte.
+Para cambiar pesos de forma permanente: editar `config/profiles.json`, ejecutar `python -m src.build` y `python -m src.build_powerbi`, cerrar y reabrir el PBIP y actualizar Power BI. El generador reconstruye el diseño: guardar aparte los cambios visuales manuales que se quieran conservar. Los cambios del visor son temporales y no modifican el fichero de configuración. El mínimo de referencia inicial es 900 minutos y la fracción mínima de tiempo en los roles es 50%. Si se cambia esta configuración, se reconstruyen los percentiles y la cohorte.
 
 ## Archivos y resultados que se generan
 
@@ -64,6 +67,8 @@ Para cambiar pesos de forma permanente: editar `config/profiles.json`, ejecutar 
 | `outputs/audit.json` | Auditoría de cobertura y reconciliación de goles. |
 | `powerbi/Fuente.pq` | Importador Power Query con tipos explícitos y lectura de nulos. |
 | `powerbi/Medidas.dax` | Parámetros de peso, puntuación y ranking interactivos. |
+| `powerbi/Powerbi-scouting/` | Informe PBIP/PBIR y modelo semántico con dos páginas. |
+| `src/build_powerbi.py` | Generador del informe y de la referencia de regresión DAX. |
 | `docs/METODOLOGIA.md` | Definiciones, decisiones estadísticas y límites. |
 
 ## Revisión propuesta
@@ -81,4 +86,4 @@ El motor de puntuación está separado del procesamiento de eventos. Incorporar 
 
 ## Organizador actualizado (v2)
 
-El organizador separa volumen y xG asistido en juego abierto y a balón parado, con ocho pesos editables. Consultar `outputs/ORGANIZADOR_V2.md` para comparar los 66 candidatos con el perfil original y con la simulación 40/5. Los otros perfiles se conservan. En Power BI es necesario actualizar el importador y las medidas, añadir Peso7/Peso8 y borrar las selecciones anteriores de pesos.
+El organizador separa volumen y xG asistido en juego abierto y a balón parado, con ocho pesos editables. Consultar `outputs/ORGANIZADOR_V2.md` para comparar los 66 candidatos con el perfil original y con la simulación 40/5. Los otros perfiles se conservan. El informe nativo incorpora los ocho controles. Al cambiar de perfil hay que limpiar las selecciones de pesos para recuperar los valores base del nuevo perfil.

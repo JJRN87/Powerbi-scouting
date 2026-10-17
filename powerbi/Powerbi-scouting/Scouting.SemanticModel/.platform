@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Powerbi-scouting"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a0d339e1-63e3-4c4a-aba0-9791fe0f7d9f"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "f6c3ea8f3e5ee0da0ee4",
+  "position": {
+    "x": 24,
+    "y": 700,
+    "z": 0,
+    "height": 230,
+    "width": 1510,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Base: 387 candidatos en siete perfiles. Ceros: puntuación y puesto vacíos. Solo progresión: puntuación igual al percentil.\nLos tres escenarios de organizador comprueban los cambios ya analizados de André Gomes, Kroos y Trashorras.\n\nLimitaciones: tasas de temporada completa, sin ajuste por posesión/rival. Pesos elegidos, no aprendidos.\nPara repetir: reconstruir datos, ejecutar python -m src.build_powerbi y pulsar Actualizar en Desktop.\nFuente: StatsBomb Open Data. Desarrollo asistido por IA; decisiones y validación documentadas.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#173047",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

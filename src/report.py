@@ -100,7 +100,7 @@ def write_reports(audit, tables, schemas):
             'VAR Candidatos = FILTER(ALLSELECTED(rankings), rankings[profile_id] = Perfil)',
             'RETURN IF(HASONEVALUE(rankings[candidate_id]) && NOT(ISBLANK(Actual)),',
             '    RANKX(Candidatos, [Puntuacion interactiva], Actual, DESC, DENSE), BLANK())', '',
-            'Cambio de puntuacion = [Puntuacion interactiva] - SELECTEDVALUE(rankings[score_base])', '']
+            'Cambio de puntuacion = IF(NOT ISBLANK([Puntuacion interactiva]), [Puntuacion interactiva] - SELECTEDVALUE(rankings[score_base]))', '']
     for i in range(1, MAX_SLOTS + 1):
         dax += [f'Etiqueta peso {i} =', f'VAR Perfil = SELECTEDVALUE(profiles[profile_id])',
                 f'VAR Metrica = LOOKUPVALUE(weights[metric_id], weights[profile_id], Perfil, weights[slot], {i})',

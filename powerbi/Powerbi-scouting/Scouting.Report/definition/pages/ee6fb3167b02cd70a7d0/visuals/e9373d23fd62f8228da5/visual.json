@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "e9373d23fd62f8228da5",
+  "position": {
+    "x": 24,
+    "y": 80,
+    "z": 0,
+    "height": 70,
+    "width": 1530,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "1. Elige un perfil.  2. Ajusta pesos (sin selección = valor base).  3. Al cambiar de perfil, limpia los pesos.\nPuestos entre candidatos visibles; percentiles fijos. Datos: StatsBomb Open Data. Pesos exploratorios.",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#173047",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

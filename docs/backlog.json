@@ -1,6 +1,6 @@
 {
   "project_name": "Powerbi-scouting",
-  "publication_status": "Seguimiento creado en Atlassian el 17/10/2026; instantánea de 7 tareas terminadas y 4 pendientes",
+  "publication_status": "Actualizado el 17/10/2026: 8 tareas terminadas y 3 pendientes. BI-01 cerrado en Jira tras validar el informe en Power BI Desktop.",
   "items": [
     {
       "local_id": "DAT-01",
@@ -89,8 +89,8 @@
       "local_id": "BI-01",
       "area": "Power BI",
       "summary": "Ejecutar y validar el informe en Power BI Desktop",
-      "status": "Por hacer",
-      "description": "Importar tablas, configurar relaciones y parámetros, construir visualizaciones y comprobar DAX frente a Python.",
+      "status": "Listo",
+      "description": "Informe abierto, actualizado y guardado en Power BI Desktop. Siete perfiles, filtro de equipo y ocho pesos ajustables. Seis escenarios y 1.359 comparaciones DAX-Python sin diferencias.",
       "acceptance": [
         "PBIX o proyecto Power BI reproducible disponible",
         "Los siete perfiles coinciden con Python en el escenario base",
@@ -102,9 +102,13 @@
         "MOD-01"
       ],
       "evidence": [
+        "src/build_powerbi.py",
+        "powerbi/Powerbi-scouting/Powerbi-scouting.pbip",
         "powerbi/LEEME.md",
-        "powerbi/Fuente.pq",
-        "powerbi/Medidas.dax"
+        "outputs/powerbi-verification.json",
+        "outputs/powerbi-validacion.png",
+        "docs/VALIDACION_POWERBI.md",
+        "docs/evidencias/powerbi-validacion.json"
       ]
     },
     {

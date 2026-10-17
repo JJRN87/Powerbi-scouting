@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.4.0/schema.json",
+  "name": "ee6fb3167b02cd70a7d0",
+  "displayName": "Selección por perfil",
+  "displayOption": "FitToPage",
+  "width": 1600,
+  "height": 1000
+}

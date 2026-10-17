@@ -1,90 +1,54 @@
-# Preparar el informe en Power BI Desktop
+# Informe interactivo en Power BI Desktop
 
-Los datos están calculados y el visor local ya funciona. Esta carpeta contiene el importador, las medidas y el diseño sugerido. **No se ha ejecutado ni validado DAX/Power Query dentro de Power BI Desktop en esta entrega y no se ha creado un PBIX.**
+El archivo local listo para abrir es `Powerbi-scouting/Powerbi-scouting.pbix`. Incluye datos cargados. La versión reproducible es el PBIP de la misma carpeta.
 
-## 1. Importar con tipos correctos
+## Abrir y reproducir
 
-1. Abrir un informe nuevo. Obtener datos → Consulta en blanco → Editor avanzado.
-2. Pegar el contenido de `Fuente.pq`. Llamar a la consulta **Fuente**. Si se mueve el proyecto, cambiar únicamente `Carpeta` al directorio de datos procesados.
-3. Crear consultas en blanco con los siguientes nombres y expresiones:
+1. Generar los datos siguiendo el README del proyecto.
+2. Ejecutar `python -m src.build_powerbi` desde la raíz. Genera el PBIP, el modelo y `data/processed/qa_expected.csv`.
+3. Abrir `powerbi/Powerbi-scouting/Powerbi-scouting.pbip` con Power BI Desktop.
+4. Pulsar **Actualizar**. La primera apertura no contiene caché de datos.
+5. Revisar **Validación con Python**: las seis filas deben tener cero errores en las tres columnas de errores y coincidir en candidatos reales y esperados.
 
-| Nombre de consulta | Expresión |
-|---|---|
-| rankings | `= Fuente[rankings]` |
-| profiles | `= Fuente[profiles]` |
-| weights | `= Fuente[weights]` |
-| metrics | `= Fuente[metrics]` |
-| ranking_detail | `= Fuente[ranking_detail]` |
-| sensitivity | `= Fuente[sensitivity]` |
-| players_season | `= Fuente[players_season]` |
-| player_match | `= Fuente[player_match]` |
-| matches | `= Fuente[matches]` |
+El generador escribe la ruta local de los CSV en el parámetro Power Query `CarpetaDatos`. Tras mover o clonar el proyecto, volver a generar o editar ese parámetro. Ejecutar el generador reconstruye el diseño; guardar aparte los cambios visuales manuales que se quieran conservar.
 
-No cargar Fuente como tabla. `position_stints` y `event_exclusions` se pueden añadir de la misma forma para auditoría. Cerrar y aplicar. Los CSV tienen coma como separador, punto decimal y UTF-8 con BOM. El importador usa `en-US` para números y mantiene los vacíos como nulos; no confiar en la detección automática del formato regional español.
+## Usar el informe
 
-Convertir `match_date` a fecha con formato ISO si se utilizarán series temporales. El modelo v1 solo contiene esta temporada y competición.
+- **Perfil / posición:** selección única entre siete perfiles. El informe abre en organizador.
+- **Equipo:** restringe los candidatos visibles. Los percentiles de referencia y las puntuaciones permanecen fijos; el puesto interactivo se recalcula dentro de la selección.
+- **Ocho pesos:** cada desplegable acepta un entero de 0 a 100. Sin selección (`Todas`) usa el peso base que indica el título. El valor seleccionado aparece en el desplegable. Cero elimina el atributo; todos los pesos cero dejan puntuación y puesto vacíos.
+- **Cambio de perfil:** limpiar los pesos seleccionados con el icono de borrador del segmentador. Los números de slot representan atributos distintos en cada perfil. Los controles «No aplica» se ignoran.
+- **Tabla:** puesto actual, jugador, equipo, minutos, proporción de tiempo en el rol, puntuación, puesto base de la cohorte completa y cambio de puntuación. Orden inicial por puntuación descendente.
 
-## 2. Relaciones
+Las puntuaciones se redondean a ocho decimales antes de ordenar, aunque se muestran dos. Los empates reciben el mismo puesto denso. La cohorte exige 900 minutos y 50% de tiempo en los roles; cambiar esos umbrales exige reconstruir los datos, no solo filtrar el informe.
 
-Desactivar o revisar las relaciones detectadas automáticamente. Crear relaciones uno-a-muchos, filtro en una dirección:
+## Validación en el motor de Desktop
 
-- `profiles[profile_id]` → `rankings[profile_id]`.
-- `rankings[candidate_id]` → `ranking_detail[candidate_id]`.
-- `metrics[metric_id]` → `ranking_detail[metric_id]`.
-- `players_season[player_id]` → `player_match[player_id]`.
-- `matches[match_id]` → `player_match[match_id]`.
+La página de validación ejecuta las mismas medidas de puntuación y ranking que el informe, con referencias calculadas en Python. Se comprueban 1.359 filas:
 
-Dejar `weights` y `sensitivity` desconectadas para evitar rutas ambiguas. Las medidas de etiquetas consultan `weights` por perfil y slot. No relacionar las tablas Peso1…Peso8. Usar los campos de `rankings` en la página de ranking; esta página funciona sin relacionar `players_season` con `rankings`.
+| Escenario | Candidatos |
+|---|---:|
+| Pesos base, siete perfiles | 387 |
+| Todos los pesos cero | 387 |
+| Solo el primer atributo a 100 | 387 |
+| Organizador: progresión 32 y regate 8 | 66 |
+| Organizador: progresión 35 y regate 5 | 66 |
+| Organizador: progresión 25 y xG abierto 25 | 66 |
 
-La página de detalle de partidos usa `players_season`, `matches` y `player_match`. Sus filtros de fecha no recalculan el ranking de temporada: no colocar un filtro de fecha en la página del ranking v1.
+«Solo progresión» es la etiqueta técnica del escenario que deja únicamente el primer atributo de cada perfil; ese atributo no siempre es pase progresivo. La consulta completa está en `Scouting.SemanticModel/DAXQueries/Validacion.dax`. Los resultados de la página se recalculan al actualizar el modelo; no son una respuesta escrita a mano.
 
-## 3. Pesos interactivos
+La prueba controla tamaño de cohorte, nulos, puntuaciones (tolerancia 1e-7) y puestos exactos. Usa `COUNTROWS(rankings)` como expresión de conservación de filas: una constante habría retenido candidatos de otros perfiles con resultados vacíos bajo la semántica de SUMMARIZECOLUMNS. La comprobación de datos general `python -m src.validate` sigue siendo una prueba Python; su campo `powerbi_engine_tested: false` describe esa ejecución, no sustituye la evidencia independiente de Desktop.
 
-1. En Modelado → Nueva tabla, crear cada una de las ocho tablas `Peso1`…`Peso8` copiando su expresión de `Medidas.dax` por separado.
-2. Crear por separado cada medida del mismo fichero dentro de `rankings`.
-3. Añadir un segmentador `profiles[profile]`, selección única.
-4. Añadir ocho segmentadores de selección única, uno por `PesoN[Value]`. Usar lista desplegable (0–100); **no usar un intervalo «Entre»**, porque selecciona múltiples pesos.
-5. Cuando un segmentador de peso esté sin selección, la medida utiliza el peso base del perfil. Una selección de cero elimina esa métrica. Si todos los pesos son cero, la puntuación queda en blanco.
-6. Para el título dinámico de cada segmentador usar Formato → Título → fx → Valor de campo → `Etiqueta peso N`.
+## Modelo y mantenimiento
 
-Cada slot representa una métrica diferente según el perfil. Al cambiar de perfil, limpiar las selecciones de pesos para usar los valores base del nuevo perfil. Se puede guardar un marcador con los ocho segmentadores sin selección y añadir un botón «Restablecer pesos» limitado a esos segmentadores. Los slots sin métrica se ignoran en los perfiles con menos de ocho atributos.
+Se importan rankings, perfiles, pesos, métricas, detalle y sensibilidad. Relaciones de una dirección: profiles → rankings → ranking_detail y metrics → ranking_detail. Las tablas Peso1…Peso8 están desconectadas; sus selecciones entran en las medidas. `qa_expected` contiene la referencia y `QA_resultados` es una tabla calculada por DAX.
 
-Las fórmulas usan separadores DAX estándar con coma. Si Desktop tiene activados separadores regionales, desactivar esa opción o adaptar separadores antes de pegar.
+Para modificar pesos base: editar `config/profiles.json`, ejecutar `python -m src.build` y `python -m src.build_powerbi`, cerrar y reabrir el PBIP y actualizar. Para explorar pesos temporalmente basta con los desplegables.
 
-## 4. Página de ranking
+Las tasas corresponden a la temporada completa, sin ajuste por posesión ni rival. Los pesos son hipótesis de scouting. La validación técnica no demuestra calidad predictiva ni determina por sí sola la mejor posición de un jugador.
 
-- Encabezado: «LaLiga 2015/16 · Selección por perfil», atribución StatsBomb y nota «Pesos exploratorios».
-- Izquierda: perfil, mínimo de minutos (usar `rankings[minutes]`, mayor o igual que 900), equipo y ocho pesos.
-- Tabla: `candidate_id` (necesario para identificar la fila), jugador, equipos, minutos, `role_share`, `[Puntuacion interactiva]`, `[Ranking interactivo]`, `score_base`, `[Cambio de puntuacion]`.
-- Ordenar por puntuación descendente. Formatear puntuación a 2 decimales, minutos a 0 y `role_share` como porcentaje.
-- Desglose: al seleccionar un candidato, mostrar `metrics[label]`, `ranking_detail[value]`, `percentile` y `contribution_base`. **La contribución base es estática**: no presentarla como contribución de pesos personalizados.
-- Sensibilidad: tabla independiente con perfil, jugador, puesto base, mejor/peor puesto. Corresponde exclusivamente a perturbaciones del perfil base.
+## Archivos y atribución
 
-Los percentiles no cambian al filtrar por equipo o minutos. El ranking interactivo se recalcula entre los candidatos visibles del perfil seleccionado. Una cohorte de 900 minutos impide incluir jugadores con menor muestra; cambiarla requiere reconstruir con otra configuración.
+El PBIP/PBIR y el generador se pueden versionar. Los CSV, la caché y el PBIX con datos se conservan localmente. Fuente de datos: StatsBomb Open Data; consultar su licencia y atribución antes de compartir análisis. El tema base CY24SU02 procede de Microsoft/BCApps, bajo la licencia MIT incluida en `base-theme/LICENSE-Microsoft.txt`.
 
-## 5. Comprobación en Desktop
-
-Antes de dar por validado el informe:
-
-1. Elegir organizador y limpiar los ocho pesos: la puntuación interactiva debe coincidir con `score_base` para cada candidato.
-2. Dejar un único peso a 100 y los demás a cero: puntuación igual al percentil de esa métrica.
-3. Poner todos los pesos a cero: puntuación y ranking vacíos.
-4. Cambiar pesos: observar que orden y puntuaciones se actualizan.
-5. Filtrar un equipo: los percentiles y puntuaciones no cambian; el puesto visible sí puede cambiar.
-6. Comparar nombres y puntuaciones con `outputs/revisar_rankings.html` para los mismos pesos y minutos. No aplicar un filtro de equipo durante esa comparación.
-7. Guardar el informe como PBIX una vez comprobado.
-
-## Actualizar
-
-Editar `config/profiles.json` → ejecutar `python -m src.build` → pulsar Actualizar en Power BI. El visor se regenera con los nuevos datos. No es necesario volver a descargar los partidos.
-
-Mantener los datos y el informe en local para esta fase de investigación. Consultar `data/raw/LICENSE.pdf` antes de publicar o compartir.
-
-
-## Actualización del organizador v2
-
-Volver a pegar el importador `Fuente.pq` para incorporar las columnas nuevas. Actualizar las medidas de `Medidas.dax`, crear las nuevas tablas Peso7 y Peso8 y añadir sus segmentadores y etiquetas. Limpiar todos los pesos seleccionados: los slots del organizador ahora representan otros atributos. No basta con refrescar los CSV si el modelo mantiene las fórmulas antiguas de seis slots.
-
-Añadir una consulta `organizer_comparison` con `= Fuente[organizer_comparison]` para comparar puestos v1, escenario conversado 40/5 y v2. Dejarla desconectada y usar sus campos en una tabla independiente. Las comparaciones históricas corresponden a la cohorte completa y no se recalculan al cambiar los pesos interactivos.
-
-El organizador utiliza ocho métricas. La creación en juego abierto suma 35% y la de balón parado 5%. Las definiciones incluyen secuencias etiquetadas como procedentes de córner/falta; consultar la metodología v2. Las pruebas de los ocho controles se han realizado en el visor local. Power BI Desktop sigue pendiente de validación en su motor.
+Comprobado en Desktop el 17/10/2026: seis escenarios y 1.359 filas, sin diferencias. Evidencia local en `outputs/powerbi-verification.json` y capturas asociadas.

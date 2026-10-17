@@ -11,4 +11,8 @@ outputs/
 .codex/
 .agents/
 *.log
+powerbi/schemas/
+**/.pbi/cache.abf
+**/.pbi/localSettings.json
+*.pbix
 

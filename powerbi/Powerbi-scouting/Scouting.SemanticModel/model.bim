@@ -1,0 +1,1762 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"rankings\", \"profiles\", \"weights\", \"metrics\", \"ranking_detail\", \"sensitivity\", \"Peso1\", \"Peso2\", \"Peso3\", \"Peso4\", \"Peso5\", \"Peso6\", \"Peso7\", \"Peso8\", \"qa_expected\", \"QA_resultados\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "es-ES",
+    "cultures": [
+      {
+        "name": "es-ES",
+        "linguisticMetadata": {
+          "content": {
+            "Entities": {
+              "peso1.value": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Peso1",
+                    "ConceptualProperty": "Value"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Peso 1": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "peso2.value": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Peso2",
+                    "ConceptualProperty": "Value"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Peso 2": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "peso3.value": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Peso3",
+                    "ConceptualProperty": "Value"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Peso 3": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "peso4.value": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Peso4",
+                    "ConceptualProperty": "Value"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Peso 4": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "peso5.value": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Peso5",
+                    "ConceptualProperty": "Value"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Peso 5": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "peso6.value": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Peso6",
+                    "ConceptualProperty": "Value"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Peso 6": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "peso7.value": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Peso7",
+                    "ConceptualProperty": "Value"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Peso 7": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "peso8.value": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Peso8",
+                    "ConceptualProperty": "Value"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Peso 8": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "profiles.profile": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "profiles",
+                    "ConceptualProperty": "profile"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Perfil / posición": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "qa_resultados.candidatos": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "QA_resultados",
+                    "ConceptualProperty": "Candidatos"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Candidatos": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "qa_resultados.errores_cohorte": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "QA_resultados",
+                    "ConceptualProperty": "Errores cohorte"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Errores cohorte": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "qa_resultados.errores_ranking": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "QA_resultados",
+                    "ConceptualProperty": "Errores ranking"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Errores ranking": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "qa_resultados.errores_score": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "QA_resultados",
+                    "ConceptualProperty": "Errores score"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Errores score": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "qa_resultados.escenario": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "QA_resultados",
+                    "ConceptualProperty": "Escenario"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Escenario": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "qa_resultados.esperados": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "QA_resultados",
+                    "ConceptualProperty": "Esperados"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Esperados": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "rankings.cambio_de_puntuacion": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "rankings",
+                    "ConceptualProperty": "Cambio de puntuacion"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Δ puntuación": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "rankings.candidatos_visibles": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "rankings",
+                    "ConceptualProperty": "Candidatos visibles"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Candidatos visibles": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "rankings.minutes": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "rankings",
+                    "ConceptualProperty": "minutes"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Minutos": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "rankings.player": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "rankings",
+                    "ConceptualProperty": "player"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Jugador": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "rankings.puesto_base": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "rankings",
+                    "ConceptualProperty": "Puesto base"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Puesto base": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "rankings.puntuacion_interactiva": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "rankings",
+                    "ConceptualProperty": "Puntuacion interactiva"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Puntuación": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "rankings.ranking_interactivo": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "rankings",
+                    "ConceptualProperty": "Ranking interactivo"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Puesto": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "rankings.role_share": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "rankings",
+                    "ConceptualProperty": "role_share"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Tiempo en rol": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "rankings.teams": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "rankings",
+                    "ConceptualProperty": "teams"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Equipo": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              }
+            },
+            "Language": "en-US",
+            "Version": "2.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "CarpetaDatos",
+        "expression": "\"E:/Proyecto_Futbol/data/processed\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "1fca114b-8fe4-4b2a-8345-89dccd24c779"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "rankings_profile_id_profiles",
+        "fromColumn": "profile_id",
+        "fromTable": "rankings",
+        "toColumn": "profile_id",
+        "toTable": "profiles"
+      },
+      {
+        "name": "ranking_detail_candidate_id_rankings",
+        "fromColumn": "candidate_id",
+        "fromTable": "ranking_detail",
+        "toColumn": "candidate_id",
+        "toTable": "rankings"
+      },
+      {
+        "name": "ranking_detail_metric_id_metrics",
+        "fromColumn": "metric_id",
+        "fromTable": "ranking_detail",
+        "toColumn": "metric_id",
+        "toTable": "metrics"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "rankings",
+        "columns": [
+          {
+            "name": "candidate_id",
+            "dataType": "string",
+            "lineageTag": "0c948efb-8b48-43ce-86c4-b3ccc0aed080",
+            "sourceColumn": "candidate_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "profile_id",
+            "dataType": "string",
+            "lineageTag": "34099162-c8f7-4a8f-9bc1-77a7ca32d210",
+            "sourceColumn": "profile_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "profile",
+            "dataType": "string",
+            "lineageTag": "3a54242f-a698-484f-a6d7-8feecb8e3c09",
+            "sourceColumn": "profile",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "player_id",
+            "dataType": "int64",
+            "lineageTag": "c39cc481-db44-47b0-a1e0-2f51a568b53c",
+            "sourceColumn": "player_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "player",
+            "dataType": "string",
+            "lineageTag": "21ce8267-4ebf-4742-b21e-baee74c34e8b",
+            "sourceColumn": "player",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "teams",
+            "dataType": "string",
+            "lineageTag": "03c1089c-a8ac-446c-b92a-e535f0a969f9",
+            "sourceColumn": "teams",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "primary_role",
+            "dataType": "string",
+            "lineageTag": "bd6199bd-cea7-4999-992f-7682214aff3f",
+            "sourceColumn": "primary_role",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "minutes",
+            "dataType": "double",
+            "formatString": "#,0",
+            "lineageTag": "6cb5434e-48e2-4f30-9388-3a6266fdf4a5",
+            "sourceColumn": "minutes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "role_share",
+            "dataType": "double",
+            "formatString": "0.0%",
+            "lineageTag": "595b2693-8c11-4414-9245-4385d0be1706",
+            "sourceColumn": "role_share",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "matches",
+            "dataType": "int64",
+            "lineageTag": "98b1c7db-d64d-4f0c-9a5b-1c01bf5273a7",
+            "sourceColumn": "matches",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "score_base",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "0a514388-765f-419e-9b69-b386acc3c4f2",
+            "sourceColumn": "score_base",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rank_base",
+            "dataType": "int64",
+            "lineageTag": "87e21c46-012e-45cd-ac22-a0235dfe1d7a",
+            "sourceColumn": "rank_base",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cohort_size",
+            "dataType": "int64",
+            "lineageTag": "11625a66-0a51-4761-93b2-eb5c8aaadddd",
+            "sourceColumn": "cohort_size",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric_1",
+            "dataType": "string",
+            "lineageTag": "e136786b-06ca-4e18-92a3-01bc535a952a",
+            "sourceColumn": "metric_1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "percentile_1",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "c61369ab-9fac-4b80-955d-2ca74baef106",
+            "sourceColumn": "percentile_1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weight_1",
+            "dataType": "int64",
+            "lineageTag": "7808c3eb-0dbd-4660-8118-9f8559cee1b2",
+            "sourceColumn": "weight_1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric_2",
+            "dataType": "string",
+            "lineageTag": "c13efbd4-1d24-46eb-89df-1eada0c84e8a",
+            "sourceColumn": "metric_2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "percentile_2",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "22255568-7cc1-4512-a09a-57d7bdf20645",
+            "sourceColumn": "percentile_2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weight_2",
+            "dataType": "int64",
+            "lineageTag": "fc433ec3-c292-486b-9b92-27e79d03448a",
+            "sourceColumn": "weight_2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric_3",
+            "dataType": "string",
+            "lineageTag": "2182c35e-9c89-40d4-98d1-050217c96516",
+            "sourceColumn": "metric_3",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "percentile_3",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "3f413d9f-f3b7-4e77-ba97-7cf918bf74b9",
+            "sourceColumn": "percentile_3",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weight_3",
+            "dataType": "int64",
+            "lineageTag": "a4c6fa0f-fb51-45a5-b679-0ec0ee364f3b",
+            "sourceColumn": "weight_3",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric_4",
+            "dataType": "string",
+            "lineageTag": "7ffa19dd-8bbb-4749-af04-319d11adf28a",
+            "sourceColumn": "metric_4",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "percentile_4",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "d62a846d-9830-4b75-8be6-16e49ecf486a",
+            "sourceColumn": "percentile_4",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weight_4",
+            "dataType": "int64",
+            "lineageTag": "ef3610e7-6bc3-4e2b-99d9-f875566373fd",
+            "sourceColumn": "weight_4",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric_5",
+            "dataType": "string",
+            "lineageTag": "b826661d-1f49-40c2-9fbd-6f0b40acb9b9",
+            "sourceColumn": "metric_5",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "percentile_5",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "30f91c53-fdb2-46f0-8fa9-76c46537c6d8",
+            "sourceColumn": "percentile_5",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weight_5",
+            "dataType": "int64",
+            "lineageTag": "e890528a-0998-4150-8ea1-080282ab3dd2",
+            "sourceColumn": "weight_5",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric_6",
+            "dataType": "string",
+            "lineageTag": "58ec487f-d930-42a8-ab1c-853377c65980",
+            "sourceColumn": "metric_6",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "percentile_6",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "0a290a37-1c12-42a9-bb28-2e3d3883b449",
+            "sourceColumn": "percentile_6",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weight_6",
+            "dataType": "int64",
+            "lineageTag": "617be866-af0d-4da5-840a-f4a819458a2c",
+            "sourceColumn": "weight_6",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric_7",
+            "dataType": "string",
+            "lineageTag": "c5fed5c0-0ed6-4c87-afec-2147ee440ea1",
+            "sourceColumn": "metric_7",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "percentile_7",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "57c252d3-512f-4783-a352-a8ded4cd9d35",
+            "sourceColumn": "percentile_7",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weight_7",
+            "dataType": "int64",
+            "lineageTag": "35b9a46a-3e46-419c-a7ad-eed8e30ceb54",
+            "sourceColumn": "weight_7",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric_8",
+            "dataType": "string",
+            "lineageTag": "a577772f-0f2d-45bf-8f82-99dfe0e16f07",
+            "sourceColumn": "metric_8",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "percentile_8",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "e5f8d9a8-7511-4114-bc43-c95ec03d8e21",
+            "sourceColumn": "percentile_8",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weight_8",
+            "dataType": "int64",
+            "lineageTag": "185c5bf4-1e12-4d27-8ef5-9ba3cdaf917b",
+            "sourceColumn": "weight_8",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "b3a215e5-553a-42bf-b050-2b71d22223a0",
+        "measures": [
+          {
+            "name": "Puntuacion interactiva",
+            "expression": [
+              "VAR UnCandidato = HASONEVALUE(rankings[candidate_id])",
+              "VAR W1 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_1])), 0, SELECTEDVALUE(Peso1[Value], SELECTEDVALUE(rankings[weight_1])))",
+              "VAR P1 = SELECTEDVALUE(rankings[percentile_1])",
+              "VAR W2 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_2])), 0, SELECTEDVALUE(Peso2[Value], SELECTEDVALUE(rankings[weight_2])))",
+              "VAR P2 = SELECTEDVALUE(rankings[percentile_2])",
+              "VAR W3 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_3])), 0, SELECTEDVALUE(Peso3[Value], SELECTEDVALUE(rankings[weight_3])))",
+              "VAR P3 = SELECTEDVALUE(rankings[percentile_3])",
+              "VAR W4 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_4])), 0, SELECTEDVALUE(Peso4[Value], SELECTEDVALUE(rankings[weight_4])))",
+              "VAR P4 = SELECTEDVALUE(rankings[percentile_4])",
+              "VAR W5 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_5])), 0, SELECTEDVALUE(Peso5[Value], SELECTEDVALUE(rankings[weight_5])))",
+              "VAR P5 = SELECTEDVALUE(rankings[percentile_5])",
+              "VAR W6 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_6])), 0, SELECTEDVALUE(Peso6[Value], SELECTEDVALUE(rankings[weight_6])))",
+              "VAR P6 = SELECTEDVALUE(rankings[percentile_6])",
+              "VAR W7 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_7])), 0, SELECTEDVALUE(Peso7[Value], SELECTEDVALUE(rankings[weight_7])))",
+              "VAR P7 = SELECTEDVALUE(rankings[percentile_7])",
+              "VAR W8 = IF(ISBLANK(SELECTEDVALUE(rankings[metric_8])), 0, SELECTEDVALUE(Peso8[Value], SELECTEDVALUE(rankings[weight_8])))",
+              "VAR P8 = SELECTEDVALUE(rankings[percentile_8])",
+              "VAR Faltan = (W1 > 0 && ISBLANK(P1)) || (W2 > 0 && ISBLANK(P2)) || (W3 > 0 && ISBLANK(P3)) || (W4 > 0 && ISBLANK(P4)) || (W5 > 0 && ISBLANK(P5)) || (W6 > 0 && ISBLANK(P6)) || (W7 > 0 && ISBLANK(P7)) || (W8 > 0 && ISBLANK(P8))",
+              "VAR TotalPeso = W1 + W2 + W3 + W4 + W5 + W6 + W7 + W8",
+              "RETURN IF(UnCandidato && NOT(Faltan) && TotalPeso > 0,",
+              "    ROUND(DIVIDE(W1 * P1 + W2 * P2 + W3 * P3 + W4 * P4 + W5 * P5 + W6 * P6 + W7 * P7 + W8 * P8, TotalPeso), 8), BLANK())"
+            ],
+            "formatString": "0.00",
+            "lineageTag": "27a94696-43e3-410c-89ab-f7509b7da0d0"
+          },
+          {
+            "name": "Ranking interactivo",
+            "expression": [
+              "VAR Actual = [Puntuacion interactiva]",
+              "VAR Perfil = SELECTEDVALUE(rankings[profile_id])",
+              "VAR Candidatos = FILTER(ALLSELECTED(rankings), rankings[profile_id] = Perfil)",
+              "RETURN IF(HASONEVALUE(rankings[candidate_id]) && NOT(ISBLANK(Actual)),",
+              "    RANKX(Candidatos, [Puntuacion interactiva], Actual, DESC, DENSE), BLANK())"
+            ],
+            "formatString": "0",
+            "lineageTag": "07b58505-0b67-44f0-a5da-999a7863a547"
+          },
+          {
+            "name": "Cambio de puntuacion",
+            "expression": "IF(NOT ISBLANK([Puntuacion interactiva]), [Puntuacion interactiva] - SELECTEDVALUE(rankings[score_base]))",
+            "formatString": "0.00",
+            "lineageTag": "59611362-daaa-482c-862e-6a8f20dd800c"
+          },
+          {
+            "name": "Etiqueta peso 1",
+            "expression": [
+              "VAR Perfil=SELECTEDVALUE(profiles[profile_id])",
+              "VAR Metrica=LOOKUPVALUE(weights[metric_id],weights[profile_id],Perfil,weights[slot],1)",
+              "VAR Base=LOOKUPVALUE(weights[weight],weights[profile_id],Perfil,weights[slot],1)",
+              "VAR Nombre=SWITCH(Metrica,",
+              "\"progressive_passes_p90\",\"Pase progresivo /90\",",
+              "\"key_passes_open_play_p90\",\"Pase de tiro abierto /90\",",
+              "\"key_passes_set_piece_p90\",\"Pase de tiro parado /90\",",
+              "\"xg_assisted_open_play_p90\",\"xG asistido abierto /90\",",
+              "\"xg_assisted_set_piece_p90\",\"xG asistido parado /90\",",
+              "SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOOKUPVALUE(metrics[label],metrics[metric_id],Metrica),\" completados\",\"\"),\" exitosas\",\"\"),\"Recepciones y tiros en el área\",\"Recepción/tiro en área\"))",
+              "RETURN IF(ISBLANK(Metrica), \"No aplica\", Nombre & \" (base \" & FORMAT(Base,\"0\") & \")\")"
+            ],
+            "lineageTag": "d1a89071-145c-4e74-9bcf-c0960bdb05b2"
+          },
+          {
+            "name": "Etiqueta peso 2",
+            "expression": [
+              "VAR Perfil=SELECTEDVALUE(profiles[profile_id])",
+              "VAR Metrica=LOOKUPVALUE(weights[metric_id],weights[profile_id],Perfil,weights[slot],2)",
+              "VAR Base=LOOKUPVALUE(weights[weight],weights[profile_id],Perfil,weights[slot],2)",
+              "VAR Nombre=SWITCH(Metrica,",
+              "\"progressive_passes_p90\",\"Pase progresivo /90\",",
+              "\"key_passes_open_play_p90\",\"Pase de tiro abierto /90\",",
+              "\"key_passes_set_piece_p90\",\"Pase de tiro parado /90\",",
+              "\"xg_assisted_open_play_p90\",\"xG asistido abierto /90\",",
+              "\"xg_assisted_set_piece_p90\",\"xG asistido parado /90\",",
+              "SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOOKUPVALUE(metrics[label],metrics[metric_id],Metrica),\" completados\",\"\"),\" exitosas\",\"\"),\"Recepciones y tiros en el área\",\"Recepción/tiro en área\"))",
+              "RETURN IF(ISBLANK(Metrica), \"No aplica\", Nombre & \" (base \" & FORMAT(Base,\"0\") & \")\")"
+            ],
+            "lineageTag": "764688fb-8d7e-4731-8757-34ba3c055843"
+          },
+          {
+            "name": "Etiqueta peso 3",
+            "expression": [
+              "VAR Perfil=SELECTEDVALUE(profiles[profile_id])",
+              "VAR Metrica=LOOKUPVALUE(weights[metric_id],weights[profile_id],Perfil,weights[slot],3)",
+              "VAR Base=LOOKUPVALUE(weights[weight],weights[profile_id],Perfil,weights[slot],3)",
+              "VAR Nombre=SWITCH(Metrica,",
+              "\"progressive_passes_p90\",\"Pase progresivo /90\",",
+              "\"key_passes_open_play_p90\",\"Pase de tiro abierto /90\",",
+              "\"key_passes_set_piece_p90\",\"Pase de tiro parado /90\",",
+              "\"xg_assisted_open_play_p90\",\"xG asistido abierto /90\",",
+              "\"xg_assisted_set_piece_p90\",\"xG asistido parado /90\",",
+              "SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOOKUPVALUE(metrics[label],metrics[metric_id],Metrica),\" completados\",\"\"),\" exitosas\",\"\"),\"Recepciones y tiros en el área\",\"Recepción/tiro en área\"))",
+              "RETURN IF(ISBLANK(Metrica), \"No aplica\", Nombre & \" (base \" & FORMAT(Base,\"0\") & \")\")"
+            ],
+            "lineageTag": "851c2c5e-f7f2-4076-bf15-0235f415892d"
+          },
+          {
+            "name": "Etiqueta peso 4",
+            "expression": [
+              "VAR Perfil=SELECTEDVALUE(profiles[profile_id])",
+              "VAR Metrica=LOOKUPVALUE(weights[metric_id],weights[profile_id],Perfil,weights[slot],4)",
+              "VAR Base=LOOKUPVALUE(weights[weight],weights[profile_id],Perfil,weights[slot],4)",
+              "VAR Nombre=SWITCH(Metrica,",
+              "\"progressive_passes_p90\",\"Pase progresivo /90\",",
+              "\"key_passes_open_play_p90\",\"Pase de tiro abierto /90\",",
+              "\"key_passes_set_piece_p90\",\"Pase de tiro parado /90\",",
+              "\"xg_assisted_open_play_p90\",\"xG asistido abierto /90\",",
+              "\"xg_assisted_set_piece_p90\",\"xG asistido parado /90\",",
+              "SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOOKUPVALUE(metrics[label],metrics[metric_id],Metrica),\" completados\",\"\"),\" exitosas\",\"\"),\"Recepciones y tiros en el área\",\"Recepción/tiro en área\"))",
+              "RETURN IF(ISBLANK(Metrica), \"No aplica\", Nombre & \" (base \" & FORMAT(Base,\"0\") & \")\")"
+            ],
+            "lineageTag": "52d604c5-4252-4bf9-a7bf-c220cd2c7b71"
+          },
+          {
+            "name": "Etiqueta peso 5",
+            "expression": [
+              "VAR Perfil=SELECTEDVALUE(profiles[profile_id])",
+              "VAR Metrica=LOOKUPVALUE(weights[metric_id],weights[profile_id],Perfil,weights[slot],5)",
+              "VAR Base=LOOKUPVALUE(weights[weight],weights[profile_id],Perfil,weights[slot],5)",
+              "VAR Nombre=SWITCH(Metrica,",
+              "\"progressive_passes_p90\",\"Pase progresivo /90\",",
+              "\"key_passes_open_play_p90\",\"Pase de tiro abierto /90\",",
+              "\"key_passes_set_piece_p90\",\"Pase de tiro parado /90\",",
+              "\"xg_assisted_open_play_p90\",\"xG asistido abierto /90\",",
+              "\"xg_assisted_set_piece_p90\",\"xG asistido parado /90\",",
+              "SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOOKUPVALUE(metrics[label],metrics[metric_id],Metrica),\" completados\",\"\"),\" exitosas\",\"\"),\"Recepciones y tiros en el área\",\"Recepción/tiro en área\"))",
+              "RETURN IF(ISBLANK(Metrica), \"No aplica\", Nombre & \" (base \" & FORMAT(Base,\"0\") & \")\")"
+            ],
+            "lineageTag": "29e23d7f-a9e9-473e-9639-48670945f9de"
+          },
+          {
+            "name": "Etiqueta peso 6",
+            "expression": [
+              "VAR Perfil=SELECTEDVALUE(profiles[profile_id])",
+              "VAR Metrica=LOOKUPVALUE(weights[metric_id],weights[profile_id],Perfil,weights[slot],6)",
+              "VAR Base=LOOKUPVALUE(weights[weight],weights[profile_id],Perfil,weights[slot],6)",
+              "VAR Nombre=SWITCH(Metrica,",
+              "\"progressive_passes_p90\",\"Pase progresivo /90\",",
+              "\"key_passes_open_play_p90\",\"Pase de tiro abierto /90\",",
+              "\"key_passes_set_piece_p90\",\"Pase de tiro parado /90\",",
+              "\"xg_assisted_open_play_p90\",\"xG asistido abierto /90\",",
+              "\"xg_assisted_set_piece_p90\",\"xG asistido parado /90\",",
+              "SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOOKUPVALUE(metrics[label],metrics[metric_id],Metrica),\" completados\",\"\"),\" exitosas\",\"\"),\"Recepciones y tiros en el área\",\"Recepción/tiro en área\"))",
+              "RETURN IF(ISBLANK(Metrica), \"No aplica\", Nombre & \" (base \" & FORMAT(Base,\"0\") & \")\")"
+            ],
+            "lineageTag": "a4961b7d-bf39-49e9-852d-f3d7989fd26e"
+          },
+          {
+            "name": "Etiqueta peso 7",
+            "expression": [
+              "VAR Perfil=SELECTEDVALUE(profiles[profile_id])",
+              "VAR Metrica=LOOKUPVALUE(weights[metric_id],weights[profile_id],Perfil,weights[slot],7)",
+              "VAR Base=LOOKUPVALUE(weights[weight],weights[profile_id],Perfil,weights[slot],7)",
+              "VAR Nombre=SWITCH(Metrica,",
+              "\"progressive_passes_p90\",\"Pase progresivo /90\",",
+              "\"key_passes_open_play_p90\",\"Pase de tiro abierto /90\",",
+              "\"key_passes_set_piece_p90\",\"Pase de tiro parado /90\",",
+              "\"xg_assisted_open_play_p90\",\"xG asistido abierto /90\",",
+              "\"xg_assisted_set_piece_p90\",\"xG asistido parado /90\",",
+              "SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOOKUPVALUE(metrics[label],metrics[metric_id],Metrica),\" completados\",\"\"),\" exitosas\",\"\"),\"Recepciones y tiros en el área\",\"Recepción/tiro en área\"))",
+              "RETURN IF(ISBLANK(Metrica), \"No aplica\", Nombre & \" (base \" & FORMAT(Base,\"0\") & \")\")"
+            ],
+            "lineageTag": "48343c9b-ed75-4831-8726-668f197ff0f1"
+          },
+          {
+            "name": "Etiqueta peso 8",
+            "expression": [
+              "VAR Perfil=SELECTEDVALUE(profiles[profile_id])",
+              "VAR Metrica=LOOKUPVALUE(weights[metric_id],weights[profile_id],Perfil,weights[slot],8)",
+              "VAR Base=LOOKUPVALUE(weights[weight],weights[profile_id],Perfil,weights[slot],8)",
+              "VAR Nombre=SWITCH(Metrica,",
+              "\"progressive_passes_p90\",\"Pase progresivo /90\",",
+              "\"key_passes_open_play_p90\",\"Pase de tiro abierto /90\",",
+              "\"key_passes_set_piece_p90\",\"Pase de tiro parado /90\",",
+              "\"xg_assisted_open_play_p90\",\"xG asistido abierto /90\",",
+              "\"xg_assisted_set_piece_p90\",\"xG asistido parado /90\",",
+              "SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(LOOKUPVALUE(metrics[label],metrics[metric_id],Metrica),\" completados\",\"\"),\" exitosas\",\"\"),\"Recepciones y tiros en el área\",\"Recepción/tiro en área\"))",
+              "RETURN IF(ISBLANK(Metrica), \"No aplica\", Nombre & \" (base \" & FORMAT(Base,\"0\") & \")\")"
+            ],
+            "lineageTag": "e98cf501-1cba-4c17-b33d-e83e4b2b0c5c"
+          },
+          {
+            "name": "Candidatos visibles",
+            "expression": "DISTINCTCOUNT(rankings[candidate_id])",
+            "formatString": "0",
+            "lineageTag": "ee4a0db9-3c1c-431d-ae23-6880f2d1a376"
+          },
+          {
+            "name": "Perfil activo",
+            "expression": "SELECTEDVALUE(profiles[profile], \"Selecciona un perfil\")",
+            "lineageTag": "d5b71987-e876-484c-aa24-cf29b7588842"
+          },
+          {
+            "name": "Puesto base",
+            "expression": "SELECTEDVALUE(rankings[rank_base])",
+            "formatString": "0",
+            "lineageTag": "0e31d181-a193-4584-876a-bf92a5cfef5a"
+          },
+          {
+            "name": "Puntuacion base",
+            "expression": "SELECTEDVALUE(rankings[score_base])",
+            "formatString": "0.00",
+            "lineageTag": "08e548bb-88ba-4e5c-8977-112350e2329f"
+          },
+          {
+            "name": "Diferencia de puesto",
+            "expression": "IF(NOT ISBLANK([Ranking interactivo]), [Ranking interactivo] - [Puesto base])",
+            "formatString": "0",
+            "lineageTag": "421cb850-5fda-4c87-9d10-e148dc482828"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "rankings",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(CarpetaDatos & \"/rankings.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                " Nulls = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                " Typed = Table.TransformColumnTypes(Nulls, {{\"candidate_id\", type text}, {\"profile_id\", type text}, {\"profile\", type text}, {\"player_id\", Int64.Type}, {\"player\", type text}, {\"teams\", type text}, {\"primary_role\", type text}, {\"minutes\", type number}, {\"role_share\", type number}, {\"matches\", Int64.Type}, {\"score_base\", type number}, {\"rank_base\", Int64.Type}, {\"cohort_size\", Int64.Type}, {\"metric_1\", type text}, {\"percentile_1\", type number}, {\"weight_1\", Int64.Type}, {\"metric_2\", type text}, {\"percentile_2\", type number}, {\"weight_2\", Int64.Type}, {\"metric_3\", type text}, {\"percentile_3\", type number}, {\"weight_3\", Int64.Type}, {\"metric_4\", type text}, {\"percentile_4\", type number}, {\"weight_4\", Int64.Type}, {\"metric_5\", type text}, {\"percentile_5\", type number}, {\"weight_5\", Int64.Type}, {\"metric_6\", type text}, {\"percentile_6\", type number}, {\"weight_6\", Int64.Type}, {\"metric_7\", type text}, {\"percentile_7\", type number}, {\"weight_7\", Int64.Type}, {\"metric_8\", type text}, {\"percentile_8\", type number}, {\"weight_8\", Int64.Type}}, \"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "profiles",
+        "columns": [
+          {
+            "name": "profile_id",
+            "dataType": "string",
+            "lineageTag": "e8833292-61de-4255-b72e-db3ac2a02d77",
+            "sourceColumn": "profile_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "profile",
+            "dataType": "string",
+            "lineageTag": "8169be6e-e4a7-4c17-bfb9-d2e91c2bcfb0",
+            "sourceColumn": "profile",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "roles",
+            "dataType": "string",
+            "lineageTag": "2a454173-e80a-4ae5-a564-60517a8a8933",
+            "sourceColumn": "roles",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "minimum_minutes",
+            "dataType": "int64",
+            "lineageTag": "02cc0ad5-53f7-4de4-bf2d-2ee7ebfa1439",
+            "sourceColumn": "minimum_minutes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "minimum_role_share",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "c932746f-4b2f-4837-8a4e-105bbee09cdf",
+            "sourceColumn": "minimum_role_share",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cohort_size",
+            "dataType": "int64",
+            "lineageTag": "6a74d6db-66ae-4dc5-b5cb-4a6571135238",
+            "sourceColumn": "cohort_size",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "3520943b-737a-43a9-b2e3-3fc6285f1c55",
+        "partitions": [
+          {
+            "name": "profiles",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(CarpetaDatos & \"/profiles.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                " Nulls = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                " Typed = Table.TransformColumnTypes(Nulls, {{\"profile_id\", type text}, {\"profile\", type text}, {\"roles\", type text}, {\"minimum_minutes\", Int64.Type}, {\"minimum_role_share\", type number}, {\"cohort_size\", Int64.Type}}, \"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "weights",
+        "columns": [
+          {
+            "name": "profile_id",
+            "dataType": "string",
+            "lineageTag": "f21b6d6b-27cd-4d28-807d-27328d56d8ad",
+            "sourceColumn": "profile_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "slot",
+            "dataType": "int64",
+            "lineageTag": "65089de9-76b3-4b2d-97fb-1ecc62d69e38",
+            "sourceColumn": "slot",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric_id",
+            "dataType": "string",
+            "lineageTag": "557f72fc-095c-440d-b952-1938fc31db62",
+            "sourceColumn": "metric_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weight",
+            "dataType": "int64",
+            "lineageTag": "57f9d051-554c-4c73-8721-209347de10e6",
+            "sourceColumn": "weight",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "007d641b-3ca7-4cfc-a34a-b1adbcf0e91f",
+        "partitions": [
+          {
+            "name": "weights",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(CarpetaDatos & \"/weights.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                " Nulls = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                " Typed = Table.TransformColumnTypes(Nulls, {{\"profile_id\", type text}, {\"slot\", Int64.Type}, {\"metric_id\", type text}, {\"weight\", Int64.Type}}, \"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "metrics",
+        "columns": [
+          {
+            "name": "metric_id",
+            "dataType": "string",
+            "lineageTag": "ded15c94-be4f-4064-9f9a-17ca962c1f60",
+            "sourceColumn": "metric_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "label",
+            "dataType": "string",
+            "lineageTag": "7392b2f9-d401-495b-b556-02532248a8be",
+            "sourceColumn": "label",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unit",
+            "dataType": "string",
+            "lineageTag": "0fc85bef-714a-494f-963b-cfad464ff7ee",
+            "sourceColumn": "unit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "direction",
+            "dataType": "string",
+            "lineageTag": "05e256a7-964d-4df1-b633-595688e3c9c4",
+            "sourceColumn": "direction",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "definition",
+            "dataType": "string",
+            "lineageTag": "bcd6d2e9-3387-438b-b401-331a5c6c8232",
+            "sourceColumn": "definition",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "8e4ef8c4-fa9b-493c-9c4e-4c87342d8b4e",
+        "partitions": [
+          {
+            "name": "metrics",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(CarpetaDatos & \"/metrics.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                " Nulls = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                " Typed = Table.TransformColumnTypes(Nulls, {{\"metric_id\", type text}, {\"label\", type text}, {\"unit\", type text}, {\"direction\", type text}, {\"definition\", type text}}, \"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ranking_detail",
+        "columns": [
+          {
+            "name": "candidate_id",
+            "dataType": "string",
+            "lineageTag": "872f8515-2d2d-430b-bce2-a60fd87d7f54",
+            "sourceColumn": "candidate_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "profile_id",
+            "dataType": "string",
+            "lineageTag": "4591c0bb-4336-45bd-aeb9-ba815bbbd86f",
+            "sourceColumn": "profile_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "player_id",
+            "dataType": "int64",
+            "lineageTag": "09965d92-a2eb-4e93-a946-bd6fb865f0e7",
+            "sourceColumn": "player_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "slot",
+            "dataType": "int64",
+            "lineageTag": "7752bcdd-1f75-4466-90db-338f671d3491",
+            "sourceColumn": "slot",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "metric_id",
+            "dataType": "string",
+            "lineageTag": "f971baa6-bdc9-4874-a00d-607fb1c50ddf",
+            "sourceColumn": "metric_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "value",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "fe85eff3-6d0c-4ad4-88df-96e46c211ca7",
+            "sourceColumn": "value",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "percentile",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "ac821026-5d0f-4e99-92d6-8eba9f4b2558",
+            "sourceColumn": "percentile",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weight_base",
+            "dataType": "int64",
+            "lineageTag": "4e5d3aaf-4605-4339-a716-ded596f5c053",
+            "sourceColumn": "weight_base",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "contribution_base",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "5a910542-c6e9-4230-9935-67ce38a9d1f4",
+            "sourceColumn": "contribution_base",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "9923aa58-8d7b-450b-99e1-240ec9328125",
+        "partitions": [
+          {
+            "name": "ranking_detail",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(CarpetaDatos & \"/ranking_detail.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                " Nulls = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                " Typed = Table.TransformColumnTypes(Nulls, {{\"candidate_id\", type text}, {\"profile_id\", type text}, {\"player_id\", Int64.Type}, {\"slot\", Int64.Type}, {\"metric_id\", type text}, {\"value\", type number}, {\"percentile\", type number}, {\"weight_base\", Int64.Type}, {\"contribution_base\", type number}}, \"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "sensitivity",
+        "columns": [
+          {
+            "name": "profile_id",
+            "dataType": "string",
+            "lineageTag": "e5ab3155-81e9-4d67-a028-deb8f530b7dd",
+            "sourceColumn": "profile_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "player_id",
+            "dataType": "int64",
+            "lineageTag": "4e3d281b-b776-46f5-ba46-9e161d994448",
+            "sourceColumn": "player_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "player",
+            "dataType": "string",
+            "lineageTag": "48a00108-bfb7-4e13-861f-4f8786e58ec3",
+            "sourceColumn": "player",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rank_base",
+            "dataType": "int64",
+            "lineageTag": "8adc1e29-c54f-4883-afb7-354de711ef21",
+            "sourceColumn": "rank_base",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "best_rank",
+            "dataType": "int64",
+            "lineageTag": "8a5d7682-0cd6-4666-ad4d-7a8723646450",
+            "sourceColumn": "best_rank",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "worst_rank",
+            "dataType": "int64",
+            "lineageTag": "8e1c055f-0cc4-4758-82bb-390d592fb7ec",
+            "sourceColumn": "worst_rank",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "scenarios",
+            "dataType": "int64",
+            "lineageTag": "b1169e1d-44e5-432d-a748-5811c9e3fad8",
+            "sourceColumn": "scenarios",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "top10_fraction",
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "52be69ce-558b-4a30-b5cd-d322926ce7b2",
+            "sourceColumn": "top10_fraction",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "bfeabb71-24d3-49e3-8950-a3cb27ee3967",
+        "partitions": [
+          {
+            "name": "sensitivity",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(CarpetaDatos & \"/sensitivity.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                " Nulls = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                " Typed = Table.TransformColumnTypes(Nulls, {{\"profile_id\", type text}, {\"player_id\", Int64.Type}, {\"player\", type text}, {\"rank_base\", Int64.Type}, {\"best_rank\", Int64.Type}, {\"worst_rank\", Int64.Type}, {\"scenarios\", Int64.Type}, {\"top10_fraction\", type number}}, \"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Peso1",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "323b9d11-a8a6-48a5-b4f8-186678f83536",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "3067b1ee-259f-48c6-8203-f1282ef018fc",
+        "partitions": [
+          {
+            "name": "Peso1",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Peso2",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "6f30927a-40b4-44d9-b645-4221ec6f15cc",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "e0c3c21b-55af-454b-a704-068273cfde6a",
+        "partitions": [
+          {
+            "name": "Peso2",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Peso3",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "7399a257-9d2d-46a7-bad0-5f65e8398bfc",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "62117291-7dcb-4d4d-bd66-a436c1ca4f7b",
+        "partitions": [
+          {
+            "name": "Peso3",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Peso4",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "5fc8b6a9-e5cb-4eaa-8d98-676019e179e3",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "8da24ab6-067e-465d-b8f9-a9369c619639",
+        "partitions": [
+          {
+            "name": "Peso4",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Peso5",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "d1410ca0-4105-41bb-92c1-3170c22806b5",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "b7d6f696-a561-403d-9470-5b0fc8d18c62",
+        "partitions": [
+          {
+            "name": "Peso5",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Peso6",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "d6a78479-187f-42a1-8797-dc06b07d91d2",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "cf0356aa-4a69-4c75-9b77-17d6193c744d",
+        "partitions": [
+          {
+            "name": "Peso6",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Peso7",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "26d63c61-39cf-4121-ba4e-415bde4696c5",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "52606aa1-08da-4438-b10b-0aeea35053f0",
+        "partitions": [
+          {
+            "name": "Peso7",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Peso8",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "b077d7aa-be5e-4a52-8cc3-6c29902d911e",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "f957cb72-0c49-4465-b858-786f977d1b80",
+        "partitions": [
+          {
+            "name": "Peso8",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "qa_expected",
+        "columns": [
+          {
+            "name": "scenario",
+            "dataType": "string",
+            "lineageTag": "b9b31280-19fb-41d2-81e8-cb92aef038d1",
+            "sourceColumn": "scenario",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "candidate_id",
+            "dataType": "string",
+            "lineageTag": "2e32f759-c7f1-4791-a217-85836c6f34c3",
+            "sourceColumn": "candidate_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "score",
+            "dataType": "double",
+            "lineageTag": "b40a2933-4784-4520-b81d-68cb70b81135",
+            "sourceColumn": "score",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rank",
+            "dataType": "int64",
+            "lineageTag": "751d077f-82ae-48a4-beea-4bba1f11bd02",
+            "sourceColumn": "rank",
+            "summarizeBy": "none"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "cea5df76-80f4-4a53-8fe3-2ed8cee0c465",
+        "partitions": [
+          {
+            "name": "qa_expected",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " S=Csv.Document(File.Contents(CarpetaDatos & \"/qa_expected.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " H=Table.PromoteHeaders(S,[PromoteAllScalars=true]),",
+                " N=Table.ReplaceValue(H,\"\",null,Replacer.ReplaceValue,Table.ColumnNames(H)),",
+                " T=Table.TransformColumnTypes(N,{{\"scenario\",type text},{\"candidate_id\",type text},{\"score\",type number},{\"rank\",Int64.Type}},\"en-US\")",
+                "in T"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "QA_resultados",
+        "columns": [
+          {
+            "name": "Escenario",
+            "dataType": "string",
+            "isNameInferred": false,
+            "lineageTag": "ced9014a-7967-4b21-8bcc-b14c9750fa8f",
+            "sourceColumn": "[Escenario]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Candidatos",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "f00b6f77-096a-438e-95ff-d2e5f88941f0",
+            "sourceColumn": "[Candidatos]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Esperados",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "f220bfb5-47ff-45b8-bde8-ec0940e3cf54",
+            "sourceColumn": "[Esperados]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Errores cohorte",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "5dd40363-08a0-4650-9808-ee56cdd7a6a8",
+            "sourceColumn": "[Errores cohorte]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Errores score",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "8a09da19-3d61-4b14-a658-a5bd5d721132",
+            "sourceColumn": "[Errores score]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Errores ranking",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "60f93127-a8cf-41b5-ac6d-0cce496881d7",
+            "sourceColumn": "[Errores ranking]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "44068ab7-cdbc-4d65-86f7-621eb720316b",
+        "partitions": [
+          {
+            "name": "QA_resultados",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "VAR S0 = SUMMARIZECOLUMNS(rankings[profile_id], rankings[candidate_id], \"ActualScore\", [Puntuacion interactiva], \"ActualRank\", [Ranking interactivo], \"Keep\", COUNTROWS(rankings))",
+                "VAR C0 = ADDCOLUMNS(S0, \"ExpectedScore\", LOOKUPVALUE(qa_expected[score], qa_expected[scenario], \"Base\", qa_expected[candidate_id], rankings[candidate_id]), \"ExpectedRank\", LOOKUPVALUE(qa_expected[rank], qa_expected[scenario], \"Base\", qa_expected[candidate_id], rankings[candidate_id]))",
+                "VAR S1 = SUMMARIZECOLUMNS(rankings[profile_id], rankings[candidate_id], TREATAS({0}, Peso1[Value]), TREATAS({0}, Peso2[Value]), TREATAS({0}, Peso3[Value]), TREATAS({0}, Peso4[Value]), TREATAS({0}, Peso5[Value]), TREATAS({0}, Peso6[Value]), TREATAS({0}, Peso7[Value]), TREATAS({0}, Peso8[Value]), \"ActualScore\", [Puntuacion interactiva], \"ActualRank\", [Ranking interactivo], \"Keep\", COUNTROWS(rankings))",
+                "VAR C1 = ADDCOLUMNS(S1, \"ExpectedScore\", LOOKUPVALUE(qa_expected[score], qa_expected[scenario], \"Ceros\", qa_expected[candidate_id], rankings[candidate_id]), \"ExpectedRank\", LOOKUPVALUE(qa_expected[rank], qa_expected[scenario], \"Ceros\", qa_expected[candidate_id], rankings[candidate_id]))",
+                "VAR S2 = SUMMARIZECOLUMNS(rankings[profile_id], rankings[candidate_id], TREATAS({100}, Peso1[Value]), TREATAS({0}, Peso2[Value]), TREATAS({0}, Peso3[Value]), TREATAS({0}, Peso4[Value]), TREATAS({0}, Peso5[Value]), TREATAS({0}, Peso6[Value]), TREATAS({0}, Peso7[Value]), TREATAS({0}, Peso8[Value]), \"ActualScore\", [Puntuacion interactiva], \"ActualRank\", [Ranking interactivo], \"Keep\", COUNTROWS(rankings))",
+                "VAR C2 = ADDCOLUMNS(S2, \"ExpectedScore\", LOOKUPVALUE(qa_expected[score], qa_expected[scenario], \"Solo progresion\", qa_expected[candidate_id], rankings[candidate_id]), \"ExpectedRank\", LOOKUPVALUE(qa_expected[rank], qa_expected[scenario], \"Solo progresion\", qa_expected[candidate_id], rankings[candidate_id]))",
+                "VAR S3 = SUMMARIZECOLUMNS(rankings[profile_id], rankings[candidate_id], TREATAS({\"organizador\"}, profiles[profile_id]), TREATAS({32}, Peso1[Value]), TREATAS({15}, Peso2[Value]), TREATAS({20}, Peso3[Value]), TREATAS({2}, Peso4[Value]), TREATAS({3}, Peso5[Value]), TREATAS({5}, Peso6[Value]), TREATAS({15}, Peso7[Value]), TREATAS({8}, Peso8[Value]), \"ActualScore\", [Puntuacion interactiva], \"ActualRank\", [Ranking interactivo], \"Keep\", COUNTROWS(rankings))",
+                "VAR C3 = ADDCOLUMNS(S3, \"ExpectedScore\", LOOKUPVALUE(qa_expected[score], qa_expected[scenario], \"Organizador 32 y 8\", qa_expected[candidate_id], rankings[candidate_id]), \"ExpectedRank\", LOOKUPVALUE(qa_expected[rank], qa_expected[scenario], \"Organizador 32 y 8\", qa_expected[candidate_id], rankings[candidate_id]))",
+                "VAR S4 = SUMMARIZECOLUMNS(rankings[profile_id], rankings[candidate_id], TREATAS({\"organizador\"}, profiles[profile_id]), TREATAS({35}, Peso1[Value]), TREATAS({15}, Peso2[Value]), TREATAS({20}, Peso3[Value]), TREATAS({2}, Peso4[Value]), TREATAS({3}, Peso5[Value]), TREATAS({5}, Peso6[Value]), TREATAS({15}, Peso7[Value]), TREATAS({5}, Peso8[Value]), \"ActualScore\", [Puntuacion interactiva], \"ActualRank\", [Ranking interactivo], \"Keep\", COUNTROWS(rankings))",
+                "VAR C4 = ADDCOLUMNS(S4, \"ExpectedScore\", LOOKUPVALUE(qa_expected[score], qa_expected[scenario], \"Organizador 35 y 5\", qa_expected[candidate_id], rankings[candidate_id]), \"ExpectedRank\", LOOKUPVALUE(qa_expected[rank], qa_expected[scenario], \"Organizador 35 y 5\", qa_expected[candidate_id], rankings[candidate_id]))",
+                "VAR S5 = SUMMARIZECOLUMNS(rankings[profile_id], rankings[candidate_id], TREATAS({\"organizador\"}, profiles[profile_id]), TREATAS({25}, Peso1[Value]), TREATAS({15}, Peso2[Value]), TREATAS({25}, Peso3[Value]), TREATAS({2}, Peso4[Value]), TREATAS({3}, Peso5[Value]), TREATAS({5}, Peso6[Value]), TREATAS({15}, Peso7[Value]), TREATAS({10}, Peso8[Value]), \"ActualScore\", [Puntuacion interactiva], \"ActualRank\", [Ranking interactivo], \"Keep\", COUNTROWS(rankings))",
+                "VAR C5 = ADDCOLUMNS(S5, \"ExpectedScore\", LOOKUPVALUE(qa_expected[score], qa_expected[scenario], \"Organizador xG 25\", qa_expected[candidate_id], rankings[candidate_id]), \"ExpectedRank\", LOOKUPVALUE(qa_expected[rank], qa_expected[scenario], \"Organizador xG 25\", qa_expected[candidate_id], rankings[candidate_id]))",
+                "RETURN UNION(",
+                "ROW(\"Escenario\", \"Base\", \"Candidatos\", COUNTROWS(C0), \"Esperados\", 387, \"Errores cohorte\", ABS(COUNTROWS(C0)-387), \"Errores score\", SUMX(C0, IF(ISBLANK([ActualScore]) <> ISBLANK([ExpectedScore]) || ABS([ActualScore]-[ExpectedScore]) > 0.0000001, 1, 0)), \"Errores ranking\", SUMX(C0, IF(ISBLANK([ActualRank]) <> ISBLANK([ExpectedRank]) || [ActualRank] <> [ExpectedRank], 1, 0))),",
+                "ROW(\"Escenario\", \"Ceros\", \"Candidatos\", COUNTROWS(C1), \"Esperados\", 387, \"Errores cohorte\", ABS(COUNTROWS(C1)-387), \"Errores score\", SUMX(C1, IF(ISBLANK([ActualScore]) <> ISBLANK([ExpectedScore]) || ABS([ActualScore]-[ExpectedScore]) > 0.0000001, 1, 0)), \"Errores ranking\", SUMX(C1, IF(ISBLANK([ActualRank]) <> ISBLANK([ExpectedRank]) || [ActualRank] <> [ExpectedRank], 1, 0))),",
+                "ROW(\"Escenario\", \"Solo progresion\", \"Candidatos\", COUNTROWS(C2), \"Esperados\", 387, \"Errores cohorte\", ABS(COUNTROWS(C2)-387), \"Errores score\", SUMX(C2, IF(ISBLANK([ActualScore]) <> ISBLANK([ExpectedScore]) || ABS([ActualScore]-[ExpectedScore]) > 0.0000001, 1, 0)), \"Errores ranking\", SUMX(C2, IF(ISBLANK([ActualRank]) <> ISBLANK([ExpectedRank]) || [ActualRank] <> [ExpectedRank], 1, 0))),",
+                "ROW(\"Escenario\", \"Organizador 32 y 8\", \"Candidatos\", COUNTROWS(C3), \"Esperados\", 66, \"Errores cohorte\", ABS(COUNTROWS(C3)-66), \"Errores score\", SUMX(C3, IF(ISBLANK([ActualScore]) <> ISBLANK([ExpectedScore]) || ABS([ActualScore]-[ExpectedScore]) > 0.0000001, 1, 0)), \"Errores ranking\", SUMX(C3, IF(ISBLANK([ActualRank]) <> ISBLANK([ExpectedRank]) || [ActualRank] <> [ExpectedRank], 1, 0))),",
+                "ROW(\"Escenario\", \"Organizador 35 y 5\", \"Candidatos\", COUNTROWS(C4), \"Esperados\", 66, \"Errores cohorte\", ABS(COUNTROWS(C4)-66), \"Errores score\", SUMX(C4, IF(ISBLANK([ActualScore]) <> ISBLANK([ExpectedScore]) || ABS([ActualScore]-[ExpectedScore]) > 0.0000001, 1, 0)), \"Errores ranking\", SUMX(C4, IF(ISBLANK([ActualRank]) <> ISBLANK([ExpectedRank]) || [ActualRank] <> [ExpectedRank], 1, 0))),",
+                "ROW(\"Escenario\", \"Organizador xG 25\", \"Candidatos\", COUNTROWS(C5), \"Esperados\", 66, \"Errores cohorte\", ABS(COUNTROWS(C5)-66), \"Errores score\", SUMX(C5, IF(ISBLANK([ActualScore]) <> ISBLANK([ExpectedScore]) || ABS([ActualScore]-[ExpectedScore]) > 0.0000001, 1, 0)), \"Errores ranking\", SUMX(C5, IF(ISBLANK([ActualRank]) <> ISBLANK([ExpectedRank]) || [ActualRank] <> [ExpectedRank], 1, 0)))",
+                ")"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
