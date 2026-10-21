@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-21",
+  "url": "https://jjrn87.github.io/Powerbi-scouting/",
+  "deployment": "https://github.com/JJRN87/Powerbi-scouting/actions/runs/39557247645",
+  "tested_commit": "cd219582cc75b26815a5af1960a566a49784fcbd",
+  "deployment_status": "success",
+  "method": "Browser interaction with the deployed HTTPS page and reading rendered table cells.",
+  "profile_rows": {"central": 62, "lateral": 66, "pivote": 66, "mediapunta": 18, "extremo": 67, "delantero": 42, "organizador": 66},
+  "baseline_visible_score_comparisons": 387,
+  "baseline_visible_score_errors": 0,
+  "checks": {
+    "seven_profile_selectors": "passed",
+    "organizer_pass_accuracy_weight_100": "Kroos moves from fourth to third; score 86.92, baseline 75.21.",
+    "select_kroos_details": "passed",
+    "reset_weights": "Modric returns to 92.29; baseline order restored.",
+    "minimum_3420_organizer": "Empty list message shown.",
+    "minimum_900_restore": "66 candidates restored.",
+    "all_weights_zero": "No score or rank; message requests a nonzero weight.",
+    "statsbomb_logo_loaded": true,
+    "raw_metric_values_visible": false,
+    "desktop_visual_check": "passed"
+  },
+  "screenshot": "capturas/demo-web.png",
+  "limits": "Browser baseline comparison uses displayed scores at two decimals. Exact export checks are recorded separately in demo.json. This session did not test mobile viewports."
+}

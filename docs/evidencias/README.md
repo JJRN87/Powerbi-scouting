@@ -32,6 +32,10 @@ La página recoge el objetivo, la limpieza, la validación y los siguientes paso
 
 La [demo interactiva](https://jjrn87.github.io/Powerbi-scouting/) permite explorar el análisis. Su exportación comprueba los 387 cálculos base y conserva los percentiles del visor local. [Registro de exportación](demo.json) · [Alcance](../DEMO.md).
 
+Publicada y comprobada el 21/10/2026: siete perfiles, 387 puntuaciones base sin diferencias visibles, cambio de pesos, selección de jugador, filtro de minutos, lista vacía y pesos a cero. [Pruebas en la web](demo-web.json).
+
+![Demo pública con filtros y pesos ajustables](capturas/demo-web.png)
+
 ## Registros reproducibles
 
 - [Cierre de la versión histórica](cierre.json): comprobaciones finales, alcance y propuesta aplazada.
