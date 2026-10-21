@@ -8,6 +8,12 @@ Proyecto personal para practicar **Power BI, análisis de datos y Python**, con 
 
 ![Informe interactivo de Power BI](docs/evidencias/capturas/powerbi-ranking-base.png)
 
+## Probar la demo sin instalar nada
+
+[**Abrir la demo interactiva**](https://jjrn87.github.io/Powerbi-scouting/)
+
+Elige un perfil, mueve los pesos, filtra por minutos y pulsa un jugador para ver qué aporta cada atributo. Los cambios solo afectan a tu sesión. Es una versión web del análisis; el informe de Power BI se conserva por separado. [Qué publica la demo y cómo se mantiene](docs/DEMO.md).
+
 ## Qué permite hacer
 
 Elegir un perfil —central, lateral, pivote, organizador, mediapunta, extremo o delantero—, filtrar por equipo y ajustar la importancia de sus atributos. El informe ordena los candidatos según esas preferencias.
@@ -51,7 +57,7 @@ La fuente incluye 380 partidos y 539 jugadores. Los siete perfiles producen 387 
 
 ## Abrir o reproducir
 
-Para ver el resultado sin instalar nada, están las [capturas](docs/evidencias/README.md) y la [explicación](docs/EXPLICACION.md).
+Para probarlo sin instalar nada, abre la [demo web](https://jjrn87.github.io/Powerbi-scouting/). También están las [capturas de Power BI](docs/evidencias/README.md) y la [explicación](docs/EXPLICACION.md).
 
 Para reconstruirlo hacen falta Python 3.10 o posterior, Internet para la descarga inicial y Power BI Desktop en Windows para abrir el informe. El proceso básico usa la biblioteca estándar de Python; el análisis adicional de estabilidad utiliza NumPy.
 

@@ -28,6 +28,10 @@ La página recoge el objetivo, la limpieza, la validación y los siguientes paso
 
 ![Documentación del proyecto en Confluence](capturas/confluence-proyecto.png)
 
+## Demo web
+
+La [demo interactiva](https://jjrn87.github.io/Powerbi-scouting/) permite explorar el análisis. Su exportación comprueba los 387 cálculos base y conserva los percentiles del visor local. [Registro de exportación](demo.json) · [Alcance](../DEMO.md).
+
 ## Registros reproducibles
 
 - [Cierre de la versión histórica](cierre.json): comprobaciones finales, alcance y propuesta aplazada.

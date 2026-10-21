@@ -62,6 +62,7 @@ def write_reports(audit, tables, schemas):
     payload['audit'] = {k:audit[k] for k in ['matches','teams','players','events','source_commit']}
     template = (ROOT/'src/review.html').read_text(encoding='utf-8')
     encoded = json.dumps(payload,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
+    template = template.replace('__LOGO__', '../docs/assets/statsbomb-logo.png')
     template = template.replace('__MINIMUM__',str(tables['profiles'][0]['minimum_minutes']))
     template = template.replace('__ROLE_PERCENT__',str(round(100*tables['profiles'][0]['minimum_role_share'])))
     (output/'revisar_rankings.html').write_text(template.replace('__DATA__',encoded),encoding='utf-8')

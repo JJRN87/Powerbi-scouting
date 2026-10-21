@@ -1,0 +1,21 @@
+{
+  "baseline_comparisons": 387,
+  "baseline_errors": 0,
+  "profiles": 7,
+  "distinct_players": 311,
+  "source_commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+  "source_report_sha256": "df8f899eb2acb60cc7ae635ce87805ec95ce19156dce5e09ac082637db1da60a",
+  "published_html_sha256": "4473e657dfa3dcedad74712e89b893ac1ef220d2d1cb95e48c5b7b2a9d1f5176",
+  "published_bytes": 608869,
+  "published_content": "Derived percentiles, ranks, contributions, participation summaries and labels.",
+  "excluded": [
+    "events",
+    "lineups",
+    "match tables",
+    "raw metric values",
+    "SQLite",
+    "full CSV tables",
+    "PBIX"
+  ],
+  "hosting": "GitHub Pages from main /docs; calculations run in the visitor browser."
+}

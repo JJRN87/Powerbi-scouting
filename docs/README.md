@@ -6,6 +6,7 @@
 
 | Documento | Contenido |
 |---|---|
+| [Demo web](DEMO.md) | Explorar perfiles y pesos sin descargar el proyecto. |
 | [Explicación sencilla](EXPLICACION.md) | La idea, el recorrido de los datos y un ejemplo del cálculo. |
 | [Resumen del proyecto](PROYECTO.md) | Alcance, herramientas, comprobaciones y cierre. |
 | [Capturas](evidencias/README.md) | Power BI, Jira y Confluence. |

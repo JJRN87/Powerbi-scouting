@@ -1,5 +1,7 @@
 # Reproducir el proyecto
 
+La [demo web](https://jjrn87.github.io/Powerbi-scouting/) permite explorar el análisis sin ejecutar estos pasos. Para generar su copia pública: `python -m src.build_demo`, después de construir los datos. [Publicación y mantenimiento](DEMO.md).
+
 ## Requisitos
 
 - Python 3.10 o posterior.
