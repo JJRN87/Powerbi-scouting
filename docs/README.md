@@ -1,6 +1,6 @@
 # Documentación
 
-**Versión histórica finalizada el 17/10/2026.** Proyecto personal de Power BI y análisis de datos con Python y asistencia de IA.
+**Proyecto cerrado el 21/10/2026, con demo pública.** El análisis histórico terminó el 17/10/2026. Proyecto personal de Power BI y análisis de datos con Python y asistencia de IA.
 
 ## Entender y utilizar el proyecto
 
@@ -25,6 +25,7 @@
 | [Central, lateral, mediapunta y extremo](analisis/CENTRAL_LATERAL_MEDIAPUNTA_EXTREMO.md) | Revisión de candidatos y escenarios. |
 | [Partidos y contexto](analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md) | Estabilidad de la muestra y efecto exploratorio del equipo. |
 | [Organización](gestion/FORMA_DE_TRABAJO.md) | Uso de Jira, Confluence y GitHub. |
-| [Backlog](backlog.json) | Diez tareas terminadas y una propuesta aplazada fuera de esta versión. |
+| [Backlog](backlog.json) | Once tareas terminadas y una propuesta aplazada fuera de esta versión. |
+| [Cierre de publicación](evidencias/cierre-publicacion.json) | Demo, seguimiento en Atlassian y evidencias públicas. |
 
 Los registros de pruebas conservan sus cifras y fechas originales. El cierre no convierte las propuestas futuras en funcionalidades implementadas.

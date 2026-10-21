@@ -24,10 +24,13 @@ Se han utilizado backlog, criterios de aceptación, revisión de resultados y en
 | Perfiles | Revisión de atributos, escenarios y decisión de conservar los pesos base. |
 | Partidos y contexto | Pruebas de estabilidad y ajustes exploratorios por equipo. |
 | Cierre | Presentación personal, explicación sencilla y alcance de futuras ampliaciones. |
+| Publicación web | Demo en GitHub Pages, validación del visor desplegado y cierre público. |
 
-## Cierre de la versión histórica
+## Cierre del proyecto
 
-Finalizada el 17/10/2026. Diez tareas están terminadas. [SCOUT-7](https://jjrn87.atlassian.net/browse/SCOUT-7) recoge la revisión de perfiles y [SCOUT-8](https://jjrn87.atlassian.net/browse/SCOUT-8), el análisis de partidos y contexto.
+El análisis histórico terminó el 17/10/2026 con diez tareas completadas. El 21/10/2026 se añade [SCOUT-12](https://jjrn87.atlassian.net/browse/SCOUT-12), demo pública y cierre, en Listo. El total es de once tareas terminadas, sin trabajo pendiente dentro de esta entrega. [SCOUT-7](https://jjrn87.atlassian.net/browse/SCOUT-7) recoge la revisión de perfiles y [SCOUT-8](https://jjrn87.atlassian.net/browse/SCOUT-8), el análisis de partidos y contexto.
+
+SCOUT-12 enlaza la [demo pública](https://jjrn87.github.io/Powerbi-scouting/), sus criterios cumplidos y las comprobaciones. Confluence incorpora el mismo cierre y el enlace de acceso. GitHub conserva el resumen, el backlog y las capturas para consultarlos sin una cuenta de Atlassian.
 
 [SCOUT-11](https://jjrn87.atlassian.net/browse/SCOUT-11) queda aplazada como propuesta futura para evaluar datos actuales. Se conserva en Por hacer con su alcance explícito; no bloquea el cierre de esta versión ni se marca como completada.
 

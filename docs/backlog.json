@@ -1,6 +1,6 @@
 {
   "project_name": "Powerbi-scouting",
-  "publication_status": "Versión histórica finalizada el 17/10/2026: diez tareas terminadas; evaluación de datos actuales aplazada como propuesta futura fuera de este alcance.",
+  "publication_status": "Proyecto cerrado el 21/10/2026 con demo pública: once tareas terminadas y ninguna pendiente dentro de esta entrega. Evaluar datos actuales queda aplazado y fuera de alcance.",
   "items": [
     {
       "local_id": "DAT-01",
@@ -17,7 +17,8 @@
         "data/source-lock.json",
         "outputs/verification.json"
       ],
-      "release_scope": "Version historica"
+      "release_scope": "Version historica",
+      "jira_key": "SCOUT-1"
     },
     {
       "local_id": "DAT-02",
@@ -36,7 +37,8 @@
         "docs/METODOLOGIA.md",
         "outputs/audit.json"
       ],
-      "release_scope": "Version historica"
+      "release_scope": "Version historica",
+      "jira_key": "SCOUT-2"
     },
     {
       "local_id": "MOD-01",
@@ -53,7 +55,8 @@
         "src/validate.py",
         "tests/test_metrics.py"
       ],
-      "release_scope": "Version historica"
+      "release_scope": "Version historica",
+      "jira_key": "SCOUT-3"
     },
     {
       "local_id": "MOD-02",
@@ -71,7 +74,8 @@
         "outputs/organizador_robustez.json",
         "config/history/profiles_v1.json"
       ],
-      "release_scope": "Version historica"
+      "release_scope": "Version historica",
+      "jira_key": "SCOUT-4"
     },
     {
       "local_id": "VIS-01",
@@ -88,7 +92,8 @@
         "tests/check_viewer.cjs",
         "outputs/viewer-verification.json"
       ],
-      "release_scope": "Version historica"
+      "release_scope": "Version historica",
+      "jira_key": "SCOUT-5"
     },
     {
       "local_id": "BI-01",
@@ -115,7 +120,8 @@
         "docs/VALIDACION_POWERBI.md",
         "docs/evidencias/powerbi-validacion.json"
       ],
-      "release_scope": "Version historica"
+      "release_scope": "Version historica",
+      "jira_key": "SCOUT-6"
     },
     {
       "local_id": "MOD-03",
@@ -142,7 +148,8 @@
         "docs/evidencias/revision-cuatro-perfiles.json",
         "src/verify_remaining_players.py"
       ],
-      "release_scope": "Version historica"
+      "release_scope": "Version historica",
+      "jira_key": "SCOUT-7"
     },
     {
       "local_id": "MOD-04",
@@ -170,7 +177,8 @@
         "docs/analisis/ESTABILIDAD_PARTIDOS_CONTEXTO.md",
         "docs/evidencias/estabilidad-partidos.json"
       ],
-      "release_scope": "Version historica"
+      "release_scope": "Version historica",
+      "jira_key": "SCOUT-8"
     },
     {
       "local_id": "PUB-01",
@@ -181,10 +189,11 @@
       "acceptance": [
         "Repositorio público accesible",
         "Código y documentación coinciden con la entrega local",
-        "Datos descargados y resultados generados excluidos",
+        "Eventos originales, base, CSV completos y PBIX cargado excluidos; la demo publica resultados derivados.",
         "README distingue implementación y trabajo pendiente"
       ],
-      "release_scope": "Version historica"
+      "release_scope": "Version historica",
+      "jira_key": "SCOUT-9"
     },
     {
       "local_id": "PUB-02",
@@ -197,7 +206,8 @@
         "Tareas con criterios, evidencia y estado real",
         "Enlaces entre Jira, Confluence y GitHub verificados"
       ],
-      "release_scope": "Version historica"
+      "release_scope": "Version historica",
+      "jira_key": "SCOUT-10"
     },
     {
       "local_id": "DAT-03",
@@ -217,7 +227,34 @@
       "planning_status": "Aplazada",
       "evidence": [
         "docs/FUTURO.md"
-      ]
+      ],
+      "jira_key": "SCOUT-11"
+    },
+    {
+      "local_id": "PUB-03",
+      "jira_key": "SCOUT-12",
+      "area": "Publicación",
+      "summary": "Demo pública y cierre del proyecto",
+      "status": "Listo",
+      "description": "Publicar el visor en GitHub Pages, comprobar sus resultados e interacción y cerrar la documentación y el seguimiento. GitHub y la demo son públicos; Jira y Confluence requieren acceso al sitio.",
+      "acceptance": [
+        "Demo accesible sin cuenta ni descarga, enlazada desde el README",
+        "387 puntuaciones y puestos base comprobados al exportar",
+        "Siete perfiles y 387 puntuaciones visibles sin diferencias; controles probados en la web",
+        "Atribución y alcance de datos publicados documentados",
+        "Jira en Listo, Confluence actualizado y cierre disponible en GitHub"
+      ],
+      "evidence": [
+        "docs/DEMO.md",
+        "docs/evidencias/demo.json",
+        "docs/evidencias/demo-web.json",
+        "docs/evidencias/cierre-publicacion.json",
+        "docs/evidencias/capturas/jira-demo-cierre.png",
+        "docs/evidencias/capturas/confluence-demo-cierre.png"
+      ],
+      "release_scope": "Publicacion y cierre",
+      "completed_date": "2026-10-21",
+      "demo_url": "https://jjrn87.github.io/Powerbi-scouting/"
     }
   ],
   "workflow": [
@@ -234,11 +271,14 @@
     }
   ],
   "release": {
-    "status": "Finalizada",
-    "date": "2026-10-17",
+    "status": "Cerrada",
+    "date": "2026-10-21",
     "scope": "Proyecto personal de Power BI y análisis de datos con Python y asistencia de IA. StatsBomb LaLiga 2015/16.",
-    "completed_tasks": 10,
+    "completed_tasks": 11,
     "future_tasks": 1,
-    "implemented_new_providers": false
+    "implemented_new_providers": false,
+    "analysis_completed_date": "2026-10-17",
+    "pending_in_scope": 0,
+    "public_demo": "https://jjrn87.github.io/Powerbi-scouting/"
   }
 }

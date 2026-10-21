@@ -1,6 +1,6 @@
 # Capturas y comprobaciones
 
-Imágenes del informe y capturas de Jira y Confluence del 17/10/2026, con enlaces a código, análisis y comprobaciones.
+Imágenes del informe y capturas del seguimiento, con enlaces a código, análisis y comprobaciones. Se conservan las del análisis histórico del 17/10/2026 y se añaden las de la demo y el cierre del 21/10/2026.
 
 ## Power BI Desktop
 
@@ -18,15 +18,21 @@ La página de validación compara DAX con Python en seis escenarios: 1.359 compa
 
 ## Jira
 
-Tablero al cierre de la versión histórica: diez tareas terminadas. La evaluación de datos actuales se conserva en Por hacer como propuesta futura, aplazada y fuera de esta versión.
+La captura del tablero corresponde al cierre del análisis histórico del 17/10/2026: diez tareas terminadas. El 21/10/2026 se añade SCOUT-12, demo y cierre, también en Listo: once tareas completadas en total. La evaluación de datos actuales se conserva en Por hacer como propuesta futura, aplazada y fuera de esta versión.
 
 ![Seguimiento del proyecto en Jira](capturas/jira-tablero.png)
+
+![Demo pública y cierre completados en Jira](capturas/jira-demo-cierre.png)
 
 ## Confluence
 
 La página recoge el objetivo, la limpieza, la validación y los siguientes pasos. El contenido esencial también está en este repositorio para que se pueda leer sin una cuenta de Atlassian.
 
 ![Documentación del proyecto en Confluence](capturas/confluence-proyecto.png)
+
+Actualización del 21/10/2026: enlace de la demo, comprobaciones y cierre del proyecto. GitHub y GitHub Pages reúnen la presentación pública; Atlassian requiere acceso al sitio.
+
+![Cierre y demo pública documentados en Confluence](capturas/confluence-demo-cierre.png)
 
 ## Demo web
 
@@ -37,6 +43,8 @@ Publicada y comprobada el 21/10/2026: siete perfiles, 387 puntuaciones base sin 
 ![Demo pública con filtros y pesos ajustables](capturas/demo-web.png)
 
 ## Registros reproducibles
+
+- [Cierre de publicación](cierre-publicacion.json): once tareas terminadas, demo pública y actualización de Jira y Confluence.
 
 - [Cierre de la versión histórica](cierre.json): comprobaciones finales, alcance y propuesta aplazada.
 

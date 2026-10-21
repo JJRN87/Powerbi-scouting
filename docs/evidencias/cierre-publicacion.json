@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-21",
+  "status": "Proyecto cerrado con demo pública",
+  "analysis_completed_date": "2026-10-17",
+  "scope": "StatsBomb LaLiga 2015/16: datos, limpieza, siete perfiles, Power BI, revisión de pesos, estabilidad por partidos, contexto exploratorio, documentación y demo HTML.",
+  "completed_tasks": 11,
+  "pending_in_scope": 0,
+  "future": {
+    "jira_key": "SCOUT-11",
+    "status": "Por hacer",
+    "planning_status": "Aplazada y fuera del alcance cerrado",
+    "work_performed": false
+  },
+  "public_access": {
+    "repository": "https://github.com/JJRN87/Powerbi-scouting",
+    "demo": "https://jjrn87.github.io/Powerbi-scouting/",
+    "documentation": "docs/README.md",
+    "backlog": "docs/backlog.json"
+  },
+  "atlassian": {
+    "access": "Requiere acceso al sitio; los permisos no se han ampliado.",
+    "jira_issue": "https://jjrn87.atlassian.net/browse/SCOUT-12",
+    "jira_status_verified": "Listo",
+    "confluence": "https://jjrn87.atlassian.net/wiki/spaces/SCOUT/overview",
+    "confluence_published_verified": true,
+    "updates": [
+      "Enlace a la demo pública",
+      "Alcance y comprobaciones",
+      "Once entregas terminadas",
+      "Propuestas futuras separadas del cierre"
+    ]
+  },
+  "evidence": [
+    "demo.json",
+    "demo-web.json",
+    "cierre.json",
+    "powerbi-validacion.json",
+    "revision-perfiles.json",
+    "revision-cuatro-perfiles.json",
+    "estabilidad-partidos.json"
+  ],
+  "screenshots": [
+    "capturas/jira-demo-cierre.png",
+    "capturas/confluence-demo-cierre.png"
+  ],
+  "validation_scope": "Esta actualización cierra documentación y seguimiento. No se han repetido los cálculos de datos, las pruebas de Desktop ni las pruebas de interacción de la demo; se conservan sus registros anteriores."
+}

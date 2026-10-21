@@ -2,7 +2,7 @@
 
 Proyecto personal para practicar **Power BI, análisis de datos y Python**, con ayuda de IA durante el desarrollo. Uso el fútbol como caso práctico: comparar jugadores y ver cómo cambia el resultado cuando doy más importancia a unas cualidades que a otras.
 
-**Versión histórica finalizada · LaLiga 2015/16 · 17/10/2026.** Incluye preparación de datos, informe interactivo y revisión de resultados. Trabajar con temporadas actuales u otros proveedores queda como una posible ampliación.
+**Proyecto cerrado · LaLiga 2015/16 · 21/10/2026.** El análisis histórico terminó el 17/10/2026 y se completa con la demo pública. Incluye preparación de datos, informe interactivo, revisión de resultados y documentación. Trabajar con temporadas actuales u otros proveedores queda como una posible ampliación.
 
 [Explicación sencilla](docs/EXPLICACION.md) · [Ver el informe y las capturas](docs/evidencias/README.md) · [Reproducir el proyecto](docs/REPRODUCIR.md) · [Documentación completa](docs/README.md)
 
@@ -50,6 +50,7 @@ Mi parte ha sido definir el objetivo, pedir revisiones y cuestionar resultados c
 ## Qué muestran las comprobaciones
 
 - **Power BI coincide con Python:** 1.359 comparaciones en seis escenarios, sin diferencias. Son cálculos comparados, no 1.359 jugadores distintos.
+- **La demo conserva la base:** 387 puntuaciones y puestos comprobados al exportar, más pruebas de perfiles, pesos y filtros en la web publicada.
 - **Los pesos importan:** André Gomes es tercero como organizador en la base y quinto al dar más importancia al pase progresivo y menos al regate.
 - **Los minutos también importan:** Yoda y Burgui destacan con unos 975–979 minutos, pero sus puestos varían al cambiar la muestra de partidos.
 
@@ -85,3 +86,5 @@ Datos: [StatsBomb Open Data](https://github.com/statsbomb/open-data), competici�
 <img src="docs/assets/statsbomb-logo.png" width="230" alt="StatsBomb">
 
 [Jira](https://jjrn87.atlassian.net/jira/software/projects/SCOUT/boards/3) registra las tareas y [Confluence](https://jjrn87.atlassian.net/wiki/spaces/SCOUT/overview) las decisiones. La documentación y las capturas también están en GitHub, sin necesidad de acceso a Atlassian. La [forma de trabajo](docs/gestion/FORMA_DE_TRABAJO.md) describe las prácticas utilizadas.
+
+El cierre reúne **once tareas terminadas y ninguna pendiente dentro de esta entrega**. La evaluación de datos actuales queda aplazada y fuera de alcance. GitHub y GitHub Pages son la presentación pública; Jira y Confluence requieren acceso al sitio. [Resumen del cierre](docs/PROYECTO.md) · [Registro de publicación](docs/evidencias/cierre-publicacion.json).

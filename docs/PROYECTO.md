@@ -4,7 +4,7 @@
 
 Proyecto personal para practicar la preparación y el análisis de datos con Python y construir un informe interactivo en Power BI. El caso práctico es comparar jugadores según el tipo de futbolista que se busca.
 
-Se utiliza LaLiga 2015/16 de StatsBomb Open Data. La versión histórica queda finalizada el 17/10/2026. Evaluar proveedores actuales y adaptar nuevas fuentes son posibles ampliaciones, fuera de este cierre.
+Se utiliza LaLiga 2015/16 de StatsBomb Open Data. El análisis histórico terminó el 17/10/2026. El proyecto se cierra el 21/10/2026 con la publicación de la demo y la actualización del seguimiento. Evaluar proveedores actuales y adaptar nuevas fuentes son posibles ampliaciones, fuera de este cierre.
 
 ## Resultado entregado
 
@@ -13,6 +13,7 @@ Se utiliza LaLiga 2015/16 de StatsBomb Open Data. La versión histórica queda f
 | Datos | Descarga con versión de origen fijada, reglas de limpieza y tablas SQLite/CSV. |
 | Análisis | Siete perfiles, percentiles, pesos editables y detalle de contribuciones en el visor HTML. |
 | Power BI | Informe con perfiles, filtro de equipo, ocho controles de peso y página de validación. |
+| Demo pública | Siete perfiles, pesos editables, filtro de minutos y contribuciones en el navegador, sin instalar nada. |
 | Comprobaciones | Pruebas de datos y fórmulas; revisión de pesos, minutos, partidos y contexto. |
 | Documentación | Explicación sencilla, método, reproducción, análisis y capturas. |
 | Seguimiento | Tareas y criterios en Jira, decisiones en Confluence e historial en GitHub. |
@@ -36,6 +37,7 @@ Estas reglas comprueban la coherencia del procesamiento con la fuente. No equiva
 | Revisión de perfiles | Siete perfiles con atributos, sensibilidad y decisiones documentadas. |
 | Partidos y contexto | 387 puntuaciones base y 6.842 totales contrastados; 2.000 muestras de partidos y 2.000 de jornadas. |
 | Pruebas automatizadas | 18 pruebas con NumPy instalado. Sin NumPy se omiten las cuatro del análisis de estabilidad. |
+| Demo web | 387 puntuaciones y puestos base comprobados al exportar. Siete perfiles, 387 puntuaciones visibles y controles revisados en la web publicada. |
 
 Los registros conservan las pruebas de cada entrega: [Power BI](evidencias/powerbi-validacion.json), [pivote y delantero](evidencias/revision-perfiles.json), [cuatro perfiles restantes](evidencias/revision-cuatro-perfiles.json) y [partidos y contexto](evidencias/estabilidad-partidos.json).
 
@@ -51,7 +53,13 @@ La puntuación combina posiciones relativas dentro de un grupo; no representa un
 
 El autor ha definido el objetivo y solicitado revisiones de métricas, pesos y resultados. La IA ha apoyado código, documentación y comprobaciones. El ranking es una fórmula explícita y el xG procede de StatsBomb; no se ha entrenado un modelo de aprendizaje automático.
 
-La versión se cierra con diez tareas terminadas. SCOUT-11/DAT-03 se conserva como propuesta futura de evaluación de datos actuales, aplazada y fuera del alcance cerrado. No se marca como trabajo realizado. [Organización e historial](gestion/FORMA_DE_TRABAJO.md).
+El proyecto se cierra con once tareas terminadas: las diez entregas del análisis histórico y SCOUT-12/PUB-03, la demo pública y el cierre. No quedan tareas por ejecutar dentro de esta entrega. SCOUT-11/DAT-03 se conserva como propuesta futura de evaluación de datos actuales, aplazada y fuera del alcance cerrado. No se marca como trabajo realizado. [Organización e historial](gestion/FORMA_DE_TRABAJO.md).
+
+## Presentación pública
+
+La [demo](https://jjrn87.github.io/Powerbi-scouting/) permite probar los perfiles sin cuenta ni descarga. Es una presentación HTML del análisis; el informe nativo de Power BI forma parte del proyecto por separado. Los percentiles de referencia son fijos y los cambios de cada visitante solo afectan a su sesión. [Alcance y validación de la demo](DEMO.md).
+
+GitHub reúne el código, la documentación, el backlog y las capturas de seguimiento. Jira y Confluence requieren acceso al sitio: no hace falta entrar en ellos para consultar los resultados ni el cierre. [Registro de publicación](evidencias/cierre-publicacion.json).
 
 ## Reproducción y ampliación
 
